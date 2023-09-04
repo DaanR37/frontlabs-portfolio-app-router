@@ -75,7 +75,6 @@ export default function Index() {
     setIsOpen(!isOpen);
   };
 
-  const scroll = new LocomotiveScroll();
   const [idsToScroll] = useState([
     "#home",
     "#about",
@@ -84,6 +83,7 @@ export default function Index() {
     "#contact",
   ]);
 
+  const scroll = new LocomotiveScroll();
   function handleScroll(targetId) {
     scroll.scrollTo(targetId, {
       duration: 3,
@@ -94,6 +94,7 @@ export default function Index() {
 
   return (
     <header
+      id="navbar"
       className="absolute w-full min-h-[100vh] flex items-start justify-between 
         px-16 py-8 font-semibold uppercase tracking-wide text-[white] xl:px-16 lg:px-16 md:px-12 sm:px-8"
     >
@@ -132,35 +133,35 @@ export default function Index() {
           >
             <li onClick={() => handleScroll(idsToScroll[0])}>
               <CustomLink
-                href="/"
+                href=""
                 title="Home"
                 className={`${styles.textShadow} mr-4 tracking-wide`}
               />
             </li>
             <li onClick={() => handleScroll(idsToScroll[1])}>
               <CustomLink
-                href="/"
+                href=""
                 title="About"
                 className={`${styles.textShadow} mr-4 tracking-wide`}
               />
             </li>
             <li onClick={() => handleScroll(idsToScroll[2])}>
               <CustomLink
-                href="/"
+                href=""
                 title="Projects"
                 className={`${styles.textShadow} mr-4 tracking-wide`}
               />
             </li>
             <li onClick={() => handleScroll(idsToScroll[3])}>
               <CustomLink
-                href="/"
+                href=""
                 title="Articles"
                 className={`${styles.textShadow} mr-4 tracking-wide`}
               />
             </li>
             <li onClick={() => handleScroll(idsToScroll[4])}>
               <CustomLink
-                href="/"
+                href=""
                 title="Contact"
                 className={`${styles.textShadow} mr-4 tracking-wide`}
               />
@@ -225,7 +226,7 @@ export default function Index() {
             <ul className="text-center list-none">
               <li onClick={() => handleScroll(idsToScroll[0])}>
                 <CustomMobileLink
-                  href="/"
+                  href=""
                   title="Home"
                   className=""
                   toggle={handleclick}
@@ -233,7 +234,7 @@ export default function Index() {
               </li>
               <li onClick={() => handleScroll(idsToScroll[1])}>
                 <CustomMobileLink
-                  href="/"
+                  href=""
                   title="About"
                   className=""
                   toggle={handleclick}
@@ -241,7 +242,7 @@ export default function Index() {
               </li>
               <li onClick={() => handleScroll(idsToScroll[2])}>
                 <CustomMobileLink
-                  href="/"
+                  href=""
                   title="Projects"
                   className=""
                   toggle={handleclick}
@@ -249,7 +250,7 @@ export default function Index() {
               </li>
               <li onClick={() => handleScroll(idsToScroll[3])}>
                 <CustomMobileLink
-                  href="/"
+                  href=""
                   title="Articles"
                   className=""
                   toggle={handleclick}
@@ -257,7 +258,7 @@ export default function Index() {
               </li>
               <li onClick={() => handleScroll(idsToScroll[4])}>
                 <CustomMobileLink
-                  href="/"
+                  href=""
                   title="Contact"
                   className=""
                   toggle={handleclick}

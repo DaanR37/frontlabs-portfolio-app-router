@@ -17,8 +17,8 @@ export default function Index() {
     "#articles",
     "#contact",
   ]);
-  const scroll = new LocomotiveScroll();
 
+  const scroll = new LocomotiveScroll();
   function handleScroll(targetId) {
     scroll.scrollTo(targetId, {
       duration: 3,
