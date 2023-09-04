@@ -27,7 +27,6 @@
     "postcss": "8.4.28",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-locomotive-scroll": "^0.2.2",
     "react-rough-notation": "^1.0.5",
     "rough-notation": "^0.5.1",
     "sass-loader": "^13.3.2",
