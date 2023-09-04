@@ -131,36 +131,41 @@ export default function Index() {
             className={`${roboto.className} flex justify-between items-center list-none 
                 flex-wrap text-[22px] font-medium text-light xl:text-[24px]`}
           >
-            <li onClick={() => handleScroll(idsToScroll[0])}>
+            <li>
               <CustomLink
+                onClick={() => handleScroll(idsToScroll[0])}
                 href=""
                 title="Home"
                 className={`${styles.textShadow} mr-4 tracking-wide`}
               />
             </li>
-            <li onClick={() => handleScroll(idsToScroll[1])}>
+            <li>
               <CustomLink
+                onClick={() => handleScroll(idsToScroll[1])}
                 href=""
                 title="About"
                 className={`${styles.textShadow} mr-4 tracking-wide`}
               />
             </li>
-            <li onClick={() => handleScroll(idsToScroll[2])}>
+            <li>
               <CustomLink
+                onClick={() => handleScroll(idsToScroll[2])}
                 href=""
                 title="Projects"
                 className={`${styles.textShadow} mr-4 tracking-wide`}
               />
             </li>
-            <li onClick={() => handleScroll(idsToScroll[3])}>
+            <li>
               <CustomLink
+                onClick={() => handleScroll(idsToScroll[3])}
                 href=""
                 title="Articles"
                 className={`${styles.textShadow} mr-4 tracking-wide`}
               />
             </li>
-            <li onClick={() => handleScroll(idsToScroll[4])}>
+            <li>
               <CustomLink
+                onClick={() => handleScroll(idsToScroll[4])}
                 href=""
                 title="Contact"
                 className={`${styles.textShadow} mr-4 tracking-wide`}
