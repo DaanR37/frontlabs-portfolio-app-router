@@ -1,8 +1,6 @@
 "use client";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import { useRef } from "react";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import LocomotiveScroll from "locomotive-scroll";
 
@@ -20,62 +18,32 @@ import {
 import useThemeSwitcher from "../hooks/useThemeSwitcher";
 import styles from "./style.module.scss";
 
-// const CustomLink = ({ href, title, className = "", onClick }) => {
-//   const router = useRouter();
-
-//   return (
-//     <Link
-//       href={href}
-//       onClick={onClick}
-//       className={`${className} relative group`}
-//     >
-//       {title}
-//       <span
-//         className={`
-//             absolute h-[1px] inline-block left-0 -bottom-0.5
-//             group-hover:w-full transition-[width] ease duration-300 bg-light
-//             ${router.asPath === href ? "w-full" : "w-0"}`}
-//       >
-//         &nbsp;
-//       </span>
-//     </Link>
-//   );
-// };
-
+/* CUSTOMLINK */
 const CustomLink = ({ title, className = "", onClick }) => {
   return (
     <li
       onClick={onClick}
-      className={`${className} relative group cursor-pointer`}
+      className={`${className} ${styles.hoverUnderlineAnimation} relative inline-block group cursor-pointer`}
     >
       {title}
-      <span className="">&nbsp;</span>
     </li>
   );
 };
 
-const CustomMobileLink = ({ href, title, className = "", toggle }) => {
-  const router = useRouter();
-  const handleclick = () => {
-    toggle();
-    router.push(href);
+/* CUSTOMMOBILELINK */
+const CustomMobileLink = ({ title, className = "", onClick }) => {
+  const handleClick = () => {
+    if (onClick) {
+      onClick();
+    }
   };
 
   return (
     <button
-      href={href}
+      onClick={handleClick}
       className={`${className} relative group lg:text-[20px] text-light dark:text-dark my-2`}
-      onClick={handleclick}
     >
       {title}
-      <span
-        className={`
-            absolute h-[0.5px] inline-block bg-customTwo left-0 -bottom-0.5
-            group-hover:w-full transition-[width] ease duration-300 dark:bg-dark
-            ${router.asPath === href ? "w-full" : "w-0"}`}
-      >
-        &nbsp;
-      </span>
     </button>
   );
 };
@@ -84,10 +52,13 @@ export default function Index() {
   const ref = useRef(null);
   const [mode, setMode] = useThemeSwitcher();
   const [isOpen, setIsOpen] = useState(false);
-  const handleclick = () => {
+
+  /* HANDLECLICK FUNCTION */
+  const handleClick = () => {
     setIsOpen(!isOpen);
   };
 
+  /* ARRAY OF IDS AND ROUTES */
   const [idsToScroll] = useState([
     "#home",
     "#about",
@@ -96,6 +67,7 @@ export default function Index() {
     "#contact",
   ]);
 
+  /* HANDLESCROLL FUNCTION */
   const scroll = new LocomotiveScroll();
   function handleScroll(targetId) {
     scroll.scrollTo(targetId, {
@@ -111,9 +83,10 @@ export default function Index() {
       className="absolute w-full min-h-[100vh] flex items-start justify-between 
         px-16 py-8 font-semibold uppercase tracking-wide text-[white] xl:px-16 lg:px-16 md:px-12 sm:px-8"
     >
+      {/* Button Mobile Logic */}
       <button
         className="flex-col justify-center items-center hidden lg:flex z-10"
-        onClick={handleclick}
+        onClick={handleClick}
       >
         <span
           className={`block bg-dark dark:bg-customTwo transition-all duration-300 ease-in-out h-0.5 w-6 rounded-sm -translate-y-0.5 ${
@@ -227,44 +200,54 @@ export default function Index() {
         >
           <nav className="flex flex-col items-center justify-center">
             <ul className="text-center list-none">
-              <li onClick={() => handleScroll(idsToScroll[0])}>
+              <li>
                 <CustomMobileLink
-                  href=""
+                  onClick={() => {
+                    handleScroll(idsToScroll[0]);
+                    handleClick();
+                  }}
                   title="Home"
                   className=""
-                  toggle={handleclick}
                 />
               </li>
-              <li onClick={() => handleScroll(idsToScroll[1])}>
+              <li>
                 <CustomMobileLink
-                  href=""
+                  onClick={() => {
+                    handleScroll(idsToScroll[1]);
+                    handleClick();
+                  }}
                   title="About"
                   className=""
-                  toggle={handleclick}
                 />
               </li>
-              <li onClick={() => handleScroll(idsToScroll[2])}>
+              <li>
                 <CustomMobileLink
-                  href=""
+                  onClick={() => {
+                    handleScroll(idsToScroll[2]);
+                    handleClick();
+                  }}
                   title="Projects"
                   className=""
-                  toggle={handleclick}
                 />
               </li>
-              <li onClick={() => handleScroll(idsToScroll[3])}>
+              <li>
                 <CustomMobileLink
-                  href=""
+                  onClick={() => {
+                    handleScroll(idsToScroll[3]);
+                    handleClick();
+                  }}
                   title="Articles"
                   className=""
-                  toggle={handleclick}
                 />
               </li>
-              <li onClick={() => handleScroll(idsToScroll[4])}>
+              <li>
                 <CustomMobileLink
-                  href=""
+                  onClick={() => {
+                    handleScroll(idsToScroll[4]);
+                    handleClick();
+                  }}
                   title="Contact"
                   className=""
-                  toggle={handleclick}
                 />
               </li>
             </ul>

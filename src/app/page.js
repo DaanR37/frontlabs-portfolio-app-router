@@ -33,9 +33,9 @@ export default function Home() {
 
         return (
                 <main className="w-full bg-[black]">
-                        <AnimatePresence mode='wait'>
+                        {/* <AnimatePresence mode='wait'>
                                 {isLoading && <Preloader />}
-                        </AnimatePresence>
+                        </AnimatePresence> */}
                         <Cursor />
                         <Homepage />
                         <About />
