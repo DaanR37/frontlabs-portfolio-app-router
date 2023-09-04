@@ -42,7 +42,7 @@ export default function Index({ videos }) {
 
         <div className="flex w-full items-center justify-between lg:justify-start lg:flex-col">
           {/* Frontlabs Logo */}
-          <motion.div
+          {/* <motion.div
             initial={{
               opacity: 0,
             }}
@@ -71,7 +71,7 @@ export default function Index({ videos }) {
               className="w-[50%] h-auto object-cover
                                 lg:inline-block ml-[6rem] lg:w-[42.5%] lg:mt-40 lg:mx-auto invert opacity-[0.9]"
             />
-          </motion.div>
+          </motion.div> */}
 
           <div
             className="w-1/2 lg:my-0 lg:mx-auto lg:w-full flex flex-col items-start 
