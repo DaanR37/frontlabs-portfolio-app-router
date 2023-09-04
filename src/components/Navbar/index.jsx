@@ -20,27 +20,40 @@ import {
 import useThemeSwitcher from "../hooks/useThemeSwitcher";
 import styles from "./style.module.scss";
 
-const CustomLink = ({ href, title, className = "", onClick }) => {
-  const router = useRouter();
+// const CustomLink = ({ href, title, className = "", onClick }) => {
+//   const router = useRouter();
 
+//   return (
+//     <Link
+//       href={href}
+//       onClick={onClick}
+//       className={`${className} relative group`}
+//     >
+//       {title}
+//       <span
+//         className={`
+//             absolute h-[1px] inline-block left-0 -bottom-0.5
+//             group-hover:w-full transition-[width] ease duration-300 bg-light
+//             ${router.asPath === href ? "w-full" : "w-0"}`}
+//       >
+//         &nbsp;
+//       </span>
+//     </Link>
+//   );
+// };
+
+const CustomLink = ({ title, className = "", onClick }) => {
   return (
-    <Link
-      href={href}
+    <li
       onClick={onClick}
-      className={`${className} relative group`}
+      className={`${className} relative group cursor-pointer`}
     >
       {title}
-      <span
-        className={`
-            absolute h-[1px] inline-block left-0 -bottom-0.5
-            group-hover:w-full transition-[width] ease duration-300 bg-light
-            ${router.asPath === href ? "w-full" : "w-0"}`}
-      >
-        &nbsp;
-      </span>
-    </Link>
+      <span className="">&nbsp;</span>
+    </li>
   );
 };
+
 const CustomMobileLink = ({ href, title, className = "", toggle }) => {
   const router = useRouter();
   const handleclick = () => {
@@ -131,46 +144,31 @@ export default function Index() {
             className={`${roboto.className} flex justify-between items-center list-none 
                 flex-wrap text-[22px] font-medium text-light xl:text-[24px]`}
           >
-            <li>
-              <CustomLink
-                onClick={() => handleScroll(idsToScroll[0])}
-                href=""
-                title="Home"
-                className={`${styles.textShadow} mr-4 tracking-wide`}
-              />
-            </li>
-            <li>
-              <CustomLink
-                onClick={() => handleScroll(idsToScroll[1])}
-                href=""
-                title="About"
-                className={`${styles.textShadow} mr-4 tracking-wide`}
-              />
-            </li>
-            <li>
-              <CustomLink
-                onClick={() => handleScroll(idsToScroll[2])}
-                href=""
-                title="Projects"
-                className={`${styles.textShadow} mr-4 tracking-wide`}
-              />
-            </li>
-            <li>
-              <CustomLink
-                onClick={() => handleScroll(idsToScroll[3])}
-                href=""
-                title="Articles"
-                className={`${styles.textShadow} mr-4 tracking-wide`}
-              />
-            </li>
-            <li>
-              <CustomLink
-                onClick={() => handleScroll(idsToScroll[4])}
-                href=""
-                title="Contact"
-                className={`${styles.textShadow} mr-4 tracking-wide`}
-              />
-            </li>
+            <CustomLink
+              onClick={() => handleScroll(idsToScroll[0])}
+              title="Home"
+              className={`${styles.textShadow} mr-4 tracking-wide`}
+            />
+            <CustomLink
+              onClick={() => handleScroll(idsToScroll[1])}
+              title="About"
+              className={`${styles.textShadow} mr-4 tracking-wide`}
+            />
+            <CustomLink
+              onClick={() => handleScroll(idsToScroll[2])}
+              title="Projects"
+              className={`${styles.textShadow} mr-4 tracking-wide`}
+            />
+            <CustomLink
+              onClick={() => handleScroll(idsToScroll[3])}
+              title="Articles"
+              className={`${styles.textShadow} mr-4 tracking-wide`}
+            />
+            <CustomLink
+              onClick={() => handleScroll(idsToScroll[4])}
+              title="Contact"
+              className={`${styles.textShadow} mr-4 tracking-wide`}
+            />
           </ul>
         </motion.nav>
         <motion.nav
