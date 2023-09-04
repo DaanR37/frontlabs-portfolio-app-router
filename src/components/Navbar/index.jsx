@@ -133,35 +133,35 @@ export default function Index() {
           >
             <li onClick={() => handleScroll(idsToScroll[0])}>
               <CustomLink
-                href="#home"
+                href=""
                 title="Home"
                 className={`${styles.textShadow} mr-4 tracking-wide`}
               />
             </li>
             <li onClick={() => handleScroll(idsToScroll[1])}>
               <CustomLink
-                href="#about"
+                href=""
                 title="About"
                 className={`${styles.textShadow} mr-4 tracking-wide`}
               />
             </li>
             <li onClick={() => handleScroll(idsToScroll[2])}>
               <CustomLink
-                href="#projects"
+                href=""
                 title="Projects"
                 className={`${styles.textShadow} mr-4 tracking-wide`}
               />
             </li>
             <li onClick={() => handleScroll(idsToScroll[3])}>
               <CustomLink
-                href="#articles"
+                href=""
                 title="Articles"
                 className={`${styles.textShadow} mr-4 tracking-wide`}
               />
             </li>
             <li onClick={() => handleScroll(idsToScroll[4])}>
               <CustomLink
-                href="#contact"
+                href=""
                 title="Contact"
                 className={`${styles.textShadow} mr-4 tracking-wide`}
               />

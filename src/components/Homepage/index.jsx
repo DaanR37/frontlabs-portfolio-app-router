@@ -12,7 +12,7 @@ import HireMe from "../Reusablecomponents/HireMe";
 import Logo from "../../../public/images/frontlabslogo-alternative-logos/svg/logo-no-background-four.svg";
 
 export default function Index({ videos }) {
-  const videoUrl = process.env.NEXT_PUBLIC_VIDEO_URL;
+//   const videoUrl = process.env.NEXT_PUBLIC_VIDEO_URL;
   const colors = ["#7893ffe2", "#ff4f2cce", "#ff9372e1", "#ff91ffc7"];
 
   return (
@@ -26,7 +26,7 @@ export default function Index({ videos }) {
         id="home"
         className="relative w-full h-[100vh] flex items-center !p-0 md:pt-16 sm:pt-8 dark:text-light"
       >
-        {videoUrl && (
+        {/* {videoUrl && (
           <video
             autoPlay
             muted
@@ -35,7 +35,7 @@ export default function Index({ videos }) {
           >
             <source src={videoUrl} type="video/mp4" />
           </video>
-        )}
+        )} */}
 
         {/* Filter Gradient */}
         <div className="absolute top-0 left-0 inset-[25px] ring-1 ring-blue-500/50 bg-black opacity-70 rounded-br-[250px]" />
