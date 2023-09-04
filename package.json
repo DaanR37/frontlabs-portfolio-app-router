@@ -9,13 +9,34 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@motionone/utils": "^10.15.1",
     "autoprefixer": "10.4.15",
+    "contentful": "^10.5.0",
+    "dotenv": "^16.3.1",
     "eslint": "8.48.0",
     "eslint-config-next": "13.4.19",
+    "file-loader": "^6.2.0",
+    "framer-motion": "^10.16.1",
+    "gsap": "^3.12.2",
+    "locomotive-scroll": "^5.0.0-beta.8",
     "next": "13.4.19",
+    "next-images": "^1.8.5",
+    "next-transpile-modules": "^10.0.1",
+    "nodemailer": "^6.9.4",
+    "normalize.css": "^8.0.1",
     "postcss": "8.4.28",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-locomotive-scroll": "^0.2.2",
+    "react-rough-notation": "^1.0.5",
+    "rough-notation": "^0.5.1",
+    "sass-loader": "^13.3.2",
+    "semver": "^7.5.4",
+    "styled-components": "^6.0.7",
+    "swc": "^1.0.11",
     "tailwindcss": "3.3.3"
+  },
+  "devDependencies": {
+    "sass": "^1.66.1"
   }
 }
