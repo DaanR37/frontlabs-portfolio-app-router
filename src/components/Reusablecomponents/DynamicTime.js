@@ -16,9 +16,9 @@ const DynamicTime = () => {
         return (
                 <div className="flex flex-col">
                         <div className="flex mb-4">
-                                <p>Local Time</p>
+                                <p className="text-base">Local Time</p>
                         </div>
-                        <span className="opacity-[0.7] font-extralight">
+                        <span className="opacity-[0.7] font-extralight text-base">
                                 {currentTime.toLocaleTimeString()} CEST
                         </span>
                 </div>

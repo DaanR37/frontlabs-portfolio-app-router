@@ -1,6 +1,6 @@
+"use client";
 // import { createClient } from 'contentful';
 import Image from "next/image";
-import Link from "next/link";
 import Head from "next/head";
 import { motion } from "framer-motion";
 
@@ -38,9 +38,12 @@ export default function Index({ videos }) {
         )}
 
         {/* Filter Gradient */}
-        <div className="absolute top-0 left-0 inset-[25px] ring-1 ring-blue-500/50 bg-black opacity-70 rounded-br-[250px]" />
+        <div
+          className="absolute top-0 left-0 inset-[25px] ring-1 ring-blue-500/50 
+        bg-black opacity-70 rounded-br-[250px] lg:rounded-br-[100px]"
+        />
 
-        <div className="flex w-full items-center justify-between lg:justify-start lg:flex-col">
+        <div className="flex w-full items-center justify-between lg:justify-center lg:flex-col md:mt-[8rem] sm:mt-[6rem]">
           {/* Frontlabs Logo */}
           <motion.div
             initial={{
@@ -53,7 +56,7 @@ export default function Index({ videos }) {
               duration: 3.5,
               ease: "easeInOut",
             }}
-            className="flex w-1/2 lg:w-full"
+            className="flex w-1/2 xl:w-[75%] lg:w-full"
           >
             <Image
               src={Logo}
@@ -61,26 +64,26 @@ export default function Index({ videos }) {
               priority
               rel="preload"
               as="image/svg"
-              // sizes="(max-width: 768px) 100vw,
-              // (max-width: 1200px) 50vw,
-              // 50vw"
+              sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              50vw"
               width={100}
               height={100}
               data-scroll
               data-scroll-speed="0.4"
-              className="w-[50%] h-auto object-cover
-                                lg:inline-block ml-[6rem] lg:w-[42.5%] lg:mt-40 lg:mx-auto invert opacity-[0.9]"
+              className="w-[50%] lg:w-[40%] sm:w-[45%] xs:w-[50%] h-auto object-cover ml-[6rem] 
+              lg:inline-block lg:mx-auto invert opacity-[0.9]"
             />
           </motion.div>
 
           <div
-            className="w-1/2 lg:my-0 lg:mx-auto lg:w-full flex flex-col items-start 
-          lg:items-center self-center xl:w-[65%] lg:text-center"
+            className="w-1/2 flex flex-col items-start self-center xl:w-[60%] 
+            lg:w-full lg:items-center lg:mx-auto lg:my-16"
           >
             <AnimatedText
               text="Unleashing web wonders, where front-end flourishes"
-              className="!text-5xl !text-left xl:!text-4xl lg:!text-center 
-              lg:!text-[2rem] sm:!text-3xl z-20"
+              className="!text-5xl xl:!text-4xl md:!text-2xl xs:!text-xl 
+              !text-left lg:!text-center z-20"
             />
 
             {/* Key Words with color */}
@@ -118,9 +121,9 @@ export default function Index({ videos }) {
                 href="/cvdaan3.pdf"
                 download={true}
                 target={"_blank"}
-                className="flex items-center bg-customThree/[0.85] text-dark py-[6px] px-6 
-                rounded text-xl font-medium hover:bg-customThree/100 transition-all duration-[300ms] 
-                ease-in-out lg:p-[0.2rem] lg:px-[0.75rem] lg:text-base z-20"
+                className="flex items-center rounded text-xl lg:text-lg md:text-base sm:text-sm
+                font-medium bg-customThree/[0.85] text-dark hover:bg-customThree/100 transition-all duration-[300ms] 
+                ease-in-out py-[6px] px-6 lg:py-1 lg:px-4 z-20"
               >
                 CV
               </a>

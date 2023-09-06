@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import LocomotiveScroll from "locomotive-scroll";
 
 /* Import Fonts from next/font/google */
-import { open_sans } from "@/app/fonts";
+// import { open_sans } from "@/app/fonts";
 import { roboto } from "../../app/fonts";
 
 /* Import Components */
@@ -41,7 +41,7 @@ const CustomMobileLink = ({ title, className = "", onClick }) => {
   return (
     <button
       onClick={handleClick}
-      className={`${className} relative group lg:text-[20px] text-light dark:text-dark my-2`}
+      className={`${className} relative lg:text-[20px] text-light dark:text-dark my-2`}
     >
       {title}
     </button>
@@ -89,17 +89,17 @@ export default function Index() {
         onClick={handleClick}
       >
         <span
-          className={`block bg-dark dark:bg-customTwo transition-all duration-300 ease-in-out h-0.5 w-6 rounded-sm -translate-y-0.5 ${
+          className={`block bg-light transition-all duration-300 ease-in-out h-0.5 w-6 rounded-sm -translate-y-0.5 ${
             isOpen ? "rotate-45 translate-y-1" : "-translate-y-0.5"
           }`}
         ></span>
         <span
-          className={`block bg-dark dark:bg-customTwo transition-all duration-300 ease-in-out h-0.5 w-6 rounded-sm my-0.5 ${
+          className={`block bg-light transition-all duration-300 ease-in-out h-0.5 w-6 rounded-sm my-0.5 ${
             isOpen ? "opacity-0" : "opacity-100"
           }`}
         ></span>
         <span
-          className={`block bg-dark dark:bg-customTwo transition-all duration-300 ease-in-out h-0.5 w-6 rounded-sm ${
+          className={`block bg-light transition-all duration-300 ease-in-out h-0.5 w-6 rounded-sm ${
             isOpen ? "-rotate-45 -translate-y-1" : "translate-y-0.5"
           }`}
         ></span>
@@ -196,10 +196,10 @@ export default function Index() {
           transition={{ duration: 0.3 }}
           className="absolute flex flex-col min-w-[75vw] justify-between items-center
                                 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
-                                bg-dark/90 dark:bg-customTwo/75 rounded-lg backdrop-blur-md py-32 z-40"
+                                bg-dark/60 dark:bg-light/60 rounded-lg backdrop-blur-md py-32 z-40"
         >
           <nav className="flex flex-col items-center justify-center">
-            <ul className="text-center list-none">
+            <ul className="text-center list-none mb-4">
               <li>
                 <CustomMobileLink
                   onClick={() => {
@@ -259,7 +259,7 @@ export default function Index() {
               target={"_blank"}
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.9 }}
-              className="w-8 mr-3 sm:mx-1 text-light dark:text-dark"
+              className="w-8 mr-4 sm:mx-2 text-light dark:text-dark"
             >
               <LinkedInIcon />
             </motion.a>
@@ -268,13 +268,13 @@ export default function Index() {
               target={"_blank"}
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.9 }}
-              className="w-8 sm:mx-1 text-light dark:text-dark"
+              className="w-8 sm:mx-2 text-light dark:text-dark"
             >
               <GithubIcon />
             </motion.a>
             <button
               onClick={() => setMode(mode === "light" ? "dark" : "light")}
-              className={`ml-3 sm:mx-1 flex items-center justify-center rounded-full p-1
+              className={`ml-4 sm:mx-2 flex items-center justify-center rounded-full p-1
                                     ${
                                       mode === "light"
                                         ? "bg-dark text-light"

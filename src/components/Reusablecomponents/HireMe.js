@@ -6,7 +6,7 @@ const HireMe = () => {
                 <div className="absolute bottom-0 right-0 flex items-center 
                         justify-center overflow-hidden lg:right-4 lg:left-auto 
                         lg:top-0 lg:bottom-auto sm:right-0 z-20">
-                        <div className="relative w-48 lg:w-28 h-auto flex items-center justify-center">
+                        <div className="relative w-44 lg:w-28 h-auto flex items-center justify-center">
                                 <CircText2 className="lg:w-[100px] fill-[whitesmoke] animate-spin-slow" />
                                 <Link href="mailto:frontlabsamsterdam@gmail.com" target="_blank" className="absolute flex items-center justify-center 
                                                 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-dark/40 text-light shadow-md border border-[whitesmoke] hover:border-dark
