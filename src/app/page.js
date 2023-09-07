@@ -1,10 +1,10 @@
 "use client";
 import React, { useEffect, useState } from 'react';
-import { AnimatePresence } from 'framer-motion';
-import Preloader from "./_components/Reusablecomponents/Preloader";
+// import { AnimatePresence } from 'framer-motion';
+// import Preloader from "./_components/Reusablecomponents/Preloader";
 
 import dynamic from 'next/dynamic';
-import Biography from "./_components/biography";
+import Biography from "./biography";
 
 
 const DynamicCursor = dynamic(() => import('./_components/Reusablecomponents/Cursor'), {
@@ -53,9 +53,9 @@ export default function Home() {
                 });
 
                 // setTimeout(() => {
-                //         setIsLoading(false);
-                //         document.body.style.cursor = 'default'
-                //         window.scrollTo(0, 0);
+                //     setIsLoading(false);
+                //     document.body.style.cursor = 'default'
+                //     window.scrollTo(0, 0);
                 // }, 2000)
             }
         )()
