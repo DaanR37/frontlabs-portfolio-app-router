@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -42,21 +42,22 @@ export default function Index() {
         transition={{
           duration: 1,
         }}
-        className="absolute mb-24"
+        className="absolute w-1/2 h-auto mb-24"
       >
         <Image
-          src={Logo}
+          src="/images/frontlabslogo-alternative-logos/logo-no-background.png"
           alt="Frontlabs Amsterdam"
           priority
           rel="preload"
-          as="image/svg"
-          className="w-[17vw] lg:w-[21vw] md:w-[25vw] sm:w-[27vw] xs:w-[30vw] h-auto invert"
-          sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              50vw"
-          width={300}
-          height={300}
+          as="image/png"
+          //   sizes="(max-width: 768px) 100vw,
+          //         (max-width: 1535px) 50vw,
+          //         50vw"
+          width={400}
+          height={400}
+          className="object-cover w-auto mx-auto invert"
         />
+        {/* w-[17vw] lg:w-[21vw] md:w-[25vw] sm:w-[27vw] xs:w-[30vw] ^^ */}
       </motion.div>
 
       {/* HomeButton */}

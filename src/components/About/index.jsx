@@ -39,8 +39,8 @@ export default function Index() {
       </Head>
       <div
         id="about"
-        className="relative flex w-[80vw] mx-auto mt-28 md:mt-14
-        text-light xs:w-[90vw]"
+        className="relative flex w-[80vw] xs:w-[90vw] mx-auto mt-28 md:mt-14
+        text-light"
       >
         {/* Title About Me */}
         <div className="relative w-full flex justify-between">
@@ -56,44 +56,58 @@ export default function Index() {
           </div>
 
           {/* Images Sliding Vertical */}
-          <div className="brightness-[85%] w-[50%] right-0 ">
+          <div className="relative w-1/2 brightness-[85%] right-0 ">
             {/* md:flex md:w-full md:justify-center md:items-center */}
             <Image
-              src={img1}
+              src="/images/profilepic/profilepic-1-kopie.png"
               alt="picture of author"
-              width={350}
-              height={350}
-              className="absolute w-full h-auto rounded-[5px] lg:object-cover blur-[4px]"
               priority
               rel="preload"
-              as="image/jpg"
+              as="image/png"
+              //       sizes="(max-width: 768px) 100vw,
+              //       (max-width: 1535px) 50vw,
+              //       50vw"
+              width={500}
+              height={500}
+              className="absolute object-cover w-auto rounded-[5px] blur-[4px]"
             />
+            {/* w-full object-cover ^^ */}
             <Image
-              src={img3}
+              src="/images/profilepic/profilepic-3-kopie.png"
               alt="picture of author"
-              width={350}
-              height={350}
+              priority
+              rel="preload"
+              as="image/png"
+              //       fill={true}
+              //       sizes="(max-width: 768px) 100vw,
+              //               (max-width: 1200px) 50vw,
+              //               50vw"
+              width={200}
+              height={200}
               data-scroll
               data-scroll-speed="0.2"
-              className="relative w-[40%] sm:w-[45%] right-[17.5%] top-[67.5%] rounded-[5px] 
+              className="object-cover relative w-auto right-[17.5%] top-[67.5%] rounded-[5px] 
               xl:right-[15%] md:left-[65%] xs:left-[45%] md:object-cover drop-shadow-4xl"
+            />
+            {/* object-cover w-[40%] sm:w-[45%] object-cover*/}
+            <Image
+              src="/images/profilepic/profilepic-2-kopie.png"
+              alt="picture of author"
               priority
               rel="preload"
-              as="image/jpg"
-            />
-            <Image
-              src={img2}
-              alt="picture of author"
-              width={350}
-              height={350}
+              as="image/png"
+              //       fill={true}
+              //       sizes="(max-width: 768px) 100vw,
+              //               (max-width: 1200px) 50vw,
+              //               50vw"
+              width={200}
+              height={200}
               data-scroll
               data-scroll-speed="-0.3"
-              className="relative w-[40%] md:w-[35%] sm:w-[45%] left-[80%] xl:left-[75%] 
+              className="object-cover relative w-auto left-[80%] xl:left-[75%] 
               top-[25%] rounded-[5px] md:hidden drop-shadow-4xl mt-8"
-              priority
-              rel="preload"
-              as="image/jpg"
             />
+            {/* object-cover w-[40%] md:w-[35%] sm:w-[45%] object-cover */}
           </div>
         </div>
       </div>

@@ -7,29 +7,31 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const projects = [
   {
-    src: "projects/afb_bbkk.png",
+    src: "projects/afb_bbkk_kopie.png",
     title: "Tebbernekkel",
     link: "https://tebbernekkel.nl/",
   },
   {
-    src: "projects/afb_postmark.png",
+    src: "projects/afb_postmark_kopie.png",
     title: "Postmark",
     link: "https://postmark.nl/",
   },
   {
-    src: "projects/afb_rtxp.png",
+    src: "projects/afb_rtxp_kopie.png",
     title: "RTXP Amsterdam",
     link: "https://www.rtxp.nl/",
   },
   {
-    src: "projects/afb_podcast.png",
+    src: "projects/afb_podcast_kopie.png",
     title: "PodcastTailor",
     link: "https://www.podcast-tailor.nl/",
   },
 ];
 
 export default function Index() {
+  // Is it Array or not?
   const [selectedProject, setSelectedProject] = useState(0);
+
   const container = useRef(null);
   const imageContainer = useRef(null);
   const titlesContainer = useRef(null);
@@ -108,13 +110,17 @@ export default function Index() {
           >
             <Image
               src={`/images/${projects[selectedProject].src}`}
-              fill={true}
-              sizes="400"
               alt="project image"
               priority
               rel="preload"
-              as="image/jpg"
-              className="object-cover xl:object-none rounded-[5px]"
+              as="image/png"
+              fill={true}
+              sizes="(max-width: 768px) 100vw,
+                (max-width: 1535px) 50vw,
+                50vw"
+              //       width={100}
+              //       height={100}
+              className="object-cover w-auto xl:object-none rounded-[5px]"
             />
           </div>
           <div className="column flex h-full w-[20%] text-[1.6vw] lg:text-[2vw] lg:w-[25%] lg:pl-6 sm:text-[2.2vw]">

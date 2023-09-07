@@ -151,21 +151,25 @@ const Column = ({ y }) => {
         return (
           <div
             key={i}
-            className={`${styles.imageContainer} relative w-full h-full min-h-[500px] 
+            className={`${styles.imageContainer} relative h-full w-auto min-h-[500px] 
             rounded-[0.5vw] overflow-hidden`}
           >
-            <a href={image.link} target={"_blank"} className="relative">
+            <a
+              href={image.link}
+              target={"_blank"}
+              className="relative h-full w-auto"
+            >
               <Image
                 src={`/images/${image.src}`}
                 alt={`Image ${i}`}
-                fill={true}
-                sizes="(max-width: 768px) 100vw,
-                          (max-width: 1200px) 50vw,
-                          50vw"
                 priority
                 rel="preload"
                 as="image/jpg"
-                className="relative object-cover"
+                fill={true}
+                sizes="(max-width: 768px) 100vw,
+                (max-width: 1535px) 50vw,
+                50vw"
+                className="relative object-cover w-auto"
               />
               <div className="">
                 <div

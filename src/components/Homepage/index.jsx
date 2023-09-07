@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 // import { createClient } from 'contentful';
 import Image from "next/image";
 import Head from "next/head";
@@ -56,24 +56,26 @@ export default function Index({ videos }) {
               duration: 3.5,
               ease: "easeInOut",
             }}
-            className="flex w-1/2 xl:w-[75%] lg:w-full"
+            className="relative flex w-1/2 h-auto"
           >
+            {/* xl:w-[75%] lg:w-full */}
             <Image
-              src={Logo}
+              src="/images/frontlabslogo-alternative-logos/logo-no-background.png"
               alt="logo"
               priority
               rel="preload"
-              as="image/svg"
-              sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              50vw"
-              width={100}
-              height={100}
+              as="image/png"
+              //       sizes="(max-width: 768px) 100vw,
+              //               (max-width: 1200px) 50vw,
+              //               50vw"
+              width={400}
+              height={400}
               data-scroll
               data-scroll-speed="0.4"
-              className="w-[50%] lg:w-[40%] sm:w-[45%] xs:w-[50%] h-auto object-cover ml-[6rem] 
-              lg:inline-block lg:mx-auto invert opacity-[0.9]"
+              className="object-cover w-auto ml-[6rem] lg:inline-block lg:mx-auto invert opacity-[0.9]"
             />
+            {/* w-1/2 lg:w-[40%] sm:w-[45%] xs:w-[50%] 
+                h-auto ^^ */}
           </motion.div>
 
           <div
