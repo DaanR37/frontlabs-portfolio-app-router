@@ -29,7 +29,6 @@ const projects = [
 ];
 
 export default function Index() {
-  // Is it Array or not?
   const [selectedProject, setSelectedProject] = useState(0);
 
   const container = useRef(null);
@@ -97,7 +96,7 @@ export default function Index() {
         <meta name="description" content="lorem ipsum" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <div
+      <section
         ref={container}
         id="projects"
         className="projects relative text-light mt-[40vh] p-[10%] xl:p-[5%]"
@@ -163,7 +162,7 @@ export default function Index() {
             );
           })}
         </div>
-      </div>
+      </section>
     </>
   );
 }

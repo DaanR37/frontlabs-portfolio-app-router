@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 import { useState } from "react";
 import { useRef } from "react";
 import { motion } from "framer-motion";
@@ -6,7 +6,7 @@ import LocomotiveScroll from "locomotive-scroll";
 
 /* Import Fonts from next/font/google */
 // import { open_sans } from "@/app/fonts";
-import { roboto } from "../../app/fonts";
+import { roboto } from "../../fonts";
 
 /* Import Components */
 import {

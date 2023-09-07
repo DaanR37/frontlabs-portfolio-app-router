@@ -1,13 +1,3 @@
-
-
-
-
-
-
-
-
-
-
 const ContactForm = (props) => {
     return (
         <form

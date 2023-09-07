@@ -9,12 +9,12 @@ import {
   MailIcon,
   PinpointIcon,
   TelIcon,
-} from "../Reusablecomponents/Icons";
-import MyUserData from "../Reusablecomponents/MyUserData";
-import Loader from "../Reusablecomponents/Loader";
-import ContactForm from "../Reusablecomponents/ContactForm";
+} from "../_components/Reusablecomponents/Icons";
+import MyUserData from "../_components/Reusablecomponents/MyUserData";
+import Loader from "../_components/Reusablecomponents/Loader";
+import ContactForm from "../_components/Reusablecomponents/ContactForm";
 import Magnetic from "../../magnetic";
-import AnimatedTextContact from "../Reusablecomponents/PreloaderContact/AnimatedTextContact";
+import AnimatedTextContact from "../_components/Reusablecomponents/PreloaderContact/AnimatedTextContact";
 
 export default function Index() {
   const [name, setName] = useState("");
@@ -87,7 +87,7 @@ export default function Index() {
         <meta name="description" content="lorem ipsum" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <div
+      <section
         id="contact"
         className={`${
           loading ? "blur-xs" : ""
@@ -218,7 +218,7 @@ export default function Index() {
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 }

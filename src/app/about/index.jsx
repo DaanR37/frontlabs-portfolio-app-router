@@ -7,9 +7,6 @@ import Head from "next/head";
 import Image from "next/image";
 
 /* Import Icons & Images */
-import img1 from "../../../public/images/profilepic/profilepic-1.jpg";
-import img2 from "../../../public/images/profilepic/profilepic-2.jpg";
-import img3 from "../../../public/images/profilepic/profilepic-3.jpg";
 import styles from "./style.module.scss";
 
 export default function Index() {
@@ -25,7 +22,8 @@ export default function Index() {
         end: "bottom+=200px bottom",
       },
       opacity: 0.5,
-      left: "-200px",
+      left: "-100px",
+      //       left: "-200px",
       ease: "power3.Out",
     });
   }, []);
@@ -37,7 +35,7 @@ export default function Index() {
         <meta name="description" content="lorem ipsum" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <div
+      <section
         id="about"
         className="relative flex w-[80vw] xs:w-[90vw] mx-auto mt-28 md:mt-14
         text-light"
@@ -47,10 +45,10 @@ export default function Index() {
           <div ref={title} className="relative mt-4 xs:mt-2">
             <h1
               // ref={title}
-              className={`${styles.textShadow} title relative text-[4rem] lg:text-[3rem] sm:text-4xl xs:text-2xl 
-              text-light uppercase font-extralight m-0 left-[5%] lg:top-4`}
+              className={`${styles.textShadow} title relative text-[4rem] lg:text-[3rem] sm:text-4xl xs:text-xl 
+               uppercase font-extralight m-0 left-[5%] lg:top-4`}
             >
-              {/* xs:left-4 */}
+              {/* xs:left-4  xs:text-2xl */}
               About me
             </h1>
           </div>
@@ -110,7 +108,7 @@ export default function Index() {
             {/* object-cover w-[40%] md:w-[35%] sm:w-[45%] object-cover */}
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 }

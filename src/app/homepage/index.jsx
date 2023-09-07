@@ -5,11 +5,11 @@ import Head from "next/head";
 import { motion } from "framer-motion";
 
 /* Import components */
-import AnimatedText from "../Reusablecomponents/AnimatedText";
+import AnimatedText from "../_components/Reusablecomponents/AnimatedText";
 import { RoughNotationGroup } from "react-rough-notation";
-import RainbowHighlight from "../Reusablecomponents/RainbowHighlight";
-import HireMe from "../Reusablecomponents/HireMe";
-import Logo from "../../../public/images/frontlabslogo-alternative-logos/svg/logo-no-background-four.svg";
+import RainbowHighlight from "../_components/Reusablecomponents/RainbowHighlight";
+import HireMe from "../_components/Reusablecomponents/HireMe";
+// import Logo from "../../../public/images/frontlabslogo-alternative-logos/svg/logo-no-background-four.svg";
 
 export default function Index({ videos }) {
   const videoUrl = process.env.NEXT_PUBLIC_VIDEO_URL;
@@ -22,9 +22,9 @@ export default function Index({ videos }) {
         <meta name="description" content="FrontLabs Portfolio Page" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <div
+      <section
         id="home"
-        className="relative w-full h-[100vh] flex items-center !p-0 md:pt-16 sm:pt-8 dark:text-light"
+        className="relative w-full h-[100vh] flex items-center !p-0 md:pt-16 sm:pt-8"
       >
         {videoUrl && (
           <video
@@ -66,8 +66,8 @@ export default function Index({ videos }) {
               rel="preload"
               as="image/png"
               //       sizes="(max-width: 768px) 100vw,
-              //               (max-width: 1200px) 50vw,
-              //               50vw"
+              //       (max-width: 1535px) 100%,
+              //       50vw"
               width={400}
               height={400}
               data-scroll
@@ -133,7 +133,7 @@ export default function Index({ videos }) {
           </div>
         </div>
         <HireMe />
-      </div>
+      </section>
     </>
   );
 }

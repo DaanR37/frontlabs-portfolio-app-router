@@ -1,36 +1,29 @@
 "use client";
 import React, { useEffect, useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
-import Preloader from "../components/Reusablecomponents/Preloader";
-
-import Homepage from "../components/Homepage";
-import Cursor from '../components/Reusablecomponents/Cursor';
-import About from '@/components/About';
-import Biography from "../components/Biography";
-import Work from "../components/Work";
-// import Skills from "../components/Skills";
-import Articles from "../components/Articles";
-import Contact from "../components/Contact";
+import Preloader from "./_components/Reusablecomponents/Preloader";
 
 import dynamic from 'next/dynamic';
+import Biography from "../app/_components/Biography";
 
+// import LocomotiveScroll from 'locomotive-scroll';
 
-const DynamicCursor = dynamic(() => import('../components/Reusablecomponents/Cursor'), {
+const DynamicCursor = dynamic(() => import('./_components/Reusablecomponents/Cursor'), {
         ssr: false,
 });
-const DynamicHomepage = dynamic(() => import('../components/Homepage'), {
+const DynamicHomepage = dynamic(() => import('./homepage'), {
         ssr: false,
 });
-const DynamicAbout = dynamic(() => import('../components/About'), {
+const DynamicAbout = dynamic(() => import('./about'), {
         ssr: false,
 });
-const DynamicWork = dynamic(() => import('../components/Work'), {
+const DynamicWork = dynamic(() => import('./work'), {
         ssr: false,
 });
-const DynamicArticles = dynamic(() => import('../components/Articles'), {
+const DynamicArticles = dynamic(() => import('./articles'), {
         ssr: false,
 });
-const DynamicContact = dynamic(() => import('../components/Contact'), {
+const DynamicContact = dynamic(() => import('./contact'), {
         ssr: false,
 });
 
@@ -42,7 +35,22 @@ export default function Home() {
                 (
                         async () => {
                                 const LocomotiveScroll = (await import('locomotive-scroll')).default
-                                const locomotiveScroll = new LocomotiveScroll();
+                                const locomotiveScroll = new LocomotiveScroll({
+                                        el: document.querySelector("[data-scroll-container]"),
+                                        smooth: true,
+                                        mobile: {
+                                                smooth: true,
+                                                breakpoint: 0,
+                                                inertia: 0.8,
+                                                getDirection: true,
+                                        },
+                                        tablet: {
+                                                smooth: true,
+                                                breakpoint: 0,
+                                                inertia: 0.8,
+                                                getDirection: true,
+                                        }
+                                });
 
                                 // setTimeout(() => {
                                 //         setIsLoading(false);
@@ -54,24 +62,17 @@ export default function Home() {
         }, [])
 
         return (
-                <main className="relative w-full bg-[black]">
+                <main className="relative w-full">
                         {/* <AnimatePresence mode='wait'>
                                 {isLoading && <Preloader />}
                         </AnimatePresence> */}
                         <DynamicCursor />
-                        {/* <Cursor /> */}
                         <DynamicHomepage />
-                        {/* <Homepage /> */}
                         <DynamicAbout />
-                        {/* <About /> */}
                         <Biography />
-                        {/* <Skills /> */}
                         <DynamicWork />
-                        {/* <Work /> */}
                         <DynamicArticles />
-                        {/* <Articles /> */}
                         <DynamicContact />
-                        {/* <Contact /> */}
                 </main>
         )
 };

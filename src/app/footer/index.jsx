@@ -5,9 +5,9 @@ import { motion } from "framer-motion";
 import LocomotiveScroll from "locomotive-scroll";
 
 /* Import Components */
-import Logo from "../../../public/images/frontlabslogo-alternative-logos/svg/logo-no-background-four.svg";
-import HomeButton from "../Reusablecomponents/Homebutton/HomeButton";
-import DynamicTime from "../Reusablecomponents/DynamicTime";
+// import Logo from "../../../public/images/frontlabslogo-alternative-logos/svg/logo-no-background-four.svg";
+import HomeButton from "../_components/Reusablecomponents/Homebutton/HomeButton";
+import DynamicTime from "../_components/Reusablecomponents/DynamicTime";
 
 export default function Index() {
   const [idsToScroll] = useState([
@@ -28,7 +28,7 @@ export default function Index() {
   }
 
   return (
-    <div
+    <section
       id="footer"
       className="relative w-full min-h-[100vh] flex justify-center items-center
       sm:w-[90%] xl:px-8 lg:px-10 md:px-8 mx-auto
@@ -150,6 +150,6 @@ export default function Index() {
           </div>
         </footer>
       </div>
-    </div>
+    </section>
   );
 }

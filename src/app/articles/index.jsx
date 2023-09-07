@@ -112,7 +112,7 @@ export default function Index() {
   }, []);
 
   return (
-    <main id="articles" className={styles.main}>
+    <section id="articles" className={styles.main}>
       <div className={`${styles.spacer} h-[25vh]`}></div>
       <div
         ref={gallery}
@@ -136,7 +136,7 @@ export default function Index() {
           </>
         )}
       </div>
-    </main>
+    </section>
   );
 }
 
