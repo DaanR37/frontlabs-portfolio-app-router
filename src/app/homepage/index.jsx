@@ -1,4 +1,3 @@
-// "use client";
 // import { createClient } from 'contentful';
 import Image from "next/image";
 import Head from "next/head";
@@ -9,7 +8,6 @@ import AnimatedText from "../_components/Reusablecomponents/AnimatedText";
 import { RoughNotationGroup } from "react-rough-notation";
 import RainbowHighlight from "../_components/Reusablecomponents/RainbowHighlight";
 import HireMe from "../_components/Reusablecomponents/HireMe";
-// import Logo from "../../../public/images/frontlabslogo-alternative-logos/svg/logo-no-background-four.svg";
 
 export default function Index({ videos }) {
   const videoUrl = process.env.NEXT_PUBLIC_VIDEO_URL;
@@ -26,6 +24,7 @@ export default function Index({ videos }) {
         id="home"
         className="relative w-full h-[100vh] flex items-center !p-0 md:pt-16 sm:pt-8"
       >
+        {/* Importing Video */}
         {videoUrl && (
           <video
             autoPlay
@@ -43,8 +42,12 @@ export default function Index({ videos }) {
         bg-black opacity-70 rounded-br-[250px] lg:rounded-br-[100px]"
         />
 
-        <div className="flex w-full items-center justify-between lg:justify-center lg:flex-col md:mt-[8rem] sm:mt-[6rem]">
-          {/* Frontlabs Logo */}
+        {/* Container Logo and Animated Text section */}
+        <div
+          className="flex w-full items-center justify-between lg:flex-col lg:justify-center 
+        lg:mx-14 lg:px-6 lg:mt-[7rem] md:mx-8 md:mt-[5rem] sm:mx-2 sm:mt-[4rem]"
+        >
+          {/* Image Component */}
           <motion.div
             initial={{
               opacity: 0,
@@ -56,39 +59,36 @@ export default function Index({ videos }) {
               duration: 3.5,
               ease: "easeInOut",
             }}
-            className="relative flex w-1/2 h-auto"
+            className="relative flex w-1/2 lg:w-[75%] md:w-1/2 h-auto"
           >
-            {/* xl:w-[75%] lg:w-full */}
             <Image
               src="/images/frontlabslogo-alternative-logos/logo-no-background.png"
               alt="logo"
               priority
               rel="preload"
               as="image/png"
-              //       sizes="(max-width: 768px) 100vw,
-              //       (max-width: 1535px) 100%,
-              //       50vw"
+              //  sizes="(max-width: 768px) 100vw,
+              //  (max-width: 1535px) 100%,
+              //  50vw"
               width={400}
               height={400}
               data-scroll
               data-scroll-speed="0.4"
               className="object-cover w-auto ml-[6rem] lg:inline-block lg:mx-auto invert opacity-[0.9]"
             />
-            {/* w-1/2 lg:w-[40%] sm:w-[45%] xs:w-[50%] 
-                h-auto ^^ */}
           </motion.div>
 
+          {/* Container Animated Text Column with key words */}
           <div
-            className="w-1/2 flex flex-col items-start self-center xl:w-[60%] 
+            className="w-1/2 flex flex-col items-start self-center xl:pl-[3.5rem] lg:pl-0 
             lg:w-full lg:items-center lg:mx-auto lg:my-16"
           >
             <AnimatedText
               text="Unleashing web wonders, where front-end flourishes"
-              className="!text-5xl xl:!text-4xl md:!text-2xl xs:!text-xl 
+              className="!text-5xl xl:!text-[2rem] xl:!leading-[1.8rem] md:!text-2xl xs:!text-xl 
               !text-left lg:!text-center z-20"
             />
 
-            {/* Key Words with color */}
             <RoughNotationGroup show={true}>
               <RainbowHighlight color={colors[0]} order="1">
                 <h1 className="text-base text-dark font-medium 2xl:text-3xl lg:hidden p-2">

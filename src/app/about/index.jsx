@@ -1,12 +1,9 @@
 "use client";
-import { useLayoutEffect, useRef } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
-
 import Head from "next/head";
 import Image from "next/image";
-
-/* Import Icons & Images */
 import styles from "./style.module.scss";
 
 export default function Index() {
@@ -22,11 +19,13 @@ export default function Index() {
         end: "bottom+=200px bottom",
       },
       opacity: 0.5,
-      left: "-100px",
-      //       left: "-200px",
+      left: "-200px",
+      //       left: "-100px",
       ease: "power3.Out",
     });
   }, []);
+
+  //   TRY SMOOTH VERTICAL SCROLL WITH GSAP & SCROLLTRIGGER!!!!!!!!
 
   return (
     <>
@@ -40,22 +39,23 @@ export default function Index() {
         className="relative flex w-[80vw] xs:w-[90vw] mx-auto mt-28 md:mt-14
         text-light"
       >
-        {/* Title About Me */}
+        {/* Container Title & Images */}
         <div className="relative w-full flex justify-between">
+          {/* Title About Me */}
           <div ref={title} className="relative mt-4 xs:mt-2">
             <h1
-              // ref={title}
-              className={`${styles.textShadow} title relative text-[4rem] lg:text-[3rem] sm:text-4xl xs:text-xl 
-               uppercase font-extralight m-0 left-[5%] lg:top-4`}
+              className={`${styles.textShadow} title relative text-[4rem] lg:text-[3rem] 
+              sm:text-4xl xs:text-[22px] uppercase font-extralight m-0 left-[5%] xs:left-[20%] lg:top-4`}
             >
-              {/* xs:left-4  xs:text-2xl */}
               About me
             </h1>
           </div>
 
-          {/* Images Sliding Vertical */}
-          <div className="relative w-1/2 brightness-[85%] right-0 ">
-            {/* md:flex md:w-full md:justify-center md:items-center */}
+          {/* Container Images */}
+          <div
+            className="relative w-1/2 brightness-[85%] right-0
+                md:flex md:justify-center md:items-center"
+          >
             <Image
               src="/images/profilepic/profilepic-1-kopie.png"
               alt="picture of author"
@@ -80,8 +80,8 @@ export default function Index() {
               //       sizes="(max-width: 768px) 100vw,
               //               (max-width: 1200px) 50vw,
               //               50vw"
-              width={200}
-              height={200}
+              width={190}
+              height={190}
               data-scroll
               data-scroll-speed="0.2"
               className="object-cover relative w-auto right-[17.5%] top-[67.5%] rounded-[5px] 
@@ -94,12 +94,18 @@ export default function Index() {
               priority
               rel="preload"
               as="image/png"
+              srcSet={{
+                "/images/profilepic/profilepic-1-kopie.png":
+                  "/images/profilepic/profilepic-1-kopie.webp",
+              }}
               //       fill={true}
               //       sizes="(max-width: 768px) 100vw,
               //               (max-width: 1200px) 50vw,
               //               50vw"
-              width={200}
-              height={200}
+              //   sizes="(max-width: 768px) 100vw, (max-width: 1535px) 50vw, 50vw"
+              //   layout="responsive"
+              width={190}
+              height={190}
               data-scroll
               data-scroll-speed="-0.3"
               className="object-cover relative w-auto left-[80%] xl:left-[75%] 

@@ -4,21 +4,21 @@ import { roboto_flex } from './fonts';
 import dynamic from 'next/dynamic';
 
 
-const DynamicNavbar = dynamic(() => import('./_components/Navbar'), {
-        ssr: false,
+const DynamicNavbar = dynamic(() => import('./_components/navbar'), {
+    ssr: false,
 });
 const DynamicFooter = dynamic(() => import('./footer'), {
-        ssr: false,
+    ssr: false,
 });
 
 export default function RootLayout({ children }) {
-        return (
-                <html lang="en">
-                        <body className={roboto_flex.className}>
-                                <DynamicNavbar />
-                                {children}
-                                <DynamicFooter />
-                        </body>
-                </html>
-        )
+    return (
+        <html lang="en">
+            <body className={roboto_flex.className}>
+                <DynamicNavbar />
+                {children}
+                <DynamicFooter />
+            </body>
+        </html>
+    )
 };

@@ -1,10 +1,11 @@
 const ContactForm = (props) => {
     return (
         <form
+            id="form"
             onSubmit={props.onFormSubmit}
             className="form flex flex-col justify-between text-light 
-            border-l-[0.5px] border-r-[0.5px] border-light/50
-            px-12 xl:px-10 lg:px-8 md:px-6 sm:px-0 sm:mb-16 sm:border-none"
+                    border-l-[0.5px] border-r-[0.5px] border-light/50
+                    px-12 xl:px-10 lg:px-8 md:px-6 sm:px-0 sm:mb-16 sm:border-none"
         >
             <div className="flex flex-col">
                 <div className="flex flex-col mb-5 sm:mb-12">
