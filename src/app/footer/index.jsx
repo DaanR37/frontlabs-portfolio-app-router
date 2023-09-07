@@ -6,8 +6,8 @@ import LocomotiveScroll from "locomotive-scroll";
 
 /* Import Components */
 // import Logo from "../../../public/images/frontlabslogo-alternative-logos/svg/logo-no-background-four.svg";
-import HomeButton from "../_components/Reusablecomponents/Homebutton/HomeButton";
-import DynamicTime from "../_components/Reusablecomponents/DynamicTime";
+import HomeButton from "../components/Reusablecomponents/Homebutton/HomeButton";
+import DynamicTime from "../components/Reusablecomponents/DynamicTime";
 
 export default function Index() {
   const [idsToScroll] = useState([

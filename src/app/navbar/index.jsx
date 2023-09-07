@@ -6,7 +6,7 @@ import LocomotiveScroll from "locomotive-scroll";
 
 /* Import Fonts from next/font/google */
 // import { open_sans } from "@/app/fonts";
-import { roboto } from "../../fonts";
+import { roboto } from "../fonts";
 
 /* Import Components */
 import {
@@ -14,8 +14,8 @@ import {
   LinkedInIcon,
   MoonIcon,
   SunIcon,
-} from "../Reusablecomponents/Icons";
-import useThemeSwitcher from "../hooks/useThemeSwitcher";
+} from "../components/Reusablecomponents/Icons";
+import useThemeSwitcher from "../components/hooks/useThemeSwitcher";
 import styles from "./style.module.scss";
 
 /* CUSTOMLINK */

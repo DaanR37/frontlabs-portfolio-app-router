@@ -7,7 +7,7 @@ import dynamic from 'next/dynamic';
 import Biography from "./biography";
 
 
-const DynamicCursor = dynamic(() => import('./_components/Reusablecomponents/Cursor'), {
+const DynamicCursor = dynamic(() => import('./components/Reusablecomponents/Cursor'), {
     ssr: false,
 });
 const DynamicHomepage = dynamic(() => import('./homepage'), {

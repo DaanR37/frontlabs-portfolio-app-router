@@ -4,7 +4,7 @@ import { roboto_flex } from './fonts';
 import dynamic from 'next/dynamic';
 
 
-const DynamicNavbar = dynamic(() => import('./_components/navbar'), {
+const DynamicNavbar = dynamic(() => import('./navbar'), {
     ssr: false,
 });
 const DynamicFooter = dynamic(() => import('./footer'), {

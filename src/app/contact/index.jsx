@@ -9,12 +9,12 @@ import {
   MailIcon,
   PinpointIcon,
   TelIcon,
-} from "../_components/Reusablecomponents/Icons";
-import MyUserData from "../_components/Reusablecomponents/MyUserData";
-import Loader from "../_components/Reusablecomponents/Loader";
-import ContactForm from "../_components/Reusablecomponents/ContactForm";
+} from "../components/Reusablecomponents/Icons";
+import MyUserData from "../components/Reusablecomponents/MyUserData";
+import Loader from "../components/Reusablecomponents/Loader";
+import ContactForm from "../components/Reusablecomponents/ContactForm";
 import Magnetic from "../../magnetic";
-import AnimatedTextContact from "../_components/Reusablecomponents/PreloaderContact/AnimatedTextContact";
+import AnimatedTextContact from "../components/Reusablecomponents/PreloaderContact/AnimatedTextContact";
 
 export default function Index() {
   const [name, setName] = useState("");

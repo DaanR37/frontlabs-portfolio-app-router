@@ -4,10 +4,10 @@ import Head from "next/head";
 import { motion } from "framer-motion";
 
 /* Import components */
-import AnimatedText from "../_components/Reusablecomponents/AnimatedText";
+import AnimatedText from "../components/Reusablecomponents/AnimatedText";
 import { RoughNotationGroup } from "react-rough-notation";
-import RainbowHighlight from "../_components/Reusablecomponents/RainbowHighlight";
-import HireMe from "../_components/Reusablecomponents/HireMe";
+import RainbowHighlight from "../components/Reusablecomponents/RainbowHighlight";
+import HireMe from "../components/Reusablecomponents/HireMe";
 
 export default function Index({ videos }) {
   const videoUrl = process.env.NEXT_PUBLIC_VIDEO_URL;
