@@ -80,14 +80,16 @@ export default function Index() {
   return (
     <header
       id="navbar"
-      className="absolute w-full min-h-[100vh] flex items-start justify-between 
-        px-16 py-8 font-semibold uppercase tracking-wide text-[white] xl:px-16 lg:px-16 md:px-12 sm:px-8"
+      className="absolute w-full flex items-start justify-between 
+      px-16 py-8 font-semibold uppercase tracking-wide text-[white] md:px-12 sm:px-8"
     >
+      {/* className="min-h-[100vh]" ^^ ?? */}
       {/* Button Mobile Logic */}
       <button
-        className="flex-col justify-center items-center hidden lg:flex z-10"
+        className="absolute flex-col justify-center items-center hidden lg:top-[2rem] lg:flex z-10"
         onClick={handleClick}
       >
+        {/* className="flex-col justify-center items-center hidden lg:flex z-10" */}
         <span
           className={`block bg-light transition-all duration-300 ease-in-out h-0.5 w-6 rounded-sm -translate-y-0.5 ${
             isOpen ? "rotate-45 translate-y-1" : "-translate-y-0.5"
@@ -191,14 +193,16 @@ export default function Index() {
       {/* NavBar smaller screen */}
       {isOpen ? (
         <motion.div
-          initial={{ scale: 0, opacity: 0, x: "-50%", y: "-50%" }}
+          initial={{ scale: 0, opacity: 0, x: "-50%", y: "30%" }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.3 }}
-          className="absolute flex flex-col min-w-[75vw] justify-between items-center
-                                top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
-                                bg-dark/60 dark:bg-light/60 rounded-lg backdrop-blur-md py-32 z-40"
+          className="absolute flex flex-col min-w-[75vw] left-1/2 -translate-x-1/2
+                bg-dark/60 dark:bg-light/60 py-28 sm:py-20 xs:py-16
+                rounded-lg backdrop-blur-md z-40"
         >
-          <nav className="flex flex-col items-center justify-center">
+          {/* top-1/2 -translate-y-1/2 justify-between items-center ^^ ?? */}
+          <nav className="flex flex-col">
+            {/* items-center justify-center */}
             <ul className="text-center list-none mb-4">
               <li>
                 <CustomMobileLink

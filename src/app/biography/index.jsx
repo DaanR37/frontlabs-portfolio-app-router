@@ -4,17 +4,23 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 
 const phrases = [
-  "Los Flamencos National Reserve",
-  "is a nature reserve located",
-  "in the commune of San Pedro de Atacama",
-  "The reserve covers a total area",
-  "of 740 square kilometres (290 sq mi)",
+  "a passionate web developer who has made the transition",
+  "from tech sales to a life as a freelance",
+  "reactjs and nextjs developer. Proficient in front-end and",
+  "full-stack development, all within just three years.",
+
+  "",
+
+  "I've specialized in creating scalable websites from scratch,",
+  "that fit seamlessly and go hand in hand with",
+  "the right design. Whether it concerns improving your web",
+  "projects or increasing your online presence.",
 ];
 
 export default function Index() {
   return (
     <div
-      className="relative text-light text-[3.25vw] font-extralight uppercase mt-[25rem] ml-[10vw]
+      className="relative text-light text-[2vw] font-extralight uppercase mt-[25rem] ml-[10vw]
             lg:mt-[45rem] xs:mt-[42.5rem]"
     >
       {phrases.map((phrase, index) => {
@@ -25,16 +31,16 @@ export default function Index() {
 }
 
 function AnimatedText({ children }) {
-  const text = useRef(null);
+  const textRef = useRef(null);
 
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    gsap.from(text.current, {
+    gsap.from(textRef.current, {
       scrollTrigger: {
-        trigger: text.current,
+        trigger: textRef.current,
         scrub: true,
         start: "0px bottom",
-        end: "bottom+=400px bottom",
+        end: "bottom+=200px bottom",
       },
       opacity: 0,
       left: "-200px",
@@ -43,7 +49,10 @@ function AnimatedText({ children }) {
   }, []);
 
   return (
-    <p className="relative m-0" ref={text}>
+    <p
+      ref={textRef}
+      className={`relative m-0 ${!children.trim() ? "my-4" : ""}`}
+    >
       {children}
     </p>
   );

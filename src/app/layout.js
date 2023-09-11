@@ -15,7 +15,9 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en">
             <body className={roboto_flex.className}>
-                <DynamicNavbar />
+                <div className=''>
+                    <DynamicNavbar />
+                </div>
                 {children}
                 <DynamicFooter />
             </body>
