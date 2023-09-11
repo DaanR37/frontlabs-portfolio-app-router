@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import LocomotiveScroll from "locomotive-scroll";
 
 /* Import Components */
-// import Logo from "../../../public/images/frontlabslogo-alternative-logos/svg/logo-no-background-four.svg";
 import HomeButton from "../components/Reusablecomponents/Homebutton/HomeButton";
 import DynamicTime from "../components/Reusablecomponents/DynamicTime";
 

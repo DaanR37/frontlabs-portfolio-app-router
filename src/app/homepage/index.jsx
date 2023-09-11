@@ -9,9 +9,16 @@ import { RoughNotationGroup } from "react-rough-notation";
 import RainbowHighlight from "../components/Reusablecomponents/RainbowHighlight";
 import HireMe from "../components/Reusablecomponents/HireMe";
 
+/* DECIDE TO USE IT OR */
+import { useMediaQuery } from "@mui/material";
+
 export default function Index({ videos }) {
   const videoUrl = process.env.NEXT_PUBLIC_VIDEO_URL;
   const colors = ["#7893ffe2", "#ff4f2cce", "#ff9372e1", "#ff91ffc7"];
+
+  /* DECIDE TO USE IT OR */
+  // Use the useMediaQuery hook to determine the screen size
+  const isLargeScreen = useMediaQuery("(max-width: 1023px)");
 
   return (
     <>
@@ -48,35 +55,69 @@ export default function Index({ videos }) {
         lg:mx-14 lg:px-6 lg:mt-[7rem] md:mx-8 md:mt-[5rem] sm:mx-2 sm:mt-[4rem]"
         >
           {/* Image Component */}
-          <motion.div
-            initial={{
-              opacity: 0,
-            }}
-            animate={{
-              opacity: 1,
-            }}
-            transition={{
-              duration: 3.5,
-              ease: "easeInOut",
-            }}
-            className="relative flex w-1/2 lg:w-[75%] md:w-1/2 h-auto"
-          >
-            <Image
-              src="/images/frontlabslogo-alternative-logos/logo-no-background.png"
-              alt="logo"
-              priority
-              rel="preload"
-              as="image/png"
-              //  sizes="(max-width: 768px) 100vw,
-              //  (max-width: 1535px) 100%,
-              //  50vw"
-              width={400}
-              height={400}
-              data-scroll
-              data-scroll-speed="0.4"
-              className="object-cover w-auto ml-[6rem] lg:inline-block lg:mx-auto invert opacity-[0.9]"
-            />
-          </motion.div>
+          {/* DECIDE TO USE TERNARY OPERATOR OR NOT - CAN AFFECT PRESTATIONS */}
+          {isLargeScreen ? (
+            <motion.div
+              initial={{
+                y: "-300px",
+                opacity: 0,
+              }}
+              animate={{
+                opacity: 1,
+              }}
+              whileInView={{ y: 0 }}
+              viewport={{ once: false }}
+              transition={{
+                duration: 0.9,
+                ease: "easeInOut",
+              }}
+              className="relative flex w-1/2 lg:w-[75%] md:w-1/2 h-auto"
+            >
+              <Image
+                src="/images/frontlabslogo-alternative-logos/logo-no-background.png"
+                alt="logo"
+                priority
+                rel="preload"
+                as="image"
+                //  sizes="(max-width: 768px) 100vw,
+                //  (max-width: 1535px) 100%,
+                //  50vw"
+                width={400}
+                height={400}
+                className="object-cover w-auto ml-[6rem] lg:inline-block lg:mx-auto invert opacity-[0.9]"
+              />
+            </motion.div>
+          ) : (
+            <motion.div
+              initial={{
+                opacity: 0,
+              }}
+              animate={{
+                opacity: 1,
+              }}
+              transition={{
+                duration: 3.5,
+                ease: "easeInOut",
+              }}
+              className="relative flex w-1/2 lg:w-[75%] md:w-1/2 h-auto"
+            >
+              <Image
+                src="/images/frontlabslogo-alternative-logos/logo-no-background.png"
+                alt="logo"
+                priority
+                rel="preload"
+                as="image"
+                //  sizes="(max-width: 768px) 100vw,
+                //  (max-width: 1535px) 100%,
+                //  50vw"
+                width={400}
+                height={400}
+                data-scroll
+                data-scroll-speed="0.4"
+                className="object-cover w-auto ml-[6rem] lg:inline-block lg:mx-auto invert opacity-[0.9]"
+              />
+            </motion.div>
+          )}
 
           {/* Container Animated Text Column with key words */}
           <div
@@ -120,7 +161,7 @@ export default function Index({ videos }) {
               <a
                 rel="preload"
                 as="style"
-                href="/cvdaan3.pdf"
+                href="/cvdaan.pdf"
                 download={true}
                 target={"_blank"}
                 className="flex items-center rounded text-xl lg:text-lg md:text-base sm:text-sm

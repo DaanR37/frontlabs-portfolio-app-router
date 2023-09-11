@@ -1,5 +1,5 @@
 "use client";
-import { useLayoutEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import Head from "next/head";
@@ -57,11 +57,11 @@ export default function Index() {
                 md:flex md:justify-center md:items-center"
           >
             <Image
-              src="/images/profilepic/profilepic-1-kopie.png"
+              src="/images/profilepic/profilepic-1.png"
               alt="picture of author"
               priority
               rel="preload"
-              as="image/png"
+              as="image"
               //       sizes="(max-width: 768px) 100vw,
               //       (max-width: 1535px) 50vw,
               //       50vw"
@@ -71,11 +71,11 @@ export default function Index() {
             />
             {/* w-full object-cover ^^ */}
             <Image
-              src="/images/profilepic/profilepic-3-kopie.png"
+              src="/images/profilepic/profilepic-3.png"
               alt="picture of author"
               priority
               rel="preload"
-              as="image/png"
+              as="image"
               //       fill={true}
               //       sizes="(max-width: 768px) 100vw,
               //               (max-width: 1200px) 50vw,
@@ -89,14 +89,14 @@ export default function Index() {
             />
             {/* object-cover w-[40%] sm:w-[45%] object-cover*/}
             <Image
-              src="/images/profilepic/profilepic-2-kopie.png"
+              src="/images/profilepic/profilepic-2.png"
               alt="picture of author"
               priority
               rel="preload"
-              as="image/png"
+              as="image"
               srcSet={{
-                "/images/profilepic/profilepic-1-kopie.png":
-                  "/images/profilepic/profilepic-1-kopie.webp",
+                "/images/profilepic/profilepic-1.png":
+                  "/images/profilepic/profilepic-1.webp",
               }}
               //       fill={true}
               //       sizes="(max-width: 768px) 100vw,
