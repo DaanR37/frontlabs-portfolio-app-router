@@ -14,8 +14,8 @@ const phrases = [
 export default function Index() {
   return (
     <div
-      className="relative text-light text-[3vw] font-extralight uppercase mt-[25rem] ml-[10vw]
-            lg:mt-[37.5rem] xs:mt-[25rem]"
+      className="relative text-light text-[3.25vw] font-extralight uppercase mt-[25rem] ml-[10vw]
+            lg:mt-[45rem] xs:mt-[42.5rem]"
     >
       {phrases.map((phrase, index) => {
         return <AnimatedText key={index}>{phrase}</AnimatedText>;

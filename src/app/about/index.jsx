@@ -49,24 +49,26 @@ export default function Index() {
         text-light"
       >
         {/* Container Title & Images */}
-        <div className="relative w-full flex justify-between lg:flex-col">
+        <div className="relative w-full flex justify-between">
           {/* lg:flex-col ?? ^^ */}
           {/* Title About Me */}
-          <div ref={title} className="relative mt-4 xs:mt-2">
+          <div ref={title} className="relative mt-4">
             <h1
-              className={`${styles.textShadow} title relative text-[4rem] lg:text-[3rem] 
-              sm:text-4xl xs:text-[20px] uppercase font-extralight m-0 left-[5%] xs:left-[20%] lg:top-4`}
+              className={`${styles.textShadow} title relative left-[5%] text-[4rem] lg:text-[3rem] lg:top-4 
+              sm:text-[2.5rem] xs:text-[2rem] xs:left-[20%] uppercase font-extralight m-0`}
             >
-              About me
+              About
             </h1>
           </div>
 
           {/* Container Images */}
           {isLargeScreen ? (
             <div
-              className="relative w-[75%] flex justify-center items-center right-0 
-                 lg:top-[6.5rem] xs:top-[2rem] brightness-[85%]"
+              className="relative w-[75%] 
+                 lg:top-[14rem] sm:top-[12rem] brightness-[85%]"
             >
+              {/* flex items-start justify-start */}
+              {/* flex justify-center items-center */}
               <div>
                 <Image
                   src="/images/profilepic/profilepic-1.png"
@@ -95,8 +97,8 @@ export default function Index() {
                   //               50vw"
                   width={190}
                   height={190}
-                  className="relative w-[32.5vw] object-cover mr-6
-                  lg:left-[17.5rem] lg:top-[8rem] md:left-[12.5rem] md:top-[6rem] xs:left-[10rem]
+                  className="relative w-auto object-cover
+                  lg:w-[30vw] lg:left-[2rem] lg:top-[8rem] md:w-[30vw] md:left-[2rem] sm:w-[35vw]
                   drop-shadow-4xl rounded-[5px]"
                 />
               </motion.div>
