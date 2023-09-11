@@ -52,23 +52,26 @@ export default function Index({ videos }) {
         {/* Container Logo and Animated Text section */}
         <div
           className="flex w-full items-center justify-between lg:flex-col lg:justify-center 
-        lg:mx-14 lg:px-6 lg:mt-[7rem] md:mx-8 md:mt-[5rem] sm:mx-2 sm:mt-[4rem]"
+        lg:mx-14 lg:px-6 lg:mt-[7rem] md:mx-8 md:mt-[5rem] sm:mx-2 sm:mt-[4rem] xs:mx-0"
         >
           {/* Image Component */}
           {/* DECIDE TO USE TERNARY OPERATOR OR NOT - CAN AFFECT PRESTATIONS */}
           {isLargeScreen ? (
             <motion.div
               initial={{
-                y: "-300px",
+                y: "-325px",
                 opacity: 0,
               }}
               animate={{
                 opacity: 1,
               }}
-              whileInView={{ y: 0 }}
+              whileInView={{
+                y: 0,
+                opacity: 1,
+              }}
               viewport={{ once: false }}
               transition={{
-                duration: 0.9,
+                duration: 0.75,
                 ease: "easeInOut",
               }}
               className="relative flex w-1/2 lg:w-[75%] md:w-1/2 h-auto"

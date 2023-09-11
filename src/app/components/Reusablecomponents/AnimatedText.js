@@ -30,7 +30,7 @@ const singleWord = {
 export default function AnimatedText({ text, className = "" }) {
         return (
                 <div className="flex w-full items-center justify-center text-center mx-auto 
-                        overflow-hidden py-2 lg:px-6 md:px-4 sm:py-0 sm:px-8">
+                        overflow-hidden py-2 lg:px-6 md:px-4 sm:py-0 sm:px-8 xs:px-4">
                         <motion.h1 className={`inline-block w-full text-light font-semibold 
                                         text-7xl ${className}`}
                                 variants={quote}
