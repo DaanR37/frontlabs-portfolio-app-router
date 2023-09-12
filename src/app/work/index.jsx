@@ -30,12 +30,12 @@ const projects = [
 
 export default function Index() {
   const [selectedProject, setSelectedProject] = useState(0);
-
   const container = useRef(null);
   const imageContainer = useRef(null);
   const titlesContainer = useRef(null);
 
-  //   useLayoutEffect(() => {
+  /* ALTERNATIVE SCROLL - PIN ON BOTH TITLES & IMAGES */
+  // useLayoutEffect(() => {
   //     gsap.registerPlugin(ScrollTrigger);
 
   //     const t1 = gsap.timeline();
@@ -87,11 +87,11 @@ export default function Index() {
       pin: true,
       start: "top-=100px",
       end: document.body.offsetHeight - window.innerHeight - 50,
-      //       end: "bottom+=700px bottom",
+      // end: "bottom+=700px bottom",
     });
 
     return () => {
-      ScrollTrigger.getAll().forEach((st) => st.kill()); // Kill all ScrollTriggers
+      ScrollTrigger.getAll().forEach((st) => st.kill());
     };
   }, []);
 
@@ -105,51 +105,75 @@ export default function Index() {
       <section
         ref={container}
         id="projects"
-        className="projects relative text-light mt-[40vh] p-[10%] xl:p-[5%]"
+        className="projects relative text-light mt-[40vh] p-[10%]
+            xl:mt-[25vh] xl:p-[5%] 
+            sm:p-[2.5%] 
+            xs:mt-[20vh]"
       >
-        <div className="projectDescription flex h-[700px] justify-between gap-[5%] xl:h-[650px] xl:gap-0">
+        <div
+          className="projectDescription flex justify-between h-[700px] gap-[5%] 
+            xl:h-[750px] xl:gap-0 
+            xs:h-[525px]"
+        >
           <div
             ref={imageContainer}
-            className="imageContainer h-full w-[40%] 
-                xl:w-[75%] xl:max-w-[45vw] lg:w-[65%] lg:max-w-[40vw] xl:ml-3"
+            className="imageContainer relative h-full w-[40%] mx-0
+                xl:w-[45%] xl:ml-3 
+                lg:w-[65%] lg:max-w-[40vw]"
           >
-            {/* relative??? mx-0 mt-[20vh] ^^ */}
+            {/* xl:max-w-[45vw]  */}
             <Image
               src={`/images/${projects[selectedProject].src}`}
               alt="project image"
               priority
               rel="preload"
               as="image"
-              fill={true}
-              //   sizes="(max-width: 768px) 100vw,
-              //     (max-width: 1535px) 50vw,
-              //     50vw"
-              //   width={100}
-              //   height={100}
-              className="relative object-cover w-auto xl:object-none rounded-[5px]"
+              // fill={true}
+              sizes="(max-width: 768px) 100vw,
+                  (max-width: 1535px) 50vw,
+                  50vw"
+              width={100}
+              height={100}
+              className="relative object-cover w-full rounded-[5px]"
             />
+            {/* w-auto ???? xl:object-none or xl:object-contain ?? */}
           </div>
-          <div className="column flex h-full w-[20%] text-[1.6vw] lg:text-[2vw] lg:w-[25%] lg:pl-6 sm:text-[2.2vw]">
+          <div
+            className="column flex h-full w-[20%] text-[1.6vw]
+               xl:text-xl xl:w-[25%]
+               lg:text-lg lg:pl-2 
+               sm:w-[30%] sm:text-[2.8vw]"
+          >
             <p>
-              The flora is characterized by the presence of high elevation
-              wetland, as well as yellow straw, broom sedge, tola de agua and
-              tola amaia.
+              {`Over the last years, I've specialized in crafting
+              dynamic web projects. These projects have allowed 
+              me to collaborate with various clients, each with their 
+              own unique visions and needs.`}
             </p>
           </div>
-          <div className="column flex items-end h-full w-[20%] text-[1.3vw] lg:text-[1.7vw] sm:text-[1.9vw]">
+          <div
+            className="column flex items-end h-full w-[20%] text-[1.3vw] 
+               xl:text-lg xl:mt-20
+               lg:text-base lg:w-[25%] lg:mt-0
+               md:mt-20
+               sm:text-[2.6vw] sm:mt-0"
+          >
             <p>
-              Some, like the southern viscacha, vicuña and Darwins rhea, are
-              classified as endangered species. Others, such as Andean goose,
-              horned coot, Andean gull, puna tinamou and the three flamingo
-              species inhabiting in Chile (Andean flamingo, Chilean flamingo,
-              and Jamess flamingo) are considered vulnerable.
+              {`For instance, RTXP Amsterdam, an immersive art experience,
+              required seamless ticket purchases through integrated ticket shop
+              functionality. On the other hand, for Tebbernekkel, a TV production company, I
+              created a visually captivating website serving as a portfolio
+              overview, in line with their distinctive design preferences.`}
             </p>
           </div>
         </div>
 
         <div
           ref={titlesContainer}
-          className="projectList relative flex flex-col mt-[200px]"
+          className="projectList relative flex flex-col mt-[200px] 
+               xl:mt-[300px]
+               md:mt-[250px] 
+               sm:mt-[200px]"
         >
           {projects.map((project, i) => {
             return (
@@ -158,10 +182,18 @@ export default function Index() {
                 onMouseOver={() => {
                   setSelectedProject(i);
                 }}
-                className="flex justify-end w-full text-[whitesmoke] uppercase text-[3vw] border-b-[1px] border-light"
+                className="flex justify-end w-full m-0 border-b-[1px] border-light"
               >
                 <a href={project.link} target={"_blank"}>
-                  <h2 className="m-0 mt-[40px] mb-[20px] cursor-pointer">
+                  <h2
+                    className="
+                        text-[3vw] mt-[40px] mb-[20px] 
+                        lg:text-[2.5vw] lg:mt-[30px] lg:mb-[12.5px]
+                        md:mt-[25px]
+                        sm:text-[2.75vw] sm:mb-[10px] 
+                        xs:mt-[20px]
+                        text-[whitesmoke] uppercase cursor-pointer"
+                  >
                     {project.title}
                   </h2>
                 </a>

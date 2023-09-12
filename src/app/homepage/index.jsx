@@ -105,8 +105,8 @@ export default function Index({ videos }) {
               className="relative flex w-1/2 lg:w-[75%] md:w-1/2 h-auto"
             >
               <Image
-                src="/images/frontlabslogo-alternative-logos/svg/logo-no-background.svg"
-                // src="/images/frontlabslogo-alternative-logos/logo-no-background-kopie.png"
+                //  src="/images/frontlabslogo-alternative-logos/svg/logo-no-background.svg"
+                src="/images/frontlabslogo-alternative-logos/logo-no-background-kopie.png"
                 alt="logo"
                 priority
                 rel="preload"

@@ -44,8 +44,8 @@ export default function Index() {
         className="absolute w-1/2 h-auto mb-24"
       >
         <Image
-          src="/images/frontlabslogo-alternative-logos/svg/logo-no-background.svg"
-          //   src="/images/frontlabslogo-alternative-logos/logo-no-background-kopie.png"
+          //  src="/images/frontlabslogo-alternative-logos/svg/logo-no-background.svg"
+          src="/images/frontlabslogo-alternative-logos/logo-no-background-kopie.png"
           alt="Frontlabs Amsterdam"
           priority
           rel="preload"

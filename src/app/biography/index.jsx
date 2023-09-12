@@ -20,8 +20,9 @@ const phrases = [
 export default function Index() {
   return (
     <div
-      className="relative text-light text-[2vw] font-extralight uppercase mt-[25rem] ml-[10vw]
-            lg:mt-[45rem] xs:mt-[42.5rem]"
+      className="relative mt-[25rem] ml-[10vw]
+            xl:max-w-[75vw] xl:mt-[45rem] xl:mx-auto 
+            sm:max-w-[80vw] sm:mt-[35rem]"
     >
       {phrases.map((phrase, index) => {
         return <AnimatedText key={index}>{phrase}</AnimatedText>;
@@ -51,7 +52,11 @@ function AnimatedText({ children }) {
   return (
     <p
       ref={textRef}
-      className={`relative m-0 ${!children.trim() ? "my-4" : ""}`}
+      className={`relative m-0 ${!children.trim() ? "my-4" : ""}
+       text-2xl 
+       md:text-lg 
+       xs:text-[15px] xs:leading-[1.25rem] 
+       font-extralight text-light uppercase`}
     >
       {children}
     </p>

@@ -15,7 +15,7 @@ export default function Index() {
 
   /* DECIDE TO USE IT OR */
   // Use the useMediaQuery hook to determine the screen size
-  const isLargeScreen = useMediaQuery("(max-width: 1023px)");
+  const isSmallScreen = useMediaQuery("(max-width: 1023px)");
 
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 1], [0, 1500]);
@@ -31,7 +31,6 @@ export default function Index() {
       },
       opacity: 0.5,
       left: "-200px",
-      //       left: "-100px",
       ease: "power3.Out",
     });
   }, []);
@@ -49,26 +48,26 @@ export default function Index() {
         text-light"
       >
         {/* Container Title & Images */}
-        <div className="relative w-full flex justify-between">
+        <div className="relative w-full flex justify-between lg:flex-col">
           {/* lg:flex-col ?? ^^ */}
           {/* Title About Me */}
           <div ref={title} className="relative mt-4">
             <h1
-              className={`${styles.textShadow} title relative left-[5%] text-[4rem] lg:text-[3rem] lg:top-4 
-              sm:text-[2.5rem] xs:text-[2rem] xs:left-[20%] uppercase font-extralight m-0`}
+              className={`${styles.textShadow} title relative left-[5%] text-[4rem] lg:text-[3.5rem] lg:top-4 
+              sm:text-[2.5rem] xs:text-[2rem] xs:left-[15%] uppercase font-extralight m-0`}
             >
               About
             </h1>
           </div>
 
           {/* Container Images */}
-          {isLargeScreen ? (
+          {isSmallScreen ? (
             <div
-              className="relative w-[75%] 
-                 lg:top-[14rem] sm:top-[12rem] brightness-[85%]"
+              className="relative w-[80%] mx-auto 
+                 lg:top-[10rem] 
+                 sm:top-[6rem] 
+                 brightness-[85%]"
             >
-              {/* flex items-start justify-start */}
-              {/* flex justify-center items-center */}
               <div>
                 <Image
                   src="/images/profilepic/profilepic-1.png"
@@ -81,7 +80,7 @@ export default function Index() {
                   //       50vw"
                   width={500}
                   height={500}
-                  className="absolute w-auto object-cover rounded-[5px] blur-[4px]"
+                  className="absolute w-auto object-cover rounded-[5px] blur-[3px]"
                 />
               </div>
               <motion.div style={{ y }}>
@@ -98,16 +97,18 @@ export default function Index() {
                   width={190}
                   height={190}
                   className="relative w-auto object-cover
-                  lg:w-[30vw] lg:left-[2rem] lg:top-[8rem] md:w-[30vw] md:left-[2rem] sm:w-[35vw]
+                  lg:w-[30vw] lg:left-[2rem] lg:top-[3rem] md:w-[30vw] md:left-[8rem] sm:w-[35vw]
                   drop-shadow-4xl rounded-[5px]"
                 />
               </motion.div>
             </div>
           ) : (
             <div
-              className="relative w-1/2 brightness-[85%] right-0
-                md:flex md:justify-center md:items-center"
+              className="relative w-1/2 right-0
+                  flex justify-center items-center
+                  brightness-[85%]"
             >
+              {/* flex justify-start items-start */}
               <Image
                 src="/images/profilepic/profilepic-1.png"
                 alt="picture of author"
@@ -119,7 +120,9 @@ export default function Index() {
                 //       50vw"
                 width={500}
                 height={500}
-                className="absolute object-cover w-full rounded-[5px] blur-[4px]"
+                className="absolute object-cover 
+                     w-full mt-36 
+                     rounded-[5px] blur-[4px]"
               />
               {/* w-auto ?? ^^ */}
               <Image
@@ -136,10 +139,11 @@ export default function Index() {
                 height={190}
                 data-scroll
                 data-scroll-speed="0.2"
-                className="object-cover relative w-auto right-[17.5%] top-[67.5%] rounded-[5px] 
-                    xl:right-[15%] md:left-[65%] xs:left-[45%] md:object-cover drop-shadow-4xl"
+                className="object-cover relative w-[45%] 
+                     top-[16rem] right-[25%]
+                     rounded-[5px] drop-shadow-4xl"
               />
-              {/* w-[40%] sm:w-[45%] */}
+              {/*  w-auto or w-full ?? ^^ */}
               <Image
                 src="/images/profilepic/profilepic-2.png"
                 alt="picture of author"
@@ -160,10 +164,12 @@ export default function Index() {
                 height={190}
                 data-scroll
                 data-scroll-speed="-0.3"
-                className="object-cover relative w-auto left-[80%] xl:left-[75%] 
-              top-[25%] rounded-[5px] md:hidden drop-shadow-4xl mt-8"
+                className="object-cover relative w-[40%] 
+                     top-[17rem] left-[20%] mt-24 mb-24
+                     md:hidden 
+                     rounded-[5px] drop-shadow-4xl"
               />
-              {/* w-[40%] md:w-[35%] sm:w-[45%] */}
+              {/* w-auto or w-full ?? ^^ */}
             </div>
           )}
         </div>
