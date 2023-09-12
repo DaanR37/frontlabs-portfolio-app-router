@@ -8,61 +8,61 @@ import styles from "./style.module.scss";
 
 const images = [
   {
-    src: "articles/afb_react.jpg",
+    src: "articles/afb_react.png",
     title: "Hey Hoi",
     link:
       "https://medium.com/@seun.thedeveloper/the-easiest-way-to-handle-animations-in-react-nextjs-5934a689a010",
   },
   {
-    src: "articles/afb_tips.jpg",
+    src: "articles/afb_tips.png",
     title: "Hey ha hoi",
     link:
       "https://medium.com/@Evelyn.Taylor/10-expert-performance-tips-every-senior-js-react-developer-should-know-f8a78eebcb2e",
   },
   {
-    src: "articles/afb_chatgpt.jpg",
+    src: "articles/afb_chatgpt.png",
     title: "Hey ha hoi",
     link:
       "https://techcrunch.com/2023/08/31/openai-angles-to-put-chatgpt-in-classrooms-with-special-tutor-prompts/",
   },
   {
-    src: "articles/afb_react.jpg",
+    src: "articles/afb_react.png",
     title: "Hey ha hoi",
     link:
       "https://medium.com/@seun.thedeveloper/the-easiest-way-to-handle-animations-in-react-nextjs-5934a689a010",
   },
   {
-    src: "articles/afb_tips.jpg",
+    src: "articles/afb_tips.png",
     title: "Hey ha hoi",
     link:
       "https://medium.com/@Evelyn.Taylor/10-expert-performance-tips-every-senior-js-react-developer-should-know-f8a78eebcb2e",
   },
   {
-    src: "articles/afb_chatgpt.jpg",
+    src: "articles/afb_chatgpt.png",
     title: "Hey ha hoi",
     link:
       "https://techcrunch.com/2023/08/31/openai-angles-to-put-chatgpt-in-classrooms-with-special-tutor-prompts/",
   },
   {
-    src: "articles/afb_react.jpg",
+    src: "articles/afb_react.png",
     title: "Hey ha hoi",
     link:
       "https://medium.com/@seun.thedeveloper/the-easiest-way-to-handle-animations-in-react-nextjs-5934a689a010",
   },
   {
-    src: "articles/afb_tips.jpg",
+    src: "articles/afb_tips.png",
     title: "Hey ha hoi",
     link:
       "https://medium.com/@Evelyn.Taylor/10-expert-performance-tips-every-senior-js-react-developer-should-know-f8a78eebcb2e",
   },
   {
-    src: "articles/afb_chatgpt.jpg",
+    src: "articles/afb_chatgpt.png",
     title: "Hey ha hoi",
     link:
       "https://techcrunch.com/2023/08/31/openai-angles-to-put-chatgpt-in-classrooms-with-special-tutor-prompts/",
   },
   {
-    src: "articles/afb_chatgpt.jpg",
+    src: "articles/afb_chatgpt.png",
     title: "Hey ha hoi",
     link:
       "https://techcrunch.com/2023/08/31/openai-angles-to-put-chatgpt-in-classrooms-with-special-tutor-prompts/",
@@ -157,27 +157,28 @@ const Column = ({ y }) => {
             <a
               href={image.link}
               target={"_blank"}
-              className="relative h-full w-auto"
+              className="h-full w-auto"
             >
               <Image
                 src={`/images/${image.src}`}
                 alt={`Image ${i}`}
                 priority
                 rel="preload"
-                as="image/jpg"
+                as="image"
                 fill={true}
+                // width={500}
+                // height={500}
                 sizes="(max-width: 768px) 100vw,
                 (max-width: 1535px) 50vw,
                 50vw"
-                className="relative object-cover w-auto"
+                className="!relative object-cover w-auto"
               />
-              <div className="">
-                <div
-                  className={`${styles.hoverContainer} absolute top-0 left-0 opacity-0 
+              {/* !relative => Needed to let it work with FireFox */}
+              <div
+                className={`${styles.hoverContainer} absolute top-0 left-0 opacity-0 
                 bg-[rgba(0,0,0,0.4)] transition-opacity duration-500`}
-                >
-                  <span aria-hidden="true">{image.title}</span>
-                </div>
+              >
+                <span aria-hidden="true">{image.title}</span>
               </div>
             </a>
           </div>

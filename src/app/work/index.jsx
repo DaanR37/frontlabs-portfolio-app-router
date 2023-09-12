@@ -35,59 +35,65 @@ export default function Index() {
   const imageContainer = useRef(null);
   const titlesContainer = useRef(null);
 
+  //   useLayoutEffect(() => {
+  //     gsap.registerPlugin(ScrollTrigger);
+
+  //     const t1 = gsap.timeline();
+
+  //     // Scroll-trigger for pinning the imageContainer
+  //     t1.to(imageContainer.current, {
+  //       scrollTrigger: {
+  //         trigger: imageContainer.current,
+  //         start: "top-=100px",
+  //         // start: "top top",
+  //         // end: "bottom top",
+  //         end: document.body.offsetHeight - window.innerHeight - 50,
+  //         pin: true,
+  //         // markers: true,
+  //       },
+  //     });
+
+  //     // Scroll-trigger for pinning the titlesContainer
+  //     t1.to(titlesContainer.current, {
+  //       scrollTrigger: {
+  //         trigger: titlesContainer.current,
+  //         start: "top-=100px top",
+  //         end: "top+=500px top", // Adjust for pinning duration
+  //         pin: true,
+  //         // markers: true,
+  //       },
+  //     });
+
+  //     // Apply the timeline to the ScrollTrigger
+  //     ScrollTrigger.create({
+  //       trigger: document.body,
+  //       animation: t1,
+  //       start: "top top",
+  //       end: "bottom bottom",
+  //       scrub: true,
+  //     });
+
+  //     return () => {
+  //       t1.kill();
+  //       ScrollTrigger.getAll().forEach((st) => st.kill()); // Kill all ScrollTriggers
+  //     };
+  //   }, []);
+
+  /* INITIAL CODE - WORKS FINE BUT WITHOUT PIN ON TITLES */
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-
-    const t1 = gsap.timeline();
-
-    // Scroll-trigger for pinning the imageContainer
-    t1.to(imageContainer.current, {
-      scrollTrigger: {
-        trigger: imageContainer.current,
-        start: "top-=100px",
-        // start: "top top",
-        // end: "bottom top",
-        end: document.body.offsetHeight - window.innerHeight - 50,
-        pin: true,
-        // markers: true,
-      },
-    });
-
-    // Scroll-trigger for pinning the titlesContainer
-    t1.to(titlesContainer.current, {
-      scrollTrigger: {
-        trigger: titlesContainer.current,
-        start: "top-=100px top",
-        end: "top+=500px top", // Adjust for pinning duration
-        pin: true,
-        // markers: true,
-      },
-    });
-
-    // Apply the timeline to the ScrollTrigger
     ScrollTrigger.create({
-      trigger: document.body,
-      animation: t1,
-      start: "top top",
-      end: "bottom bottom",
-      scrub: true,
+      trigger: imageContainer.current,
+      pin: true,
+      start: "top-=100px",
+      end: document.body.offsetHeight - window.innerHeight - 50,
+      //       end: "bottom+=700px bottom",
     });
 
     return () => {
-      t1.kill();
+      ScrollTrigger.getAll().forEach((st) => st.kill()); // Kill all ScrollTriggers
     };
   }, []);
-
-  //   useLayoutEffect(() => {
-  //     gsap.registerPlugin(ScrollTrigger);
-  //     ScrollTrigger.create({
-  //       trigger: imageContainer.current,
-  //       pin: true,
-  //       start: "top-=100px",
-  //       end: document.body.offsetHeight - window.innerHeight - 50,
-  //       //       end: "bottom+=700px bottom",
-  //     });
-  //   }, []);
 
   return (
     <>
@@ -104,22 +110,23 @@ export default function Index() {
         <div className="projectDescription flex h-[700px] justify-between gap-[5%] xl:h-[650px] xl:gap-0">
           <div
             ref={imageContainer}
-            className="imageContainer relative h-full w-[40%] 
-          xl:w-[75%] xl:max-w-[45vw] lg:w-[65%] lg:max-w-[40vw] xl:ml-3"
+            className="imageContainer h-full w-[40%] 
+                xl:w-[75%] xl:max-w-[45vw] lg:w-[65%] lg:max-w-[40vw] xl:ml-3"
           >
+            {/* relative??? mx-0 mt-[20vh] ^^ */}
             <Image
               src={`/images/${projects[selectedProject].src}`}
               alt="project image"
               priority
               rel="preload"
-              as="image/png"
+              as="image"
               fill={true}
-              sizes="(max-width: 768px) 100vw,
-                (max-width: 1535px) 50vw,
-                50vw"
-              //       width={100}
-              //       height={100}
-              className="object-cover w-auto xl:object-none rounded-[5px]"
+              //   sizes="(max-width: 768px) 100vw,
+              //     (max-width: 1535px) 50vw,
+              //     50vw"
+              //   width={100}
+              //   height={100}
+              className="relative object-cover w-auto xl:object-none rounded-[5px]"
             />
           </div>
           <div className="column flex h-full w-[20%] text-[1.6vw] lg:text-[2vw] lg:w-[25%] lg:pl-6 sm:text-[2.2vw]">

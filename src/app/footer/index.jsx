@@ -44,7 +44,8 @@ export default function Index() {
         className="absolute w-1/2 h-auto mb-24"
       >
         <Image
-          src="/images/frontlabslogo-alternative-logos/logo-no-background.png"
+          src="/images/frontlabslogo-alternative-logos/svg/logo-no-background.svg"
+          //   src="/images/frontlabslogo-alternative-logos/logo-no-background-kopie.png"
           alt="Frontlabs Amsterdam"
           priority
           rel="preload"
@@ -54,9 +55,9 @@ export default function Index() {
           //         50vw"
           width={400}
           height={400}
-          className="object-cover w-auto mx-auto invert"
+          className="object-cover w-full max-w-[25vw] mx-auto invert"
         />
-        {/* w-[17vw] lg:w-[21vw] md:w-[25vw] sm:w-[27vw] xs:w-[30vw] ^^ */}
+        {/* w-auto ???? w-[17vw] lg:w-[21vw] md:w-[25vw] sm:w-[27vw] xs:w-[30vw] ^^ */}
       </motion.div>
 
       {/* HomeButton */}
