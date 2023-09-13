@@ -105,22 +105,23 @@ export default function Index() {
       <section
         ref={container}
         id="projects"
-        className="projects relative text-light mt-[40vh] p-[10%]
-            xl:mt-[25vh] xl:p-[5%] 
+        className="projects relative text-light 
+            mt-[40vh] p-[10%]
+            3xl:mt-[25vh]
+            xl:p-[5%] 
             sm:p-[2.5%] 
             xs:mt-[20vh]"
       >
         <div
-          className="projectDescription flex justify-between h-[700px] gap-[5%] 
+          className="projectDescription flex justify-between 
+            h-[700px] gap-[5%] 
             xl:h-[750px] xl:gap-0 
             xs:h-[650px]"
         >
           <div
             ref={imageContainer}
-            className="imageContainer relative h-full w-[40%] mx-0
-                xl:w-[40vw] xl:ml-2 
-                lg:ml-0
-                sm:ml-2"
+            className="imageContainer relative h-full w-[40%] 
+               xl:w-[40vw]"
           >
             {/* xl:max-w-[45vw] lg:max-w-[40vw] ??? */}
             <Image
@@ -140,13 +141,19 @@ export default function Index() {
             {/* w-auto ???? xl:object-none or xl:object-contain ?? */}
           </div>
           <div
-            className="column flex h-full w-[20%] text-[1.6vw]
-               xl:w-[25vw] xl:text-[22px] xl:!leading-[2rem]
-               lg:text-lg lg:pl-2 
-               sm:text-base sm:!leading-[1.10rem]
-               xs:text-sm xs:!leading-[1.10rem] xs:pl-1"
+            className="column flex h-full w-[20%] 
+               xl:w-[25vw]
+               lg:pl-2
+               xs:pl-1"
           >
-            <p>
+            <p
+              className="
+                  text-4xl
+                  xl:text-[22px] xl:!leading-[2rem]
+                  lg:text-lg  
+                  sm:text-base sm:!leading-[1.10rem]
+                  xs:text-sm xs:!leading-[1.10rem]"
+            >
               {`Over the last years, I've specialized in crafting
               dynamic web projects. These projects have allowed 
               me to collaborate with various clients, each with their 
@@ -154,14 +161,21 @@ export default function Index() {
             </p>
           </div>
           <div
-            className="column flex items-end h-full w-[20%] text-[1.3vw] 
-               xl:text-xl xl:mt-28
-               lg:w-[25vw] lg:text-base lg:!leading-[1.75rem] lg:mt-0 
+            className="column flex items-end h-full w-[20%]
+               xl:mt-28               
+               lg:w-[25vw] lg:mt-0 
                md:mt-20
-               sm:text-[2.6vw] sm:!leading-[1.50rem] sm:mt-0 sm:mr-2
-               xs:text-xs xs:!leading-[1rem] xs:mt-28 xs:mr-2"
+               sm:mt-0 sm:mr-2
+               xs:mt-28"
           >
-            <p>
+            <p
+              className="
+                  text-2xl
+                  xl:text-xl
+                  lg:text-base lg:!leading-[1.75rem]
+                  sm:text-[2.6vw] sm:!leading-[1.50rem]
+                  xs:text-xs xs:!leading-[1rem]"
+            >
               {`For instance, RTXP Amsterdam, an immersive art experience,
               required seamless ticket purchases through integrated ticket shop
               functionality. On the other hand, for Tebbernekkel, a TV production company, I
@@ -173,7 +187,8 @@ export default function Index() {
 
         <div
           ref={titlesContainer}
-          className="projectList relative flex flex-col mt-[200px] 
+          className="projectList relative flex flex-col 
+               3xl:mt-[250px]
                xl:mt-[300px]
                md:mt-[250px] 
                sm:mt-[200px]
@@ -186,7 +201,8 @@ export default function Index() {
                 onMouseOver={() => {
                   setSelectedProject(i);
                 }}
-                className="flex justify-end w-full m-0 border-b-[1px] border-light"
+                className="flex justify-end w-full border-b-[1px] border-light
+                     m-0"
               >
                 <a href={project.link} target={"_blank"}>
                   <h2

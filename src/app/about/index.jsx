@@ -13,7 +13,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 export default function Index() {
   const title = useRef(null);
 
-  /* DECIDE TO USE IT OR */
   // Use the useMediaQuery hook to determine the screen size
   const isSmallScreen = useMediaQuery("(max-width: 1023px)");
 
@@ -44,17 +43,26 @@ export default function Index() {
       </Head>
       <section
         id="about"
-        className="relative flex w-[80vw] xs:w-[90vw] mx-auto mt-28 md:mt-14
-        text-light"
+        className="relative flex w-[80vw] mx-auto text-light
+            mt-28
+            md:mt-14
+            xs:w-[90vw]"
       >
         {/* Container Title & Images */}
-        <div className="relative w-full flex justify-between lg:flex-col">
-          {/* lg:flex-col ?? ^^ */}
+        <div
+          className="relative w-full flex justify-between 
+            lg:flex-col"
+        >
           {/* Title About Me */}
           <div ref={title} className="relative mt-4">
             <h1
-              className={`${styles.textShadow} title relative left-[5%] text-[4rem] lg:text-[3.5rem] lg:top-4 
-              sm:text-[2.5rem] xs:text-[2rem] xs:left-[15%] uppercase font-extralight m-0`}
+              className={`${styles.textShadow} title relative uppercase font-extralight
+                  left-[5%] m-0
+                  3xl:text-[4.5rem]
+                  2xl:text-[4rem]
+                  lg:text-[3.5rem] lg:top-4 
+                  sm:text-[2.5rem] 
+                  xs:text-[2rem] xs:left-[15%]`}
             >
               About
             </h1>
@@ -120,9 +128,8 @@ export default function Index() {
                 //       50vw"
                 width={500}
                 height={500}
-                className="absolute object-cover 
-                     w-full mt-36 
-                     rounded-[5px] blur-[4px]"
+                className="absolute object-cover rounded-[5px] blur-[4px]
+                     w-full mt-36"
               />
               {/* w-auto ?? ^^ */}
               <Image
@@ -139,9 +146,8 @@ export default function Index() {
                 height={190}
                 data-scroll
                 data-scroll-speed="0.2"
-                className="object-cover relative w-[45%] 
-                     top-[16rem] right-[25%]
-                     rounded-[5px] drop-shadow-4xl"
+                className="relative object-cover rounded-[5px] drop-shadow-4xl
+                     w-[45%] top-[16rem] right-[25%]"
               />
               {/*  w-auto or w-full ?? ^^ */}
               <Image
@@ -164,10 +170,9 @@ export default function Index() {
                 height={190}
                 data-scroll
                 data-scroll-speed="-0.3"
-                className="object-cover relative w-[40%] 
-                     top-[17rem] left-[20%] mt-24 mb-24
-                     md:hidden 
-                     rounded-[5px] drop-shadow-4xl"
+                className="relative object-cover rounded-[5px] drop-shadow-4xl
+                     w-[40%] top-[17rem] left-[20%] mt-24 mb-24                    
+                     md:hidden"
               />
               {/* w-auto or w-full ?? ^^ */}
             </div>

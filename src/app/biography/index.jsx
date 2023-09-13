@@ -20,7 +20,8 @@ const phrases = [
 export default function Index() {
   return (
     <div
-      className="relative mt-[25rem] ml-[10vw]
+      className="relative w-full mt-[25rem] ml-[10vw]
+            3xl:mt-[32.5rem]
             xl:w-[70vw] xl:mt-[45rem] xl:mx-auto 
             lg:w-[75vw]
             sm:w-[80vw] sm:mt-[35rem]"
@@ -54,10 +55,11 @@ function AnimatedText({ children }) {
     <p
       ref={textRef}
       className={`relative m-0 ${!children.trim() ? "my-4" : ""}
-       text-2xl 
-       md:text-lg 
-       xs:text-base
-       font-extralight text-light uppercase`}
+         3xl:text-2xl
+         2xl:text-xl
+         md:text-lg 
+         xs:text-base
+         font-extralight text-light uppercase`}
     >
       {children}
     </p>

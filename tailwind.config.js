@@ -95,8 +95,8 @@ module.exports = {
          },
       },
       screens: {
-         "3xl": { max: "1901px" },
-         // => @media (max-width: 1901px) { ... }
+         "3xl": { max: "1921px" },
+         // => @media (max-width: 1921px) { ... }
 
          "2xl": { max: "1535px" },
          // => @media (max-width: 1535px) { ... }

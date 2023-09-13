@@ -81,15 +81,17 @@ export default function Index() {
     <header
       id="navbar"
       className="absolute w-full flex items-start justify-between 
-      px-16 py-8 font-semibold uppercase tracking-wide text-[white] md:px-12 sm:px-8"
+            font-semibold uppercase tracking-wide text-[white] 
+            px-16 py-8 
+            md:px-12 
+            sm:px-8"
     >
-      {/* className="min-h-[100vh]" ^^ ?? */}
-      {/* Button Mobile Logic */}
+      {/* Hamburger Button Mobile Logic */}
       <button
-        className="absolute flex-col justify-center items-center hidden lg:top-[2rem] lg:flex z-10"
+        className="absolute flex-col justify-center items-center hidden z-10
+            lg:top-[2rem] lg:flex"
         onClick={handleClick}
       >
-        {/* className="flex-col justify-center items-center hidden lg:flex z-10" */}
         <span
           className={`block bg-light transition-all duration-300 ease-in-out h-0.5 w-6 rounded-sm -translate-y-0.5 ${
             isOpen ? "rotate-45 translate-y-1" : "-translate-y-0.5"
@@ -108,7 +110,10 @@ export default function Index() {
       </button>
 
       {/* NavBar large screens */}
-      <div className="flex w-full justify-between items-center lg:hidden z-10">
+      <div
+        className="flex w-full justify-between items-center z-10
+            lg:hidden"
+      >
         <motion.nav
           ref={ref}
           initial={{ y: -50 }}
@@ -117,7 +122,8 @@ export default function Index() {
         >
           <ul
             className={`${roboto.className} flex justify-between items-center list-none 
-                flex-wrap text-[22px] font-medium text-light xl:text-[24px]`}
+                flex-wrap text-[22px] text-light font-medium 
+                xl:text-[24px]`}
           >
             <CustomLink
               onClick={() => handleScroll(idsToScroll[0])}
@@ -197,12 +203,13 @@ export default function Index() {
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.3 }}
           className="absolute flex flex-col min-w-[75vw] left-1/2 -translate-x-1/2
-                bg-dark/60 dark:bg-light/60 py-28 sm:py-20 xs:py-16
-                rounded-lg backdrop-blur-md z-40"
+                bg-dark/60 dark:bg-light/60
+                rounded-lg backdrop-blur-md z-40
+                py-28
+                sm:py-20 
+                xs:py-16"
         >
-          {/* top-1/2 -translate-y-1/2 justify-between items-center ^^ ?? */}
           <nav className="flex flex-col">
-            {/* items-center justify-center */}
             <ul className="text-center list-none mb-4">
               <li>
                 <CustomMobileLink
@@ -263,7 +270,10 @@ export default function Index() {
               target={"_blank"}
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.9 }}
-              className="w-8 mr-4 sm:mx-2 text-light dark:text-dark"
+              className="text-light dark:text-dark
+                  mr-4
+                  w-8     
+                  sm:mx-2"
             >
               <LinkedInIcon />
             </motion.a>
@@ -272,19 +282,24 @@ export default function Index() {
               target={"_blank"}
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.9 }}
-              className="w-8 sm:mx-2 text-light dark:text-dark"
+              className="text-light dark:text-dark
+                  w-8 
+                  sm:mx-2"
             >
               <GithubIcon />
             </motion.a>
             <button
               onClick={() => setMode(mode === "light" ? "dark" : "light")}
-              className={`ml-4 sm:mx-2 flex items-center justify-center rounded-full p-1
-                                    ${
-                                      mode === "light"
-                                        ? "bg-dark text-light"
-                                        : "bg-customTwo text-dark"
-                                    }
-                                    `}
+              className={`flex items-center justify-center rounded-full
+                  p-1
+                  ml-4
+                  sm:mx-2
+                           ${
+                             mode === "light"
+                               ? "bg-dark text-light"
+                               : "bg-customTwo text-dark"
+                           }
+                           `}
             >
               {mode === "dark" ? (
                 <SunIcon className={"fill-dark"} />

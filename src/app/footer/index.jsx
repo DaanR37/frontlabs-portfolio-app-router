@@ -29,12 +29,9 @@ export default function Index() {
   return (
     <section
       id="footer"
-      className="relative w-full min-h-[100vh] flex justify-center items-center mx-auto
-            xl:px-8 
-            lg:px-10 
-            md:px-8 
-            sm:w-[95vw] 
-            text-light overflow-x-hidden bg-[black]"
+      className="relative w-full min-h-[100vh] flex justify-center items-center 
+            mx-auto text-light overflow-x-hidden bg-[black]
+            lg:w-[95vw]"
     >
       {/* Logo FrontLabs */}
       <motion.div
@@ -58,78 +55,109 @@ export default function Index() {
           //         50vw"
           width={400}
           height={400}
-          className="object-cover w-auto mx-auto 
-               xl:w-[40vw]
-               invert"
+          className="object-cover w-auto mx-auto invert
+               2xl:w-[25vw] 
+               xl:w-[30vw]"
         />
         {/* w-full max-w-[25vw] ??? ^^ */}
       </motion.div>
 
       {/* HomeButton */}
-      <div className="absolute left-[50%] translate-x-[-50%] bottom-0 p-8 sm:p-5 z-10">
+      <div
+        className="absolute left-[50%] translate-x-[-50%] bottom-0 p-7 z-10
+            sm:p-6"
+      >
         <HomeButton />
       </div>
 
       {/* Container bottom row */}
       <div className="absolute w-full flex flex-row justify-between bottom-0">
         {/* Credentials & Local Time */}
-        <div className="flex items-end">
-          <span className="flex opacity-75 text-base md:text-[14px] sm:text-[10px] xs:text-[8px] p-6 mr-6 sm:p-0 sm:mr-0 sm:mb-1">
+        <div
+          className="flex items-end lg:hidden
+               ml-6 
+               xl:ml-2"
+        >
+          <span
+            className="flex text-base p-6 mr-6 opacity-75
+              xl:text-sm xl:p-4 xl:mr-4"
+          >
             FrontLabs {new Date().getFullYear()} &copy; All Rights Reserved
           </span>
 
           {/* Dynamic Time Component */}
-          <div className="flex p-6 lg:hidden">
+          <div
+            className="flex p-6
+               xl:p-4"
+          >
             <DynamicTime />
           </div>
         </div>
 
         {/* Footer component */}
-        <footer className="flex p-6 sm:p-1 sm:mb-1">
-          {/* p-6 mr-6 sm:p-1*/}
-          <div className="flex items-end">
+        <footer
+          className="flex p-6
+            xl:p-4 xl:mx-2
+            lg:w-full lg:p-0 lg:mx-2 lg:mb-5
+            sm:mb-4
+            xs:mb-3"
+        >
+          <div
+            className="flex items-end
+               lg:w-full lg:justify-between"
+          >
             <ul
-              className="flex flex-col list-none cursor-pointer uppercase text-left text-base md:text-sm xs:text-xs
-                        mr-16 sm:mr-1 z-50"
+              className="flex flex-col text-base text-left list-none uppercase cursor-pointer z-50
+                  mr-16     
+                  xl:mr-10
+                  lg:mr-0    
+                  md:text-sm"
             >
               <li
                 onClick={() => handleScroll(idsToScroll[0])}
-                className="my-1 opacity-70 hover:scale-[1.1] hover:opacity-100 transition-all duration-[300ms] ease-in-out
-                        sm:my-[2px]"
+                className="opacity-70 hover:scale-[1.1] hover:opacity-100 transition-all duration-[300ms] ease-in-out
+                        my-1"
               >
                 Home
               </li>
               <li
                 onClick={() => handleScroll(idsToScroll[1])}
-                className="my-1 opacity-70 hover:scale-[1.1] hover:opacity-100 transition-all duration-[300ms] ease-in-out
-                        sm:my-[2px]"
+                className="opacity-70 hover:scale-[1.1] hover:opacity-100 transition-all duration-[300ms] ease-in-out
+                        my-1"
               >
                 About
               </li>
               <li
                 onClick={() => handleScroll(idsToScroll[2])}
-                className="my-1 opacity-70 hover:scale-[1.1] hover:opacity-100 transition-all duration-[300ms] ease-in-out
-                        sm:my-[2px]"
+                className="opacity-70 hover:scale-[1.1] hover:opacity-100 transition-all duration-[300ms] ease-in-out
+                        my-1"
               >
                 Projects
               </li>
               <li
                 onClick={() => handleScroll(idsToScroll[3])}
-                className="my-1 opacity-70 hover:scale-[1.1] hover:opacity-100 transition-all duration-[300ms] ease-in-out
-                        sm:my-[2px]"
+                className="opacity-70 hover:scale-[1.1] hover:opacity-100 transition-all duration-[300ms] ease-in-out
+                        my-1"
               >
                 Articles
               </li>
               <li
                 onClick={() => handleScroll(idsToScroll[4])}
                 className="opacity-70 hover:scale-[1.1] hover:opacity-100 transition-all duration-[300ms] ease-in-out
-                        mb-0 sm:mb-[2px]"
+                        mt-1 mb-0"
               >
                 Contact
               </li>
             </ul>
-            <div className="mr-6 uppercase cursor-pointer sm:mr-0 sm:mx-4 z-50">
-              <p className="mb-2 text-base md:text-sm xs:text-xs">
+            {/* Socials Buttons */}
+            <div
+              className="text-base uppercase cursor-pointer z-50
+                  mr-6 
+                  xl:mr-2
+                  lg:mr-0
+                  md:text-sm"
+            >
+              <p className="mb-2">
                 <i>Socials</i>
               </p>
               <a
@@ -137,16 +165,17 @@ export default function Index() {
                 target="_blank"
               >
                 <p
-                  className="opacity-70 hover:scale-[1.1] hover:opacity-100 transition-all duration-[300ms] ease-in-out mb-1
-                        text-base md:text-sm xs:text-xs"
+                  className="opacity-70 hover:scale-[1.1] hover:opacity-100 
+                     transition-all duration-[300ms] ease-in-out
+                     mb-1"
                 >
                   LinkedIn
                 </p>
               </a>
               <a href="https://github.com/DaanR37" target="_blank">
                 <p
-                  className="opacity-70 hover:scale-[1.1] hover:opacity-100 transition-all duration-[300ms] ease-in-out
-                        text-base md:text-sm xs:text-xs"
+                  className="opacity-70 hover:scale-[1.1] hover:opacity-100 
+                     transition-all duration-[300ms] ease-in-out"
                 >
                   Github
                 </p>
