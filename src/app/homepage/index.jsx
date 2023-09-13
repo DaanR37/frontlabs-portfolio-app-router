@@ -121,6 +121,7 @@ export default function Index({ videos }) {
                 data-scroll
                 data-scroll-speed="0.4"
                 className="object-cover w-auto ml-[6rem] 
+                     2xl:w-[50%]
                      xl:w-[50vw]
                      lg:w-[25vw] lg:inline-block lg:mx-auto 
                      invert opacity-[0.9]"
