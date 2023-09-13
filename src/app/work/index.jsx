@@ -113,15 +113,16 @@ export default function Index() {
         <div
           className="projectDescription flex justify-between h-[700px] gap-[5%] 
             xl:h-[750px] xl:gap-0 
-            xs:h-[525px]"
+            xs:h-[650px]"
         >
           <div
             ref={imageContainer}
             className="imageContainer relative h-full w-[40%] mx-0
-                xl:w-[45%] xl:ml-3 
-                lg:w-[65%] lg:max-w-[40vw]"
+                xl:w-[40vw] xl:ml-2 
+                lg:ml-0
+                sm:ml-2"
           >
-            {/* xl:max-w-[45vw]  */}
+            {/* xl:max-w-[45vw] lg:max-w-[40vw] ??? */}
             <Image
               src={`/images/${projects[selectedProject].src}`}
               alt="project image"
@@ -140,9 +141,10 @@ export default function Index() {
           </div>
           <div
             className="column flex h-full w-[20%] text-[1.6vw]
-               xl:text-xl xl:w-[25%]
+               xl:w-[25vw] xl:text-[22px] xl:!leading-[2rem]
                lg:text-lg lg:pl-2 
-               sm:w-[30%] sm:text-[2.8vw]"
+               sm:text-base sm:!leading-[1.10rem]
+               xs:text-sm xs:!leading-[1.10rem] xs:pl-1"
           >
             <p>
               {`Over the last years, I've specialized in crafting
@@ -153,10 +155,11 @@ export default function Index() {
           </div>
           <div
             className="column flex items-end h-full w-[20%] text-[1.3vw] 
-               xl:text-lg xl:mt-20
-               lg:text-base lg:w-[25%] lg:mt-0
+               xl:text-xl xl:mt-28
+               lg:w-[25vw] lg:text-base lg:!leading-[1.75rem] lg:mt-0 
                md:mt-20
-               sm:text-[2.6vw] sm:mt-0"
+               sm:text-[2.6vw] sm:!leading-[1.50rem] sm:mt-0 sm:mr-2
+               xs:text-xs xs:!leading-[1rem] xs:mt-28 xs:mr-2"
           >
             <p>
               {`For instance, RTXP Amsterdam, an immersive art experience,
@@ -173,7 +176,8 @@ export default function Index() {
           className="projectList relative flex flex-col mt-[200px] 
                xl:mt-[300px]
                md:mt-[250px] 
-               sm:mt-[200px]"
+               sm:mt-[200px]
+               xs:mt-[250px]"
         >
           {projects.map((project, i) => {
             return (
@@ -189,9 +193,9 @@ export default function Index() {
                     className="
                         text-[3vw] mt-[40px] mb-[20px] 
                         lg:text-[2.5vw] lg:mt-[30px] lg:mb-[12.5px]
-                        md:mt-[25px]
-                        sm:text-[2.75vw] sm:mb-[10px] 
-                        xs:mt-[20px]
+                        md:text-[2.75vw] md:mt-[25px]
+                        sm:mb-[10px] 
+                        xs:text-[3vw] xs:mt-[20px]
                         text-[whitesmoke] uppercase cursor-pointer"
                   >
                     {project.title}

@@ -102,12 +102,14 @@ export default function Index({ videos }) {
                 duration: 3.5,
                 ease: "easeInOut",
               }}
-              className="relative flex w-1/2 lg:w-[75%] md:w-1/2 h-auto"
+              className="relative flex w-1/2 h-auto
+                  lg:w-[75%] 
+                  md:w-1/2"
             >
               <Image
                 //  src="/images/frontlabslogo-alternative-logos/svg/logo-no-background.svg"
                 src="/images/frontlabslogo-alternative-logos/logo-no-background-kopie.png"
-                alt="logo"
+                alt="logo frontlabs amsterdam home page"
                 priority
                 rel="preload"
                 as="image"
@@ -118,9 +120,12 @@ export default function Index({ videos }) {
                 height={400}
                 data-scroll
                 data-scroll-speed="0.4"
-                className="object-cover w-full max-w-[25vw] ml-[6rem] lg:inline-block lg:mx-auto invert opacity-[0.9]"
+                className="object-cover w-auto ml-[6rem] 
+                     xl:w-[50vw]
+                     lg:w-[25vw] lg:inline-block lg:mx-auto 
+                     invert opacity-[0.9]"
               />
-              {/* w-auto ?? ^^ */}
+              {/* w-full ??? max-w-[25vw] ?? ^^ */}
             </motion.div>
           )}
 

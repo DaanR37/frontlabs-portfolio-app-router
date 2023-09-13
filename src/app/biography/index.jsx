@@ -21,8 +21,9 @@ export default function Index() {
   return (
     <div
       className="relative mt-[25rem] ml-[10vw]
-            xl:max-w-[75vw] xl:mt-[45rem] xl:mx-auto 
-            sm:max-w-[80vw] sm:mt-[35rem]"
+            xl:w-[70vw] xl:mt-[45rem] xl:mx-auto 
+            lg:w-[75vw]
+            sm:w-[80vw] sm:mt-[35rem]"
     >
       {phrases.map((phrase, index) => {
         return <AnimatedText key={index}>{phrase}</AnimatedText>;
@@ -55,7 +56,7 @@ function AnimatedText({ children }) {
       className={`relative m-0 ${!children.trim() ? "my-4" : ""}
        text-2xl 
        md:text-lg 
-       xs:text-[15px] xs:leading-[1.25rem] 
+       xs:text-base
        font-extralight text-light uppercase`}
     >
       {children}

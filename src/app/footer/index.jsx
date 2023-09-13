@@ -29,9 +29,12 @@ export default function Index() {
   return (
     <section
       id="footer"
-      className="relative w-full min-h-[100vh] flex justify-center items-center
-      sm:w-[90%] xl:px-8 lg:px-10 md:px-8 mx-auto
-      text-light overflow-x-hidden bg-[black]"
+      className="relative w-full min-h-[100vh] flex justify-center items-center mx-auto
+            xl:px-8 
+            lg:px-10 
+            md:px-8 
+            sm:w-[95vw] 
+            text-light overflow-x-hidden bg-[black]"
     >
       {/* Logo FrontLabs */}
       <motion.div
@@ -46,18 +49,20 @@ export default function Index() {
         <Image
           //  src="/images/frontlabslogo-alternative-logos/svg/logo-no-background.svg"
           src="/images/frontlabslogo-alternative-logos/logo-no-background-kopie.png"
-          alt="Frontlabs Amsterdam"
+          alt="logo frontlabs amsterdam footer"
           priority
           rel="preload"
-          as="image/png"
+          as="image"
           //   sizes="(max-width: 768px) 100vw,
           //         (max-width: 1535px) 50vw,
           //         50vw"
           width={400}
           height={400}
-          className="object-cover w-full max-w-[25vw] mx-auto invert"
+          className="object-cover w-auto mx-auto 
+               xl:w-[40vw]
+               invert"
         />
-        {/* w-auto ???? w-[17vw] lg:w-[21vw] md:w-[25vw] sm:w-[27vw] xs:w-[30vw] ^^ */}
+        {/* w-full max-w-[25vw] ??? ^^ */}
       </motion.div>
 
       {/* HomeButton */}
