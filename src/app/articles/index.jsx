@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "@mui/material";
 import { useTransform, useScroll, motion } from "framer-motion";
 import Image from "next/image";
+import Head from "next/head";
 import Lenis from "@studio-freight/lenis";
 import styles from "./style.module.scss";
 
@@ -112,31 +113,39 @@ export default function Index() {
   }, []);
 
   return (
-    <section id="articles" className={styles.main}>
-      <div className={`${styles.spacer} h-[25vh]`}></div>
-      <div
-        ref={gallery}
-        className={`${styles.gallery} relative flex h-[550vh] p-[1.5vw] 
+    <>
+      <Head>
+        {/* <title>FrontLabs | Projects Page</title> */}
+        <meta name="description" content="lorem ipsum" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
+
+      <section id="articles" className={styles.main}>
+        <div className={`${styles.spacer} h-[25vh]`}></div>
+        <div
+          ref={gallery}
+          className={`${styles.gallery} relative flex h-[550vh] p-[1.5vw] 
         box-border overflow-hidden gap-[1.5vw] sm:h-[515vh] bg-[black]`}
-      >
-        {isExtraSmallScreen ? (
-          <>
-            <Column images={[images[0], images[1]]} y={y} />
-          </>
-        ) : isSmallScreen ? (
-          <>
-            <Column images={[images[0], images[1]]} y={y} />
-            <Column images={[images[2], images[3]]} y={y2} />
-          </>
-        ) : (
-          <>
-            <Column images={[images[0], images[1], images[2]]} y={y} />
-            <Column images={[images[3], images[4], images[5]]} y={y2} />
-            <Column images={[images[6], images[7], images[8]]} y={y3} />
-          </>
-        )}
-      </div>
-    </section>
+        >
+          {isExtraSmallScreen ? (
+            <>
+              <Column images={[images[0], images[1]]} y={y} />
+            </>
+          ) : isSmallScreen ? (
+            <>
+              <Column images={[images[0], images[1]]} y={y} />
+              <Column images={[images[2], images[3]]} y={y2} />
+            </>
+          ) : (
+            <>
+              <Column images={[images[0], images[1], images[2]]} y={y} />
+              <Column images={[images[3], images[4], images[5]]} y={y2} />
+              <Column images={[images[6], images[7], images[8]]} y={y3} />
+            </>
+          )}
+        </div>
+      </section>
+    </>
   );
 }
 
@@ -154,11 +163,7 @@ const Column = ({ y }) => {
             className={`${styles.imageContainer} relative h-full w-auto min-h-[500px] 
             rounded-[0.5vw] overflow-hidden`}
           >
-            <a
-              href={image.link}
-              target={"_blank"}
-              className="h-full w-auto"
-            >
+            <a href={image.link} target={"_blank"} className="h-full w-auto">
               <Image
                 src={`/images/${image.src}`}
                 alt={`Image ${i}`}

@@ -37,7 +37,7 @@ export default function Index() {
   return (
     <>
       <Head>
-        <title>FrontLabs | About Page</title>
+        {/* <title>FrontLabs | About Page</title> */}
         <meta name="description" content="lorem ipsum" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>

@@ -1,5 +1,6 @@
 // import { createClient } from 'contentful';
 import Image from "next/image";
+import CustomImage from "../components/CustomImage";
 import Head from "next/head";
 import { motion } from "framer-motion";
 
@@ -23,7 +24,7 @@ export default function Index({ videos }) {
   return (
     <>
       <Head>
-        <title>FrontLabs | Home Page</title>
+        {/* <title>FrontLabs | Home Page</title> */}
         <meta name="description" content="FrontLabs Portfolio Page" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
@@ -116,26 +117,24 @@ export default function Index({ videos }) {
                   lg:w-[75%] 
                   md:w-1/2"
             >
-              <Image
-                //  src="/images/frontlabslogo-alternative-logos/svg/logo-no-background.svg"
+              <CustomImage
                 src="/images/frontlabslogo-alternative-logos/logo-no-background-kopie.png"
+                //  src="https://raw.githubusercontent.com/DaanR37/frontlabs-portfolio-app-router/main/public/images/frontlabslogo-alternative-logos/logo-no-background-kopie.png"
                 alt="logo frontlabs amsterdam home page"
-                priority
+                priority={true}
                 rel="preload"
                 as="image"
-                //  sizes="(max-width: 768px) 100vw,
-                //  (max-width: 1535px) 100%,
-                //  50vw"
-                width={400}
-                height={400}
+                width={350}
+                height={350}
+                sizes="(max-width: 768px) 100vw,
+                 (max-width: 1535px) 50vw,
+                 50vw"
+                //  fill
                 data-scroll
                 data-scroll-speed="0.4"
-                className="object-cover w-auto invert opacity-[0.9]
-                     3xl:w-[50%]
-                     xl:w-[60%]
-                     lg:w-[25vw] lg:inline-block lg:mx-auto"
+                className="object-cover invert opacity-[0.9]"
               />
-              {/* w-full ??? max-w-[25vw] ?? ^^ */}
+              {/* w-auto 3xl:w-[50%] xl:w-[60%] lg:w-[25vw] lg:inline-block lg:mx-auto */}
             </motion.div>
           )}
 
