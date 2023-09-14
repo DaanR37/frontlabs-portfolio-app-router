@@ -12,6 +12,10 @@ export default function Head() {
          <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
          <link rel="icon" type="image/png" sizes="180x180" href="/apple-touch-icon.png" />
          <link rel="icon" type="image/svg" href="/safari-pinned-tab.svg" />
+         <meta property="og:image" content="/images/frontlabs-amsterdam-og-image.jpg" />
+         <meta property="og:image:type" content="image/jpg" />
+         <meta property="og:image:width" content="1200" />
+         <meta property="og:image:height" content="1350" />
       </>
    )
 };

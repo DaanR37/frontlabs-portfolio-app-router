@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
       <>
          <html lang="en">
             <Head>
-               <title>Frontlabs Portfolio | Developer ReactJS and NextJS</title>
+               {/* <title>Frontlabs Portfolio | Developer ReactJS and NextJS</title> */}
                <meta name="author" content="Daan Roelofs" />
                <meta charset="UTF-8" />
                <meta name="robots" content="index, follow"></meta>
@@ -28,7 +28,11 @@ export default function RootLayout({ children }) {
                <meta property="og:title" content="Frontlabs Developers Portfolio" />
                <meta property="og:description" content="Frontlabs helps you creating scalable and custom made websites and portfolio pages" />
                <meta property="og:url" content="https://frontlabs.nl/" />
-               <meta property="og:image" content="https://frontlabs.nl/frontlabs-amsterdam-OG-Image.jpg" />
+               {/* <meta property="og:image" content="https://frontlabs.nl/frontlabs-amsterdam-OG-Image.jpg" /> */}
+               <meta property="og:image" content="/images/frontlabs-amsterdam-og-image.jpg" />
+               <meta property="og:image:type" content="image/jpg" />
+               <meta property="og:image:width" content="1200" />
+               <meta property="og:image:height" content="1350" />
 
                {/* Optional - Twitter Card */}
                {/* <meta name="twitter:title" content="Your Website Title" />
