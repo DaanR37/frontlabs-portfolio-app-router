@@ -1,78 +1,51 @@
-"use client";
-import React, { useEffect, useState } from 'react';
-// import { AnimatePresence } from 'framer-motion';
-// import Preloader from "./_components/Reusablecomponents/Preloader";
-
+import React from 'react';
 import dynamic from 'next/dynamic';
 import Biography from "./biography";
+import LocomotiveScrollSetup from './components/LocomotiveScrollSetup';
 
+export const metadata = {
+   title: "Frontlabs Portfolio | Developer React and NextJS",
+   description: "Frontlabs helps you creating scalable and custom made websites and portfolio pages",
+}
 
 const DynamicCursor = dynamic(() => import('./components/Reusablecomponents/Cursor'), {
-    ssr: false,
+   ssr: false,
+});
+const DynamicNavbar = dynamic(() => import('./navbar'), {
+   ssr: false,
 });
 const DynamicHomepage = dynamic(() => import('./homepage'), {
-    ssr: false,
+   ssr: false,
 });
 const DynamicAbout = dynamic(() => import('./about'), {
-    ssr: false,
+   ssr: false,
 });
 const DynamicWork = dynamic(() => import('./work'), {
-    ssr: false,
+   ssr: false,
 });
 const DynamicArticles = dynamic(() => import('./articles'), {
-    ssr: false,
+   ssr: false,
 });
 const DynamicContact = dynamic(() => import('./contact'), {
-    ssr: false,
+   ssr: false,
+});
+const DynamicFooter = dynamic(() => import('./footer'), {
+   ssr: false,
 });
 
 export default function Home() {
-
-    // const [isLoading, setIsLoading] = useState(true);
-
-    useEffect(() => {
-        (
-            async () => {
-                const LocomotiveScroll = (await import('locomotive-scroll')).default
-                const locomotiveScroll = new LocomotiveScroll({
-                    el: document.querySelector("[data-scroll-container]"),
-                    smooth: true,
-                    mobile: {
-                        smooth: true,
-                        breakpoint: 0,
-                        inertia: 0.8,
-                        getDirection: true,
-                    },
-                    smoothMobile: true,
-                    tablet: {
-                        smooth: true,
-                        breakpoint: 0,
-                        inertia: 0.8,
-                        getDirection: true,
-                    }
-                });
-
-                // setTimeout(() => {
-                //     setIsLoading(false);
-                //     document.body.style.cursor = 'default'
-                //     window.scrollTo(0, 0);
-                // }, 2000)
-            }
-        )()
-    }, [])
-
-    return (
-        <main className="relative w-full">
-            {/* <AnimatePresence mode='wait'>
-                {isLoading && <Preloader />}
-            </AnimatePresence> */}
-            <DynamicCursor />
-            <DynamicHomepage />
-            <DynamicAbout />
-            <Biography />
-            <DynamicWork />
-            <DynamicArticles />
-            <DynamicContact />
-        </main>
-    )
+   return (
+      <main className="relative w-full">
+         <LocomotiveScrollSetup />
+         <DynamicCursor />
+         <DynamicNavbar />
+         <DynamicHomepage />
+         <DynamicAbout />
+         <Biography />
+         <DynamicWork />
+         <DynamicArticles />
+         <DynamicContact />
+         <DynamicFooter />
+      </main>
+   )
 };

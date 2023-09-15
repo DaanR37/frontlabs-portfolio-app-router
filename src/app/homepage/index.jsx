@@ -1,3 +1,4 @@
+"use client";
 // import { createClient } from 'contentful';
 import Image from "next/image";
 import CustomImage from "../components/CustomImage";
