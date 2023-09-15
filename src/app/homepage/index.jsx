@@ -54,7 +54,7 @@ export default function Index({ videos }) {
 
         {/* Container Logo and Animated Text section */}
         <div
-          className="flex w-full items-center justify-between  
+          className="relative flex w-full items-center justify-between  
             3xl:mx-4
             2xl:mx-0
             lg:flex-col lg:justify-center lg:mx-14 lg:px-6 lg:mt-[7rem] 
@@ -131,8 +131,8 @@ export default function Index({ videos }) {
                  (max-width: 1535px) 50vw,
                  50vw"
                 //  fill
-                data-scroll
-                data-scroll-speed="0.4"
+               //  data-scroll
+               //  data-scroll-speed="0.4"
                 className="object-cover invert opacity-[0.9]"
               />
               {/* w-auto 3xl:w-[50%] xl:w-[60%] lg:w-[25vw] lg:inline-block lg:mx-auto */}

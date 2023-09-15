@@ -1,9 +1,9 @@
 "use client";
 import React, { useEffect, useState } from 'react';
-import LoaderAnimation from './LoaderAnimation';
+// import LoaderAnimation from './LoaderAnimation';
 
 export default function LocomotiveScrollSetup() {
-   const [isLoading, setIsLoading] = useState(true);
+   // const [isLoading, setIsLoading] = useState(true);
 
    useEffect(() => {
       (async () => {
@@ -26,17 +26,18 @@ export default function LocomotiveScrollSetup() {
             },
          });
 
-         setTimeout(() => {
-            setIsLoading(false);
-            document.body.style.cursor = 'default'
-            window.scrollTo(0, 0);
-         }, 2000)
+         // setTimeout(() => {
+         //    setIsLoading(false);
+         //    document.body.style.cursor = 'default'
+         //    window.scrollTo(0, 0);
+         // }, 2000)
+
       })();
    }, []);
 
    return (
       <div>
-         <LoaderAnimation isLoading={isLoading} />
+         {/* <LoaderAnimation isLoading={isLoading} /> */}
       </div>
    );
 }

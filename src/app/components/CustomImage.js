@@ -4,13 +4,15 @@ import PropTypes from 'prop-types';
 function CustomImage({ src, alt, priority, width, height, sizes, className = " " }) {
    return (
       <Image
-         className={`${className} mx-auto`}
+         className={`${className}`}
          src={src}
          alt={alt}
          width={width}
          height={height}
          sizes={sizes}
          priority={!!priority}
+         data-scroll
+         data-scroll-speed="0.5"
       />
    )
 }
