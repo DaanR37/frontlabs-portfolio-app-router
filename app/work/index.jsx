@@ -5,24 +5,30 @@ import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+/* Import Images */
+// import ProjectPic1 from "../../public/images/projects/afb_bbkk.webp";
+// import ProjectPic2 from "../../public/images/projects/afb_podcast.webp";
+// import ProjectPic3 from "../../public/images/projects/afb_postmark.webp";
+// import ProjectPic4 from "../../public/images/projects/afb_rtxp.webp";
+
 const projects = [
   {
-    src: "projects/afb_bbkk_kopie.png",
+    src: "projects/afb_bbkk.webp",
     title: "Tebbernekkel",
     link: "https://tebbernekkel.nl/",
   },
   {
-    src: "projects/afb_postmark_kopie.png",
+    src: "projects/afb_postmark.webp",
     title: "Postmark",
     link: "https://postmark.nl/",
   },
   {
-    src: "projects/afb_rtxp_kopie.png",
+    src: "projects/afb_rtxp.webp",
     title: "RTXP Amsterdam",
     link: "https://www.rtxp.nl/",
   },
   {
-    src: "projects/afb_podcast_kopie.png",
+    src: "projects/afb_podcast.webp",
     title: "PodcastTailor",
     link: "https://www.podcast-tailor.nl/",
   },
@@ -120,25 +126,38 @@ export default function Index() {
         >
           <div
             ref={imageContainer}
-            className="imageContainer relative h-full w-[40%] 
-               xl:w-[40vw]"
+            className="imageContainer relative 
+            3xl:w-[450px] 3xl:h-[675px]
+            2xl:w-[425px] 2xl:h-[650px]
+            lg:w-[350px] lg:h-[525px]
+            md:w-[275px] md:h-[425px]
+            sm:w-[210px] sm:h-[325px]
+            xs:w-[130px] xs:h-[195px]"
           >
-            {/* xl:max-w-[45vw] lg:max-w-[40vw] ??? */}
+            {/* h-full w-[40%] xl:w-[40vw] */}
             <Image
               src={`/images/${projects[selectedProject].src}`}
               alt="project image"
-              priority
+              priority={true}
               rel="preload"
               as="image"
-              // fill={true}
+              //  placeholder="blur"
+              //  quality={100}
+              //  width={100}
+              //  height={100}
               sizes="(max-width: 768px) 100vw,
-                  (max-width: 1535px) 50vw,
-                  50vw"
-              width={100}
-              height={100}
-              className="relative object-cover w-full rounded-[5px]"
+                 (max-width: 1535px) 50vw,
+               50vw"
+              fill
+              style={{
+                objectFit: "cover",
+                width: "100%",
+                borderRadius: "5px",
+                // height: "auto",
+              }}
+              className=""
             />
-            {/* w-auto ???? xl:object-none or xl:object-contain ?? */}
+            {/* relative w-auto w-full ???? xl:object-none or xl:object-contain ?? */}
           </div>
           <div
             className="column flex h-full w-[20%] 

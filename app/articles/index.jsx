@@ -9,61 +9,61 @@ import styles from "./style.module.scss";
 
 const images = [
   {
-    src: "articles/afb_react.png",
+    src: "articles/afb_react.webp",
     title: "Hey Hoi",
     link:
       "https://medium.com/@seun.thedeveloper/the-easiest-way-to-handle-animations-in-react-nextjs-5934a689a010",
   },
   {
-    src: "articles/afb_tips.png",
+    src: "articles/afb_tips.webp",
     title: "Hey ha hoi",
     link:
       "https://medium.com/@Evelyn.Taylor/10-expert-performance-tips-every-senior-js-react-developer-should-know-f8a78eebcb2e",
   },
   {
-    src: "articles/afb_chatgpt.png",
+    src: "articles/afb_chatgpt.webp",
     title: "Hey ha hoi",
     link:
       "https://techcrunch.com/2023/08/31/openai-angles-to-put-chatgpt-in-classrooms-with-special-tutor-prompts/",
   },
   {
-    src: "articles/afb_react.png",
+    src: "articles/afb_react.webp",
     title: "Hey ha hoi",
     link:
       "https://medium.com/@seun.thedeveloper/the-easiest-way-to-handle-animations-in-react-nextjs-5934a689a010",
   },
   {
-    src: "articles/afb_tips.png",
+    src: "articles/afb_tips.webp",
     title: "Hey ha hoi",
     link:
       "https://medium.com/@Evelyn.Taylor/10-expert-performance-tips-every-senior-js-react-developer-should-know-f8a78eebcb2e",
   },
   {
-    src: "articles/afb_chatgpt.png",
+    src: "articles/afb_chatgpt.webp",
     title: "Hey ha hoi",
     link:
       "https://techcrunch.com/2023/08/31/openai-angles-to-put-chatgpt-in-classrooms-with-special-tutor-prompts/",
   },
   {
-    src: "articles/afb_react.png",
+    src: "articles/afb_react.webp",
     title: "Hey ha hoi",
     link:
       "https://medium.com/@seun.thedeveloper/the-easiest-way-to-handle-animations-in-react-nextjs-5934a689a010",
   },
   {
-    src: "articles/afb_tips.png",
+    src: "articles/afb_tips.webp",
     title: "Hey ha hoi",
     link:
       "https://medium.com/@Evelyn.Taylor/10-expert-performance-tips-every-senior-js-react-developer-should-know-f8a78eebcb2e",
   },
   {
-    src: "articles/afb_chatgpt.png",
+    src: "articles/afb_chatgpt.webp",
     title: "Hey ha hoi",
     link:
       "https://techcrunch.com/2023/08/31/openai-angles-to-put-chatgpt-in-classrooms-with-special-tutor-prompts/",
   },
   {
-    src: "articles/afb_chatgpt.png",
+    src: "articles/afb_chatgpt.webp",
     title: "Hey ha hoi",
     link:
       "https://techcrunch.com/2023/08/31/openai-angles-to-put-chatgpt-in-classrooms-with-special-tutor-prompts/",

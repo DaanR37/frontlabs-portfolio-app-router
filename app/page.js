@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic';
 import Biography from "./biography";
 import LocomotiveScrollSetup from './components/LocomotiveScrollSetup';
 
-import Head from 'next/head';
+// import Head from 'next/head';
 
 export const metadata = {
    title: "Frontlabs Portfolio | Developer React and NextJS",
@@ -39,7 +39,7 @@ const DynamicFooter = dynamic(() => import('./footer'), {
 export default function Home() {
    return (
       <main className="relative w-full">
-         <Head>
+         {/* <Head>
             <meta property="og:url" content="https://www.frontlabs.nl" />
             <meta property="og:type" content="website" />
             <meta property="og:title" content={metadata.title} />
@@ -51,7 +51,7 @@ export default function Home() {
             <meta property="og:title" content="Frontlabs Portfolio | Developer React and NextJS" />
             <meta property="og:description" content="Frontlabs helps you creating scalable and custom made websites and portfolio pages" />
             <meta property="og:image" content="https://frontlabs.nl/opengraph-image.jpg" />
-         </Head>
+         </Head> */}
          <LocomotiveScrollSetup />
          <DynamicCursor />
          <DynamicNavbar />

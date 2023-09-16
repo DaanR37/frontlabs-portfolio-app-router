@@ -1,7 +1,6 @@
 "use client";
 // import { createClient } from 'contentful';
 import Image from "next/image";
-import CustomImage from "../components/CustomImage";
 import Head from "next/head";
 import { motion } from "framer-motion";
 
@@ -11,15 +10,16 @@ import { RoughNotationGroup } from "react-rough-notation";
 import RainbowHighlight from "../components/Reusablecomponents/RainbowHighlight";
 import HireMe from "../components/Reusablecomponents/HireMe";
 
-/* DECIDE TO USE IT OR */
+/* Import MediaQuery */
 import { useMediaQuery } from "@mui/material";
+/* Import Images */
+import FrontlabsLogo from "../../public/images/frontlabslogo-alternative-logos/logo-no-background-kopie.webp";
 
 export default function Index({ videos }) {
   const videoUrl = process.env.NEXT_PUBLIC_VIDEO_URL;
   const colors = ["#7893ffe2", "#ff4f2cce", "#ff9372e1", "#ff91ffc7"];
 
-  /* DECIDE TO USE IT OR */
-  // Use the useMediaQuery hook to determine the screen size
+  // useMediaQuery hook to determine the screen size
   const isSmallScreen = useMediaQuery("(max-width: 1023px)");
 
   return (
@@ -44,14 +44,12 @@ export default function Index({ videos }) {
             <source src={videoUrl} type="video/mp4" />
           </video>
         )}
-
         {/* Filter Gradient */}
         <div
           className="absolute top-0 left-0 inset-[25px] ring-1 ring-blue-500/50 
             bg-black opacity-70 rounded-br-[250px] 
             lg:rounded-br-[100px]"
         />
-
         {/* Container Logo and Animated Text section */}
         <div
           className="relative flex w-full items-center justify-between  
@@ -64,7 +62,6 @@ export default function Index({ videos }) {
             "
         >
           {/* Image Component */}
-          {/* DECIDE TO USE TERNARY OPERATOR OR NOT - CAN AFFECT PRESTATIONS */}
           {isSmallScreen ? (
             <motion.div
               initial={{
@@ -83,23 +80,31 @@ export default function Index({ videos }) {
                 duration: 0.75,
                 ease: "easeInOut",
               }}
-              className="relative flex w-1/2 h-auto 
-                  lg:w-[75%] 
-                  md:w-1/2"
+              className="relative flex justify-center mx-auto
+                  lg:w-[350px] lg:h-[350px]
+                  sm:w-[300px] sm:h-[300px]
+                  xs:w-[225px] xs:h-[225px]"
             >
               <Image
-                src="/images/frontlabslogo-alternative-logos/logo-no-background.png"
-                alt="logo"
-                priority
+                src={FrontlabsLogo}
+                alt="logo frontlabs amsterdam homepage"
+                priority={true}
                 rel="preload"
                 as="image"
-                //  sizes="(max-width: 768px) 100vw,
-                //  (max-width: 1535px) 100%,
-                //  50vw"
-                width={400}
-                height={400}
-                className="object-cover w-auto ml-[6rem] invert opacity-[0.9] 
-                     lg:inline-block lg:mx-auto"
+                //  placeholder="blur"
+                //  quality={100}
+                sizes="(max-width: 768px) 100vw,
+                   (max-width: 1535px) 50vw,
+                 50vw"
+                fill
+                style={{
+                  objectFit: "cover",
+                  width: "100%",
+                  // height: "auto",
+                  opacity: "0.9",
+                  filter: "invert(1)",
+                }}
+                className="ml-[6rem] lg:inline-block lg:mx-auto"
               />
             </motion.div>
           ) : (
@@ -114,31 +119,34 @@ export default function Index({ videos }) {
                 duration: 3.5,
                 ease: "easeInOut",
               }}
-              className="relative flex justify-center w-1/2 h-auto
-                  lg:w-[75%] 
-                  md:w-1/2"
+              className="relative flex justify-center mx-auto
+                  3xl:w-[350px] 3xl:h-[350px]"
             >
-              <CustomImage
-                src="/images/frontlabslogo-alternative-logos/logo-no-background-kopie.png"
-                //  src="https://raw.githubusercontent.com/DaanR37/frontlabs-portfolio-app-router/main/public/images/frontlabslogo-alternative-logos/logo-no-background-kopie.png"
+              <Image
+                src={FrontlabsLogo}
                 alt="logo frontlabs amsterdam home page"
                 priority={true}
                 rel="preload"
                 as="image"
-                width={350}
-                height={350}
+                //  placeholder="blur"
+                //  quality={100}
                 sizes="(max-width: 768px) 100vw,
-                 (max-width: 1535px) 50vw,
+                   (max-width: 1535px) 50vw,
                  50vw"
-                //  fill
-               //  data-scroll
-               //  data-scroll-speed="0.4"
-                className="object-cover invert opacity-[0.9]"
+                fill
+                style={{
+                  objectFit: "cover",
+                  width: "100%",
+                  // height: "auto",
+                  opacity: "0.9",
+                  filter: "invert(1)",
+                }}
+                data-scroll
+                data-scroll-speed="0.4"
+                className=""
               />
-              {/* w-auto 3xl:w-[50%] xl:w-[60%] lg:w-[25vw] lg:inline-block lg:mx-auto */}
             </motion.div>
           )}
-
           {/* Container Animated Text Column with key words */}
           <div
             className="w-1/2 flex flex-col items-start self-center 

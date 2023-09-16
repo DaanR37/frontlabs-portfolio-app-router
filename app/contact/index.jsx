@@ -13,7 +13,7 @@ import {
 import MyUserData from "../components/Reusablecomponents/MyUserData";
 import Loader from "../components/Reusablecomponents/Loader";
 import ContactForm from "../components/Reusablecomponents/ContactForm";
-import Magnetic from "../../magnetic";
+import Magnetic from "../../src/magnetic";
 import AnimatedTextContact from "../components/Reusablecomponents/PreloaderContact/AnimatedTextContact";
 
 export default function Index() {

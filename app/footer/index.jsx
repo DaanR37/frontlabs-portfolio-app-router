@@ -8,6 +8,9 @@ import LocomotiveScroll from "locomotive-scroll";
 import HomeButton from "../components/Reusablecomponents/Homebutton/HomeButton";
 import DynamicTime from "../components/Reusablecomponents/DynamicTime";
 
+/* Import Images */
+import FrontlabsLogoFooter from "../../public/images/frontlabslogo-alternative-logos/logo-no-background-kopie.webp";
+
 export default function Index() {
   const [idsToScroll] = useState([
     "#home",
@@ -41,25 +44,36 @@ export default function Index() {
         transition={{
           duration: 1,
         }}
-        className="absolute w-1/2 h-auto mb-24"
+        className="relative flex justify-center 
+            mx-auto mb-24 
+            3xl:w-[310px] 3xl:h-[310px]
+            xl:w-[250px] xl:h-[250px]
+            md:w-[225px] md:h-[225px]
+            xs:w-[200px] xs:h-[200px]"
       >
+        {/* w-1/2 h-auto */}
         <Image
-          //  src="/images/frontlabslogo-alternative-logos/svg/logo-no-background.svg"
-          src="/images/frontlabslogo-alternative-logos/logo-no-background-kopie.png"
+          src={FrontlabsLogoFooter}
           alt="logo frontlabs amsterdam footer"
-          priority
+          priority={true}
           rel="preload"
           as="image"
-          //   sizes="(max-width: 768px) 100vw,
-          //         (max-width: 1535px) 50vw,
-          //         50vw"
-          width={400}
-          height={400}
-          className="object-cover w-auto mx-auto invert
-               2xl:w-[25vw] 
-               xl:w-[30vw]"
+          //  placeholder="blur"
+          //  quality={100}w"
+          sizes="(max-width: 768px) 100vw,
+            (max-width: 1535px) 50vw,
+          50vw"
+          fill
+          style={{
+            objectFit: "cover",
+            width: "100%",
+            // height: "auto",
+            opacity: "0.9",
+            filter: "invert(1)",
+          }}
+          className="mx-auto"
         />
-        {/* w-full max-w-[25vw] ??? ^^ */}
+        {/* w-auto w-full max-w-[25vw] ??? ^^ */}
       </motion.div>
 
       {/* HomeButton */}
