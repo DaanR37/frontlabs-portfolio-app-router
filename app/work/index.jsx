@@ -103,11 +103,11 @@ export default function Index() {
 
   return (
     <>
-      <Head>
-        {/* <title>FrontLabs | Projects Page</title> */}
+      {/* <Head>
+        <title>FrontLabs | Projects Page</title>
         <meta name="description" content="lorem ipsum" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
+      </Head> */}
       <section
         ref={container}
         id="projects"

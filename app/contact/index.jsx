@@ -13,7 +13,7 @@ import {
 import MyUserData from "../components/Reusablecomponents/MyUserData";
 import Loader from "../components/Reusablecomponents/Loader";
 import ContactForm from "../components/Reusablecomponents/ContactForm";
-import Magnetic from "../../src/magnetic";
+import Magnetic from "../../magnetic";
 import AnimatedTextContact from "../components/Reusablecomponents/PreloaderContact/AnimatedTextContact";
 
 export default function Index() {
@@ -82,11 +82,11 @@ export default function Index() {
 
   return (
     <>
-      <Head>
-        {/* <title>FrontLabs | Contact Page</title> */}
+      {/* <Head>
+        <title>FrontLabs | Contact Page</title>
         <meta name="description" content="lorem ipsum" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
+      </Head> */}
       <section
         id="contact"
         className={`${

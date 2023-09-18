@@ -24,11 +24,11 @@ export default function Index({ videos }) {
 
   return (
     <>
-      <Head>
-        {/* <title>FrontLabs | Home Page</title> */}
+      {/* <Head>
+        <title>FrontLabs | Home Page</title>
         <meta name="description" content="FrontLabs Portfolio Page" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
+      </Head> */}
       <section
         id="home"
         className="relative w-full h-[100vh] flex items-center"
