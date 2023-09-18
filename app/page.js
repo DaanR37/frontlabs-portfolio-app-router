@@ -3,12 +3,12 @@ import dynamic from 'next/dynamic';
 import Biography from "./biography";
 import LocomotiveScrollSetup from './components/LocomotiveScrollSetup';
 
-// import Head from 'next/head';
+import Head from 'next/head';
 
 export const metadata = {
    title: "Frontlabs Portfolio | Developer React and NextJS",
    description: "Frontlabs helps you creating scalable and custom made websites and portfolio pages",
-   ogImage: "https://frontlabs.nl/opengraph-image.jpg",
+   ogImage: "http://frontlabs.nl/api/og",
 }
 
 const DynamicCursor = dynamic(() => import('./components/Reusablecomponents/Cursor'), {
@@ -38,31 +38,34 @@ const DynamicFooter = dynamic(() => import('./footer'), {
 
 export default function Home() {
    return (
-      <main className="relative w-full">
-         {/* <Head>
+      <>
+         <Head>
             <meta property="og:url" content="https://www.frontlabs.nl" />
             <meta property="og:type" content="website" />
             <meta property="og:title" content={metadata.title} />
             <meta property="og:description" content={metadata.description} />
             <meta property="og:image" content={metadata.ogImage} />
 
-            <meta property="og:url" content="https://www.frontlabs.nl" />
-            <meta property="og:type" content="website" />
-            <meta property="og:title" content="Frontlabs Portfolio | Developer React and NextJS" />
-            <meta property="og:description" content="Frontlabs helps you creating scalable and custom made websites and portfolio pages" />
-            <meta property="og:image" content="https://frontlabs.nl/opengraph-image.jpg" />
-         </Head> */}
-         <LocomotiveScrollSetup />
-         <DynamicCursor />
-         <DynamicNavbar />
-         <DynamicHomepage />
-         <DynamicAbout />
-         <Biography />
-         <DynamicWork />
-         <DynamicArticles />
-         <DynamicContact />
-         <DynamicFooter />
-      </main>
+            {/* <meta property="og:image" content="https://frontlabs.nl/opengraph-image.jpg" /> */}
+            {/* <meta
+               property="og:image"
+               content={"http://localhost:3000/api/og"}
+            /> */}
+         </Head>
+         <main className="relative w-full">
+
+            <LocomotiveScrollSetup />
+            <DynamicCursor />
+            <DynamicNavbar />
+            <DynamicHomepage />
+            <DynamicAbout />
+            <Biography />
+            <DynamicWork />
+            <DynamicArticles />
+            <DynamicContact />
+            <DynamicFooter />
+         </main>
+      </>
    )
 };
 
