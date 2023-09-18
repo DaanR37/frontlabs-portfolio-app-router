@@ -1,6 +1,6 @@
 import "./globals.scss";
 import { roboto_flex } from "./fonts";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://frontlabs.nl"),
@@ -16,8 +16,8 @@ export const metadata: Metadata = {
       {
         // url: "/opengraph-image.png",
         url: "https://frontlabs.nl/opengraph-image.png",
-        width: 500,
-        height: 500,
+        width: 450,
+        height: 450,
       },
     ],
   },
