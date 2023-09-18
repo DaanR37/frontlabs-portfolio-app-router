@@ -19,11 +19,6 @@ export const metadata: Metadata = {
         width: 500,
         height: 500,
       },
-      // {
-      //   url: `https://frontlabs.nl/api/og?title=Socials`, // Replace with your actual site URL
-      //   width: 1920,
-      //   height: 1080,
-      // },
     ],
   },
   robots: {
