@@ -16,7 +16,7 @@ import FrontlabsLogo from "../../public/images/frontlabslogo-alternative-logos/l
 export default function Index() {
   const videoUrl = process.env.NEXT_PUBLIC_VIDEO_URL;
   const colors = ["#f5f5f5", "#000000", "#f5f5f5", "#000000"];
-  const isSmallScreen = useMediaQuery("(max-width: 1023px)");
+  const isSmallScreen = useMediaQuery("(max-width: 1023px)")
 
   // const currentThemeClass = "dark";
 
