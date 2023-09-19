@@ -208,7 +208,7 @@ export default function Index() {
               <a
                 rel="preload"
                 as="style"
-                href="/CVDaanRoelofs2023.pdf"
+                href="/CVDaanRoelofs2023-2.pdf"
                 download={true}
                 target={"_blank"}
                 className="flex items-center rounded font-medium text-dark 

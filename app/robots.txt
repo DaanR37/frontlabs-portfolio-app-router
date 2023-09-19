@@ -3,4 +3,4 @@ Allow: /
 Allow: /api/og/*
 Disallow: /private/
 
-Sitemap: https://frontlabs.nl/sitemap.xml
+Sitemap: https://frontlabsamsterdam.nl/sitemap.xml

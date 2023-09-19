@@ -4,23 +4,23 @@ import { roboto_flex } from "./fonts";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://frontlabs.nl"),
+  metadataBase: new URL("https://frontlabsamsterdam.nl"),
   title: "Frontlabs Portfolio | Developer React and NextJS",
   description:
     "Frontlabs helps you creating scalable and custom made websites and portfolio pages",
-  authors: { name: 'Daan Roelofs', url: 'https://frontlabs.nl' },
+  authors: { name: 'Daan Roelofs', url: 'https://frontlabsamsterdam.nl' },
   applicationName: 'Frontlabs Developer Front-end and ReactJS',
   keywords: ['Next.js', 'React', 'JavaScript', 'Css', 'front-end', 'developer'],
   openGraph: {
     title: "Frontlabs Portfolio | Developer React and NextJS",
     description: "Frontlabs helps you creating scalable and custom made websites and portfolio pages",
-    url: "https://frontlabs.nl",
+    url: "https://frontlabsamsterdam.nl",
     siteName: "Frontlabs Developer Front-end and ReactJS",
     type: "website",
     images: [
       {
         // url: "/opengraph-image.png",
-        url: "https://frontlabs.nl/opengraph-image.png",
+        url: "https://frontlabsamsterdam.nl/opengraph-image.png",
         width: 450,
         height: 450,
       },
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
    description:
      "Frontlabs helps you creating scalable and custom made websites and portfolio pages",
    images: [
-      "https://frontlabs.nl/opengraph-image.png",
+      "https://frontlabsamsterdam.nl/opengraph-image.png",
    ],
   },
   robots: {
