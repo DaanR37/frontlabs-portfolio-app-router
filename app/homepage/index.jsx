@@ -1,8 +1,8 @@
 // "use client";
-import { createClient } from "contentful";
+// import { createClient } from "contentful";
 import Image from "next/image";
-// import Head from "next/head";
 import { motion } from "framer-motion";
+import { useMediaQuery } from "@mui/material";
 
 /* Import components */
 import AnimatedText from "../components/Reusablecomponents/AnimatedText";
@@ -10,31 +10,18 @@ import { RoughNotationGroup } from "react-rough-notation";
 import RainbowHighlight from "../components/Reusablecomponents/RainbowHighlight";
 import HireMe from "../components/Reusablecomponents/HireMe";
 
-/* Import MediaQuery */
-import { useMediaQuery } from "@mui/material";
 /* Import Images */
 import FrontlabsLogo from "../../public/images/frontlabslogo-alternative-logos/logo-no-background-kopie.webp";
 
-// const client = createClient({
-//   space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
-//   accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_KEY,
-// });
-
-export default function Index( posts ) {
-{console.log(posts)}
+export default function Index() {
   const videoUrl = process.env.NEXT_PUBLIC_VIDEO_URL;
-  const colors = ["#7893ffe2", "#ff4f2cce", "#ff9372e1", "#ff91ffc7"];
-
-  // useMediaQuery hook to determine the screen size
+  const colors = ["#f5f5f5", "#000000", "#f5f5f5", "#000000"];
   const isSmallScreen = useMediaQuery("(max-width: 1023px)");
+
+  // const currentThemeClass = "dark";
 
   return (
     <>
-      {/* <Head>
-        <title>FrontLabs | Home Page</title>
-        <meta name="description" content="FrontLabs Portfolio Page" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head> */}
       <section
         id="home"
         className="relative w-full h-[100vh] flex items-center"
@@ -168,7 +155,7 @@ export default function Index( posts ) {
             />
 
             <RoughNotationGroup show={true}>
-              <RainbowHighlight color={colors[0]} order="1">
+              <RainbowHighlight color={colors[0]} order="1"> {/* themeClass={currentThemeClass} */}
                 <h1
                   className="text-dark font-medium 
                      p-1
@@ -181,7 +168,7 @@ export default function Index( posts ) {
 
               <RainbowHighlight color={colors[1]} order="2">
                 <h1
-                  className="text-dark font-medium 
+                  className="text-light font-medium 
                      p-1
                      3xl:text-3xl 
                      lg:hidden"
@@ -203,7 +190,7 @@ export default function Index( posts ) {
 
               <RainbowHighlight color={colors[3]} order="4">
                 <h1
-                  className="text-dark font-medium 
+                  className="text-light font-medium 
                      p-1
                      3xl:text-3xl 
                      lg:hidden"
@@ -243,20 +230,3 @@ export default function Index( posts ) {
     </>
   );
 }
-
-// export async function getStaticProps() {
-//   const client = createClient({
-//     space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
-//     accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_KEY,
-//   });
-
-//   const res = await client.getEntries({ content_type: "video" });
-
-//   return {
-//     props: {
-//       posts: res,
-//     },
-//    //  revalidate: 1,
-//   };
-// }
-// .items[0].fields.file.url

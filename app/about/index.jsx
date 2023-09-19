@@ -2,13 +2,11 @@
 import { useLayoutEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
-// import Head from "next/head";
 import Image from "next/image";
-import styles from "./style.module.scss";
-
-/* DECIDE TO USE IT OR */
 import { useMediaQuery } from "@mui/material";
 import { motion, useScroll, useTransform } from "framer-motion";
+import styles from "./style.module.scss";
+
 
 /* Import Images */
 import Profilepic1 from "../../public/images/profilepic/A-profilepic-1-kopie.webp";
@@ -17,10 +15,7 @@ import Profilepic3 from "../../public/images/profilepic/A-profilepic-3-kopie.web
 
 export default function Index() {
   const title = useRef(null);
-
-  // Use the useMediaQuery hook to determine the screen size
   const isSmallScreen = useMediaQuery("(max-width: 1023px)");
-
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 1], [0, 1500]);
 
@@ -41,11 +36,6 @@ export default function Index() {
 
   return (
     <>
-      {/* <Head>
-        <title>FrontLabs | About Page</title>
-        <meta name="description" content="lorem ipsum" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head> */}
       <section
         id="about"
         className="relative flex w-[80vw] mx-auto text-light

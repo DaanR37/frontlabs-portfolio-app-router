@@ -1,15 +1,8 @@
 "use client";
 import { useState, useLayoutEffect, useRef } from "react";
-// import Head from "next/head";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-/* Import Images */
-// import ProjectPic1 from "../../public/images/projects/afb_bbkk.webp";
-// import ProjectPic2 from "../../public/images/projects/afb_podcast.webp";
-// import ProjectPic3 from "../../public/images/projects/afb_postmark.webp";
-// import ProjectPic4 from "../../public/images/projects/afb_rtxp.webp";
 
 const projects = [
   {
@@ -42,48 +35,45 @@ export default function Index() {
 
   /* ALTERNATIVE SCROLL - PIN ON BOTH TITLES & IMAGES */
   // useLayoutEffect(() => {
-  //     gsap.registerPlugin(ScrollTrigger);
+  //   gsap.registerPlugin(ScrollTrigger);
+  //   const t1 = gsap.timeline();
 
-  //     const t1 = gsap.timeline();
+  //   // Scroll-trigger for pinning the imageContainer
+  //   t1.to(imageContainer.current, {
+  //     scrollTrigger: {
+  //       trigger: imageContainer.current,
+  //       start: "top-=100px",
+  //       // start: "top top",
+  //       // end: "bottom top",
+  //       end: document.body.offsetHeight - window.innerHeight - 50,
+  //       pin: true,
+  //     },
+  //   });
 
-  //     // Scroll-trigger for pinning the imageContainer
-  //     t1.to(imageContainer.current, {
-  //       scrollTrigger: {
-  //         trigger: imageContainer.current,
-  //         start: "top-=100px",
-  //         // start: "top top",
-  //         // end: "bottom top",
-  //         end: document.body.offsetHeight - window.innerHeight - 50,
-  //         pin: true,
-  //         // markers: true,
-  //       },
-  //     });
+  //   // Scroll-trigger for pinning the titlesContainer
+  //   t1.to(titlesContainer.current, {
+  //     scrollTrigger: {
+  //       trigger: titlesContainer.current,
+  //       start: "top-=100px top",
+  //       end: "top+=350px top", // Adjust for pinning duration
+  //       pin: true,
+  //     },
+  //   });
 
-  //     // Scroll-trigger for pinning the titlesContainer
-  //     t1.to(titlesContainer.current, {
-  //       scrollTrigger: {
-  //         trigger: titlesContainer.current,
-  //         start: "top-=100px top",
-  //         end: "top+=500px top", // Adjust for pinning duration
-  //         pin: true,
-  //         // markers: true,
-  //       },
-  //     });
+  //   // Apply the timeline to the ScrollTrigger
+  //   ScrollTrigger.create({
+  //     trigger: document.body,
+  //     animation: t1,
+  //     start: "top top",
+  //     end: "bottom bottom",
+  //     scrub: true,
+  //   });
 
-  //     // Apply the timeline to the ScrollTrigger
-  //     ScrollTrigger.create({
-  //       trigger: document.body,
-  //       animation: t1,
-  //       start: "top top",
-  //       end: "bottom bottom",
-  //       scrub: true,
-  //     });
-
-  //     return () => {
-  //       t1.kill();
-  //       ScrollTrigger.getAll().forEach((st) => st.kill()); // Kill all ScrollTriggers
-  //     };
-  //   }, []);
+  //   return () => {
+  //     t1.kill();
+  //     ScrollTrigger.getAll().forEach((st) => st.kill()); // Kill all ScrollTriggers
+  //   };
+  // }, []);
 
   /* INITIAL CODE - WORKS FINE BUT WITHOUT PIN ON TITLES */
   useLayoutEffect(() => {
@@ -103,11 +93,6 @@ export default function Index() {
 
   return (
     <>
-      {/* <Head>
-        <title>FrontLabs | Projects Page</title>
-        <meta name="description" content="lorem ipsum" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head> */}
       <section
         ref={container}
         id="projects"

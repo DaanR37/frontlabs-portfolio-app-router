@@ -20,8 +20,8 @@ const phrases = [
 export default function Index() {
   return (
     <div
-      className="relative w-full mt-[25rem] ml-[10vw]
-            3xl:mt-[32.5rem]
+      className="relative w-full ml-[10vw]
+            3xl:mt-[25rem]
             xl:w-[70vw] xl:mt-[45rem] xl:mx-auto 
             lg:w-[75vw]
             sm:w-[80vw] sm:mt-[35rem]"

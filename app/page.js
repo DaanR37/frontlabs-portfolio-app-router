@@ -5,45 +5,43 @@ import Biography from "./biography";
 import LocomotiveScrollSetup from './components/LocomotiveScrollSetup';
 
 const DynamicCursor = dynamic(() => import('./components/Reusablecomponents/Cursor'), {
-   ssr: false,
+  ssr: false,
 });
 const DynamicNavbar = dynamic(() => import('./navbar'), {
-   ssr: false,
+  ssr: false,
 });
 const DynamicHomepage = dynamic(() => import('./homepage'), {
-   ssr: false,
+  ssr: false,
 });
 const DynamicAbout = dynamic(() => import('./about'), {
-   ssr: false,
+  ssr: false,
 });
 const DynamicWork = dynamic(() => import('./work'), {
-   ssr: false,
+  ssr: false,
 });
 const DynamicArticles = dynamic(() => import('./articles'), {
-   ssr: false,
+  ssr: false,
 });
 const DynamicContact = dynamic(() => import('./contact'), {
-   ssr: false,
+  ssr: false,
 });
 const DynamicFooter = dynamic(() => import('./footer'), {
-   ssr: false,
+  ssr: false,
 });
 
 export default function Home() {
-   return (
-      <main className="relative w-full">
-         <React.StrictMode>
-            <LocomotiveScrollSetup />
-            <DynamicCursor />
-            <DynamicNavbar />
-            <DynamicHomepage />
-            <DynamicAbout />
-            <Biography />
-            <DynamicWork />
-            <DynamicArticles />
-            <DynamicContact />
-            <DynamicFooter />
-         </React.StrictMode>
-      </main>
-   )
+  return (
+    <main className="relative w-full">
+      <LocomotiveScrollSetup />
+      <DynamicCursor />
+      <DynamicNavbar />
+      <DynamicHomepage />
+      <DynamicAbout />
+      <Biography />
+      <DynamicWork />
+      <DynamicArticles />
+      <DynamicContact />
+      <DynamicFooter />
+    </main>
+  )
 };

@@ -3,71 +3,67 @@ import { useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "@mui/material";
 import { useTransform, useScroll, motion } from "framer-motion";
 import Image from "next/image";
-// import Head from "next/head";
 import Lenis from "@studio-freight/lenis";
 import styles from "./style.module.scss";
 
 const images = [
   {
-    src: "articles/afb_react.webp",
-    title: "Hey Hoi",
+    src: "articles/afb_chatgpt.webp",
+    title: "AI in classrooms?",
     link:
-      "https://medium.com/@seun.thedeveloper/the-easiest-way-to-handle-animations-in-react-nextjs-5934a689a010",
+      "https://techcrunch.com/2023/08/31/openai-angles-to-put-chatgpt-in-classrooms-with-special-tutor-prompts/",
   },
   {
     src: "articles/afb_tips.webp",
-    title: "Hey ha hoi",
+    title: "Tips for Seniors",
     link:
       "https://medium.com/@Evelyn.Taylor/10-expert-performance-tips-every-senior-js-react-developer-should-know-f8a78eebcb2e",
   },
   {
-    src: "articles/afb_chatgpt.webp",
-    title: "Hey ha hoi",
-    link:
-      "https://techcrunch.com/2023/08/31/openai-angles-to-put-chatgpt-in-classrooms-with-special-tutor-prompts/",
+    src: "articles/afb_toptal.webp",
+    title: "Next vs React ",
+    link: "https://www.toptal.com/next-js/next-js-vs-react",
+  },
+  {
+    src: "articles/afb_binarynumbers.webp",
+    title: "Level UP!",
+    link: "https://www.hackerrank.com/blog/how-to-upskill-your-tech-team/",
   },
   {
     src: "articles/afb_react.webp",
-    title: "Hey ha hoi",
+    title: "Animations with React",
     link:
       "https://medium.com/@seun.thedeveloper/the-easiest-way-to-handle-animations-in-react-nextjs-5934a689a010",
   },
   {
-    src: "articles/afb_tips.webp",
-    title: "Hey ha hoi",
-    link:
-      "https://medium.com/@Evelyn.Taylor/10-expert-performance-tips-every-senior-js-react-developer-should-know-f8a78eebcb2e",
+    src: "articles/afb_machinelearning.webp",
+    title: "Machine Learning",
+    link: "https://www.coursera.org/articles/what-is-machine-learning",
   },
-  {
-    src: "articles/afb_chatgpt.webp",
-    title: "Hey ha hoi",
-    link:
-      "https://techcrunch.com/2023/08/31/openai-angles-to-put-chatgpt-in-classrooms-with-special-tutor-prompts/",
-  },
-  {
-    src: "articles/afb_react.webp",
-    title: "Hey ha hoi",
-    link:
-      "https://medium.com/@seun.thedeveloper/the-easiest-way-to-handle-animations-in-react-nextjs-5934a689a010",
-  },
-  {
-    src: "articles/afb_tips.webp",
-    title: "Hey ha hoi",
-    link:
-      "https://medium.com/@Evelyn.Taylor/10-expert-performance-tips-every-senior-js-react-developer-should-know-f8a78eebcb2e",
-  },
-  {
-    src: "articles/afb_chatgpt.webp",
-    title: "Hey ha hoi",
-    link:
-      "https://techcrunch.com/2023/08/31/openai-angles-to-put-chatgpt-in-classrooms-with-special-tutor-prompts/",
-  },
-  {
-    src: "articles/afb_chatgpt.webp",
-    title: "Hey ha hoi",
-    link:
-      "https://techcrunch.com/2023/08/31/openai-angles-to-put-chatgpt-in-classrooms-with-special-tutor-prompts/",
-  },
+  //  {
+  //    src: "articles/afb_react.webp",
+  //    title: "Hey ha hoi",
+  //    link:
+  //      "https://medium.com/@seun.thedeveloper/the-easiest-way-to-handle-animations-in-react-nextjs-5934a689a010",
+  //  },
+  //  {
+  //    src: "articles/afb_tips.webp",
+  //    title: "Hey ha hoi",
+  //    link:
+  //      "https://medium.com/@Evelyn.Taylor/10-expert-performance-tips-every-senior-js-react-developer-should-know-f8a78eebcb2e",
+  //  },
+  //  {
+  //    src: "articles/afb_chatgpt.webp",
+  //    title: "Hey ha hoi",
+  //    link:
+  //      "https://techcrunch.com/2023/08/31/openai-angles-to-put-chatgpt-in-classrooms-with-special-tutor-prompts/",
+  //  },
+  //  {
+  //    src: "articles/afb_chatgpt.webp",
+  //    title: "Hey ha hoi",
+  //    link:
+  //      "https://techcrunch.com/2023/08/31/openai-angles-to-put-chatgpt-in-classrooms-with-special-tutor-prompts/",
+  //  },
 ];
 
 export default function Index() {
@@ -114,12 +110,6 @@ export default function Index() {
 
   return (
     <>
-      {/* <Head>
-        <title>FrontLabs | Projects Page</title>
-        <meta name="description" content="lorem ipsum" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head> */}
-
       <section id="articles" className={styles.main}>
         <div className={`${styles.spacer} h-[25vh]`}></div>
         <div
