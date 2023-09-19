@@ -253,7 +253,7 @@ export default function Index() {
                         md:w-6"
                     whileHover={{ y: -2 }}
                     whileTap={{ scale: 0.9 }}
-                  >
+                >
                     <InstagramIcon />
                   </motion.a>
                 </div>

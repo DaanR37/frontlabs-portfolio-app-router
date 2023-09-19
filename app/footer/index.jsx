@@ -32,9 +32,11 @@ export default function Index() {
   return (
     <section
       id="footer"
-      className="relative w-full min-h-[100vh] flex justify-center items-center 
+      className="relative w-full min-h-[110vh] flex justify-center items-center 
             mx-auto text-light overflow-x-hidden bg-[black]
-            lg:w-[95vw]"
+            pt-14
+            lg:w-[95vw]
+            md:pt-14"
     >
       {/* Logo FrontLabs */}
       <motion.div
@@ -42,16 +44,15 @@ export default function Index() {
         whileInView={{ y: 0 }}
         viewport={{ once: false }}
         transition={{
-          duration: 1,
+          duration: 0.75,
         }}
         className="relative flex justify-center 
             mx-auto mb-24 
-            3xl:w-[310px] 3xl:h-[310px]
+            3xl:w-[280px] 3xl:h-[280px]
             xl:w-[250px] xl:h-[250px]
             md:w-[225px] md:h-[225px]
             xs:w-[200px] xs:h-[200px]"
       >
-        {/* w-1/2 h-auto */}
         <Image
           src={FrontlabsLogoFooter}
           alt="logo frontlabs amsterdam footer"
@@ -73,7 +74,6 @@ export default function Index() {
           }}
           className="mx-auto"
         />
-        {/* w-auto w-full max-w-[25vw] ??? ^^ */}
       </motion.div>
 
       {/* HomeButton */}
