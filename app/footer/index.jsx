@@ -32,7 +32,7 @@ export default function Index() {
   return (
     <section
       id="footer"
-      className="relative w-full min-h-[110vh] flex justify-center items-center 
+      className="relative w-full min-h-[100vh] flex justify-center items-center 
             mx-auto text-light overflow-x-hidden bg-[black]
             pt-14
             lg:w-[95vw]
@@ -40,7 +40,7 @@ export default function Index() {
     >
       {/* Logo FrontLabs */}
       <motion.div
-        initial={{ y: "-300px" }}
+        initial={{ y: "300px" }}
         whileInView={{ y: 0 }}
         viewport={{ once: false }}
         transition={{
