@@ -1,6 +1,6 @@
 "use client";
 import { useState, useLayoutEffect, useRef } from "react";
-import Head from "next/head";
+// import Head from "next/head";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";

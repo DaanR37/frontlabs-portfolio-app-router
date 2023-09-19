@@ -1,3 +1,4 @@
+import React from 'react';
 import "./globals.scss";
 import { roboto_flex } from "./fonts";
 import type { Metadata } from "next";
@@ -7,11 +8,15 @@ export const metadata: Metadata = {
   title: "Frontlabs Portfolio | Developer React and NextJS",
   description:
     "Frontlabs helps you creating scalable and custom made websites and portfolio pages",
+  authors: { name: 'Daan Roelofs', url: 'https://frontlabs.nl' },
+  applicationName: 'Frontlabs Developer Front-end and ReactJS',
+  keywords: ['Next.js', 'React', 'JavaScript', 'Css', 'front-end', 'developer'],
   openGraph: {
-    title: "Frontlabs",
-    description: "Heel mooi",
+    title: "Frontlabs Portfolio | Developer React and NextJS",
+    description: "Frontlabs helps you creating scalable and custom made websites and portfolio pages",
     url: "https://frontlabs.nl",
     siteName: "Frontlabs Developer Front-end and ReactJS",
+    type: "website",
     images: [
       {
         // url: "/opengraph-image.png",
@@ -20,6 +25,15 @@ export const metadata: Metadata = {
         height: 450,
       },
     ],
+  },
+  twitter: {
+   card: "summary_large_image",
+   title: "Frontlabs Portfolio | Developer React and NextJS",
+   description:
+     "Frontlabs helps you creating scalable and custom made websites and portfolio pages",
+   images: [
+      "https://frontlabs.nl/opengraph-image.png",
+   ],
   },
   robots: {
     index: false,
@@ -38,8 +52,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={roboto_flex.className}>{children}</body>
-    </html>
+      <html lang="en">
+         <body className={roboto_flex.className}>{children}</body>
+      </html>
   );
 }

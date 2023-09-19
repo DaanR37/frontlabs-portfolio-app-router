@@ -1,3 +1,4 @@
+"use client"
 import React from 'react';
 import dynamic from 'next/dynamic';
 import Biography from "./biography";
@@ -30,8 +31,8 @@ const DynamicFooter = dynamic(() => import('./footer'), {
 
 export default function Home() {
    return (
-      <>
-         <main className="relative w-full">
+      <main className="relative w-full">
+         <React.StrictMode>
             <LocomotiveScrollSetup />
             <DynamicCursor />
             <DynamicNavbar />
@@ -42,7 +43,7 @@ export default function Home() {
             <DynamicArticles />
             <DynamicContact />
             <DynamicFooter />
-         </main>
-      </>
+         </React.StrictMode>
+      </main>
    )
 };

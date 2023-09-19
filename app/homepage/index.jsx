@@ -1,7 +1,7 @@
-"use client";
-// import { createClient } from 'contentful';
+// "use client";
+import { createClient } from "contentful";
 import Image from "next/image";
-import Head from "next/head";
+// import Head from "next/head";
 import { motion } from "framer-motion";
 
 /* Import components */
@@ -15,7 +15,13 @@ import { useMediaQuery } from "@mui/material";
 /* Import Images */
 import FrontlabsLogo from "../../public/images/frontlabslogo-alternative-logos/logo-no-background-kopie.webp";
 
-export default function Index({ videos }) {
+// const client = createClient({
+//   space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
+//   accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_KEY,
+// });
+
+export default function Index( posts ) {
+{console.log(posts)}
   const videoUrl = process.env.NEXT_PUBLIC_VIDEO_URL;
   const colors = ["#7893ffe2", "#ff4f2cce", "#ff9372e1", "#ff91ffc7"];
 
@@ -237,3 +243,20 @@ export default function Index({ videos }) {
     </>
   );
 }
+
+// export async function getStaticProps() {
+//   const client = createClient({
+//     space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
+//     accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_KEY,
+//   });
+
+//   const res = await client.getEntries({ content_type: "video" });
+
+//   return {
+//     props: {
+//       posts: res,
+//     },
+//    //  revalidate: 1,
+//   };
+// }
+// .items[0].fields.file.url

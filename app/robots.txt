@@ -3,4 +3,4 @@ Allow: /
 Allow: /api/og/*
 Disallow: /private/
 
-Sitemap: https://acme.com/sitemap.xml
+Sitemap: https://frontlabs.nl/sitemap.xml

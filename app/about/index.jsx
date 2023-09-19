@@ -2,7 +2,7 @@
 import { useLayoutEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
-import Head from "next/head";
+// import Head from "next/head";
 import Image from "next/image";
 import styles from "./style.module.scss";
 

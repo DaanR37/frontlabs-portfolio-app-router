@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "@mui/material";
 import { useTransform, useScroll, motion } from "framer-motion";
 import Image from "next/image";
-import Head from "next/head";
+// import Head from "next/head";
 import Lenis from "@studio-freight/lenis";
 import styles from "./style.module.scss";
 
