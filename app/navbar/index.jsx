@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 import { useState } from "react";
 import { useRef } from "react";
 import { motion } from "framer-motion";
@@ -17,6 +17,7 @@ import {
 } from "../components/Reusablecomponents/Icons";
 import useThemeSwitcher from "../components/hooks/useThemeSwitcher";
 import styles from "./style.module.scss";
+
 
 /* CUSTOMLINK */
 const CustomLink = ({ title, className = "", onClick }) => {
@@ -162,6 +163,7 @@ export default function Index() {
           <motion.a
             href="https://www.linkedin.com/in/daan-roelofs-b7021220/"
             target={"_blank"}
+            rel="noreferrer"
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.9 }}
             className="w-8 mr-3"
@@ -171,6 +173,7 @@ export default function Index() {
           <motion.a
             href="https://github.com/DaanR37"
             target={"_blank"}
+            rel="noreferrer"
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.9 }}
             className="w-8"
@@ -223,7 +226,7 @@ export default function Index() {
               </li>
               <li>
                 <CustomMobileLink
-                  onClick={() => {
+                    onClick={() => {
                     handleScroll(idsToScroll[1]);
                     handleClick();
                   }}
@@ -268,6 +271,7 @@ export default function Index() {
             <motion.a
               href="https://www.linkedin.com/in/daan-roelofs-b7021220/"
               target={"_blank"}
+              rel="noreferrer"
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.9 }}
               className="text-light dark:text-dark
@@ -280,6 +284,7 @@ export default function Index() {
             <motion.a
               href="https://github.com/DaanR37"
               target={"_blank"}
+              rel="noreferrer"
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.9 }}
               className="text-light dark:text-dark

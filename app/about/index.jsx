@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 import { useLayoutEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
@@ -95,7 +95,6 @@ export default function Index() {
                     objectFit: "cover",
                     width: "100%",
                     borderRadius: "5px",
-                    // height: "auto",
                   }}
                   className="blur-[3px] mx-auto"
                 />

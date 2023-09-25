@@ -1,7 +1,5 @@
 import { RoughNotation } from "react-rough-notation";
-import { useContext } from "react"; // Import the necessary context hook
-
-
+// import { useContext } from "react"; // Import the necessary context hook
 
 const RainbowHighlight = ({ color, children }) => {
 

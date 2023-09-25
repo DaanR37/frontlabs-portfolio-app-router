@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 import { useState, useLayoutEffect, useRef } from "react";
 import Image from "next/image";
 import gsap from "gsap";

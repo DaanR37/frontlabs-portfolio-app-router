@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 import { useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "@mui/material";
 import { useTransform, useScroll, motion } from "framer-motion";
