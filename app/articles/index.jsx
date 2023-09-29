@@ -114,8 +114,10 @@ export default function Index() {
         <div className={`${styles.spacer} h-[25vh]`}></div>
         <div
           ref={gallery}
-          className={`${styles.gallery} relative flex h-[550vh] p-[1.5vw] 
-        box-border overflow-hidden gap-[1.5vw] sm:h-[515vh] bg-[black]`}
+          className={`${styles.gallery} relative 
+              flex box-border overflow-hidden gap-[1.5vw] bg-[black]
+              h-[450vh] p-[1.5vw] 
+              sm:h-[515vh]`}
         >
           {isExtraSmallScreen ? (
             <>
@@ -142,36 +144,48 @@ export default function Index() {
 const Column = ({ y }) => {
   return (
     <motion.div
-      className={`${styles.column} relative flex flex-col h-full w-1/3 min-w-[250px] 
-      md:w-1/2 md:min-w-[200px] xs:w-full xs:min-w-[150px] gap-[1vw]`}
+      className={`${styles.column} relative 
+          flex flex-col gap-[1vw]
+          h-full w-1/3 min-w-[250px] 
+          md:w-1/2 md:min-w-[200px] 
+          xs:w-full xs:min-w-[150px]`}
       style={{ y }}
     >
       {images.map((image, i) => {
         return (
           <div
             key={i}
-            className={`${styles.imageContainer} relative h-full w-auto min-h-[500px] 
-            rounded-[0.5vw] overflow-hidden`}
+            className={`${styles.imageContainer} relative 
+                w-auto h-full min-h-[500px]
+                rounded-[0.5vw] overflow-hidden`}
           >
-            <a href={image.link} target={"_blank"} className="h-full w-auto">
+            {/* w-auto ^^ ?? */}
+            <a href={image.link} target={"_blank"} className="">
               <Image
                 src={`/images/${image.src}`}
                 alt={`Image ${i}`}
-                priority
+                priority={true}
                 rel="preload"
                 as="image"
-                fill={true}
-                // width={500}
-                // height={500}
+                // width={350}
+                // height={350}
+                fill
                 sizes="(max-width: 768px) 100vw,
                 (max-width: 1535px) 50vw,
                 50vw"
-                className="!relative object-cover w-auto"
+                style={{
+                  objectFit: "cover",
+                  width: "100%",
+                  borderRadius: "5px",
+                }}
+                className=""
               />
-              {/* !relative => Needed to let it work with FireFox */}
+              {/* !relative ?? ^^ => Needed to let it work with FireFox */}
               <div
-                className={`${styles.hoverContainer} absolute top-0 left-0 opacity-0 
-                bg-[rgba(0,0,0,0.4)] transition-opacity duration-500`}
+                className={`${styles.hoverContainer} absolute 
+                    opacity-0 bg-[rgba(0,0,0,0.4)] 
+                    transition-opacity duration-500
+                    top-0 left-0`}
               >
                 <span aria-hidden="true">{image.title}</span>
               </div>

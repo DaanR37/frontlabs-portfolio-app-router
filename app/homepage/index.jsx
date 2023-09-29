@@ -12,11 +12,13 @@ import HireMe from "../components/Reusablecomponents/HireMe";
 
 /* Import Images */
 import FrontlabsLogo from "../../public/images/frontlabslogo-alternative-logos/logo-no-background-kopie.webp";
+// import { DownloadIcon } from "@/components/Reusablecomponents/Icons";
+import DownloadIcon from "../../public/images/svg/download.svg";
 
 export default function Index() {
   const videoUrl = process.env.NEXT_PUBLIC_VIDEO_URL;
   const colors = ["#f5f5f5", "#000000", "#f5f5f5", "#000000"];
-  const isSmallScreen = useMediaQuery("(max-width: 1023px)")
+  const isSmallScreen = useMediaQuery("(max-width: 1023px)");
 
   // const currentThemeClass = "dark";
 
@@ -155,7 +157,9 @@ export default function Index() {
             />
 
             <RoughNotationGroup show={true}>
-              <RainbowHighlight color={colors[0]} order="1"> {/* themeClass={currentThemeClass} */}
+              <RainbowHighlight color={colors[0]} order="1">
+                {" "}
+                {/* themeClass={currentThemeClass} */}
                 <h1
                   className="text-dark font-medium 
                      p-1
@@ -211,16 +215,22 @@ export default function Index() {
                 href="/CVDaanRoelofs2023-2.pdf"
                 download={true}
                 target={"_blank"}
-                className="flex items-center rounded font-medium text-dark 
+                className="flex justify-between items-center rounded font-medium text-dark 
                      bg-customThree/[0.85] hover:bg-customThree/100 transition-all 
                      duration-[300ms] ease-in-out z-20
-                     py-[6px] px-6 
+                     py-2 px-4 
                      text-xl
-                     lg:text-lg lg:py-1 lg:px-4
-                     md:text-base 
+                     lg:text-lg lg:py-2 lg:px-2
+                     md:text-base
                      sm:text-sm"
               >
-                CV
+                <h1 className="flex items-center">CV</h1>
+                <div
+                  className="flex items-center 
+                    max-w-[18.5px] ml-2"
+                >
+                  <Image src={DownloadIcon} alt="" />
+                </div>
               </a>
             </div>
           </div>

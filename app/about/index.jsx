@@ -156,7 +156,6 @@ export default function Index() {
                     objectFit: "cover",
                     width: "100%",
                     borderRadius: "5px",
-                    // height: "auto",
                   }}
                   className="blur-[4px]"
                 />
@@ -183,7 +182,6 @@ export default function Index() {
                     objectFit: "cover",
                     width: "100%",
                     borderRadius: "5px",
-                    //  height: "auto",
                   }}
                   data-scroll
                   data-scroll-speed="0.2"
@@ -214,7 +212,6 @@ export default function Index() {
                     objectFit: "cover",
                     width: "100%",
                     borderRadius: "5px",
-                    // height: "auto",
                   }}
                   data-scroll
                   data-scroll-speed="-0.3"
