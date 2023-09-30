@@ -18,7 +18,6 @@ import {
 import useThemeSwitcher from "../components/hooks/useThemeSwitcher";
 import styles from "./style.module.scss";
 
-
 /* CUSTOMLINK */
 const CustomLink = ({ title, className = "", onClick }) => {
   return (
@@ -83,8 +82,11 @@ export default function Index() {
       id="navbar"
       className="absolute w-full flex items-start justify-between 
             font-semibold uppercase tracking-wide text-[white] 
-            px-16 py-8 
-            md:px-12 
+            9xl:px-28 9xl:py-28 
+            7xl:px-24 7xl:py-20 
+            5xl:px-20 5xl:py-16 
+            3xl:py-12 
+            2xl:px-12 2xl:py-8 
             sm:px-8"
     >
       {/* Hamburger Button Mobile Logic */}
@@ -123,33 +125,59 @@ export default function Index() {
         >
           <ul
             className={`${roboto.className} flex justify-between items-center list-none 
-                flex-wrap text-[22px] text-light font-medium 
-                xl:text-[24px]`}
+                flex-wrap text-light font-medium 
+                9xl:text-7xl
+                8xl:text-6xl
+                7xl:text-5xl
+                6xl:text-4xl
+                4xl:text-3xl
+                2xl:text-xl
+                xl:text-xl`}
           >
             <CustomLink
               onClick={() => handleScroll(idsToScroll[0])}
               title="Home"
-              className={`${styles.textShadow} mr-4 tracking-wide`}
+              className={`${styles.textShadow} 
+                  tracking-wide
+                  9xl:mr-4
+                  7xl:mr-3
+                  4xl:mr-2`}
             />
             <CustomLink
               onClick={() => handleScroll(idsToScroll[1])}
               title="About"
-              className={`${styles.textShadow} mr-4 tracking-wide`}
+              className={`${styles.textShadow} 
+                  mr-4 tracking-wide
+                  9xl:mx-4
+                  7xl:mx-3
+                  4xl:mx-2`}
             />
             <CustomLink
               onClick={() => handleScroll(idsToScroll[2])}
               title="Projects"
-              className={`${styles.textShadow} mr-4 tracking-wide`}
+              className={`${styles.textShadow} 
+                  mr-4 tracking-wide
+                  9xl:mx-4
+                  7xl:mx-3
+                  4xl:mx-2`}
             />
             <CustomLink
               onClick={() => handleScroll(idsToScroll[3])}
               title="Articles"
-              className={`${styles.textShadow} mr-4 tracking-wide`}
+              className={`${styles.textShadow} 
+                  mr-4 tracking-wide
+                  9xl:mx-4
+                  7xl:mx-3
+                  4xl:mx-2`}
             />
             <CustomLink
               onClick={() => handleScroll(idsToScroll[4])}
               title="Contact"
-              className={`${styles.textShadow} mr-4 tracking-wide`}
+              className={`${styles.textShadow} 
+                  mr-4 tracking-wide
+                  9xl:ml-4
+                  7xl:ml-3
+                  4xl:ml-2`}
             />
           </ul>
         </motion.nav>
@@ -158,7 +186,8 @@ export default function Index() {
           initial={{ y: -50 }}
           whileInView={{ y: 0 }}
           transition={{ duration: 0.45, type: "spring" }}
-          className="flex items-center justify-center flex-wrap"
+          className="
+              flex items-center justify-center flex-wrap"
         >
           <motion.a
             href="https://www.linkedin.com/in/daan-roelofs-b7021220/"
@@ -166,7 +195,13 @@ export default function Index() {
             rel="noreferrer"
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.9 }}
-            className="w-8 mr-3"
+            className="
+                9xl:w-28 9xl:mr-8
+                8xl:w-24 8xl:mr-6
+                6xl:w-20
+                5xl:w-16
+                3xl:w-12 3xl:mr-3
+                2xl:w-8"
           >
             <LinkedInIcon />
           </motion.a>
@@ -176,13 +211,26 @@ export default function Index() {
             rel="noreferrer"
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.9 }}
-            className="w-8"
+            className="
+                9xl:w-28
+                8xl:w-24
+                6xl:w-20
+                5xl:w-16
+                3xl:w-12
+                2xl:w-8"
           >
             <GithubIcon />
           </motion.a>
           <button
             onClick={() => setMode(mode === "light" ? "dark" : "light")}
-            className={`ml-3 flex items-center justify-center rounded-full p-1
+            className={`
+                p-1 flex items-center justify-center rounded-full
+                9xl:w-28 9xl:ml-8
+                8xl:w-24 8xl:ml-6
+                6xl:w-20
+                5xl:w-16
+                3xl:w-12 3xl:ml-3
+                2xl:w-8
                     ${
                       mode === "light"
                         ? "bg-dark text-light"
@@ -226,7 +274,7 @@ export default function Index() {
               </li>
               <li>
                 <CustomMobileLink
-                    onClick={() => {
+                  onClick={() => {
                     handleScroll(idsToScroll[1]);
                     handleClick();
                   }}

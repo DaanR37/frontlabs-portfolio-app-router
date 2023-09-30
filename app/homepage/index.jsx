@@ -26,7 +26,8 @@ export default function Index() {
     <>
       <section
         id="home"
-        className="relative w-full h-[100vh] flex items-center"
+        className="relative 
+            w-full h-[100vh] flex items-center"
       >
         {/* Importing Video */}
         {videoUrl && (
@@ -41,20 +42,23 @@ export default function Index() {
         )}
         {/* Filter Gradient */}
         <div
-          className="absolute top-0 left-0 inset-[25px] ring-1 ring-blue-500/50 
+          className="absolute 
+            top-0 left-0 inset-[25px] ring-1 ring-blue-500/50 
             bg-black opacity-70 rounded-br-[250px] 
+            9xl:rounded-br-[250px]
             lg:rounded-br-[100px]"
         />
         {/* Container Logo and Animated Text section */}
         <div
           className="relative flex w-full items-center justify-between  
+            9xl:mx-12
+            7xl:mx-8
             3xl:mx-4
             2xl:mx-0
             lg:flex-col lg:justify-center lg:mx-14 lg:px-6 lg:mt-[7rem] 
-            md:mx-8 md:mt-[5rem] 
+            md:mx-20 md:mt-[5rem] 
             sm:mx-2 sm:mt-[4rem] 
-            xs:mx-0
-            "
+            xs:mx-0"
         >
           {/* Image Component */}
           {isSmallScreen ? (
@@ -76,9 +80,9 @@ export default function Index() {
                 ease: "easeInOut",
               }}
               className="relative flex justify-center mx-auto
-                  lg:w-[350px] lg:h-[350px]
-                  sm:w-[300px] sm:h-[300px]
-                  xs:w-[225px] xs:h-[225px]"
+                  w-1/2
+                  md:w-[60%]
+                  sm:w-[55%]"
             >
               <Image
                 src={FrontlabsLogo}
@@ -86,20 +90,18 @@ export default function Index() {
                 priority={true}
                 rel="preload"
                 as="image"
-                //  placeholder="blur"
-                //  quality={100}
+                width={250}
+                height={250}
+                // fill
                 sizes="(max-width: 768px) 100vw,
-                   (max-width: 1535px) 50vw,
-                 50vw"
-                fill
+                (max-width: 1535px) 50vw,
+                50vw"
                 style={{
                   objectFit: "cover",
                   width: "100%",
-                  // height: "auto",
                   opacity: "0.9",
                   filter: "invert(1)",
                 }}
-                className="ml-[6rem] lg:inline-block lg:mx-auto"
               />
             </motion.div>
           ) : (
@@ -115,24 +117,31 @@ export default function Index() {
                 ease: "easeInOut",
               }}
               className="relative flex justify-center mx-auto
-                  3xl:w-[350px] 3xl:h-[350px]"
+                  w-1/4
+                  xl:w-1/3
+                  "
             >
+              {/* 9xl:w-[1100px] 9xl:h-[1100px] 8xl:w-[950px] 8xl:h-[950px]
+              7xl:w-[800px] 7xl:h-[800px] 6xl:w-[750px] 6xl:h-[750px]
+              5xl:w-[650px] 5xl:h-[650px] 4xl:w-[600px] 4xl:h-[600px]
+              3xl:w-[500px] 3xl:h-[500px] 2xl:w-[400px] 2xl:h-[400px]
+              xl:w-[350px] xl:h-[350px] lg:w-[300px] lg:h-[300px] md:w-[250px]
+              md:h-[250px] */}
               <Image
                 src={FrontlabsLogo}
                 alt="logo frontlabs amsterdam home page"
                 priority={true}
                 rel="preload"
                 as="image"
-                //  placeholder="blur"
-                //  quality={100}
+                width={250}
+                height={250}
+                // fill
                 sizes="(max-width: 768px) 100vw,
                    (max-width: 1535px) 50vw,
                  50vw"
-                fill
                 style={{
                   objectFit: "cover",
                   width: "100%",
-                  // height: "auto",
                   opacity: "0.9",
                   filter: "invert(1)",
                 }}
@@ -144,7 +153,10 @@ export default function Index() {
           )}
           {/* Container Animated Text Column with key words */}
           <div
-            className="w-1/2 flex flex-col items-start self-center 
+            className="flex flex-col items-start self-center
+                  w-1/2
+                  9xl:px-44
+                  8xl:px-36
                   3xl:px-32
                   2xl:px-24
                   xl:pr-0 xl:pl-[3.5rem] 
@@ -158,11 +170,13 @@ export default function Index() {
 
             <RoughNotationGroup show={true}>
               <RainbowHighlight color={colors[0]} order="1">
-                {" "}
-                {/* themeClass={currentThemeClass} */}
                 <h1
                   className="text-dark font-medium 
                      p-1
+                     9xl:text-8xl
+                     8xl:text-7xl
+                     6xl:text-6xl
+                     5xl:text-5xl
                      3xl:text-3xl
                      lg:hidden"
                 >
@@ -174,6 +188,10 @@ export default function Index() {
                 <h1
                   className="text-light font-medium 
                      p-1
+                     9xl:text-8xl
+                     8xl:text-7xl
+                     6xl:text-6xl 
+                     5xl:text-5xl 
                      3xl:text-3xl 
                      lg:hidden"
                 >
@@ -185,6 +203,10 @@ export default function Index() {
                 <h1
                   className="text-dark font-medium 
                      p-1
+                     9xl:text-8xl
+                     8xl:text-7xl
+                     6xl:text-6xl
+                     5xl:text-5xl
                      3xl:text-3xl 
                      lg:hidden"
                 >
@@ -196,6 +218,10 @@ export default function Index() {
                 <h1
                   className="text-light font-medium 
                      p-1
+                     9xl:text-8xl
+                     8xl:text-7xl
+                     6xl:text-6xl
+                     5xl:text-5xl
                      3xl:text-3xl 
                      lg:hidden"
                 >
@@ -206,7 +232,12 @@ export default function Index() {
 
             {/* Button CV */}
             <div
-              className="flex items-center self-start mt-4 
+              className="flex items-center self-start 
+                  mt-4 
+                  9xl:mt-16
+                  8xl:mt-12
+                  6xl:mt-8
+                  5xl:mt-6
                   lg:self-center"
             >
               <a
@@ -218,9 +249,15 @@ export default function Index() {
                 className="flex justify-between items-center rounded font-medium text-dark 
                      bg-customThree/[0.85] hover:bg-customThree/100 transition-all 
                      duration-[300ms] ease-in-out z-20
-                     py-2 px-4 
-                     text-xl
-                     lg:text-lg lg:py-2 lg:px-2
+                     py-3 px-5 
+                     9xl:text-6xl
+                     8xl:text-5xl
+                     6xl:text-4xl
+                     5xl:text-3xl
+                     4xl:text-2xl
+                     3xl:text-xl
+                     2xl:text-lg 2xl:py-2 2xl:px-4
+                     lg:px-2
                      md:text-base
                      sm:text-sm"
               >

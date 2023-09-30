@@ -29,13 +29,19 @@ const singleWord = {
 
 export default function AnimatedText({ text, className = "" }) {
    return (
-      <div className="flex w-full items-center justify-center overflow-hidden mx-auto  
+      <div className="flex items-center justify-center overflow-hidden
+            w-full mx-auto  
             py-2 
             lg:px-6 
             md:px-4 
             sm:py-0 sm:px-8 
             xs:px-4">
-         <motion.h1 className={`${className} inline-block w-full text-light text-left font-semibold 
+         <motion.h1 className={`${className} inline-block 
+               w-full text-left text-light font-semibold 
+               9xl:text-9xl
+               7xl:text-8xl
+               6xl:text-7xl
+               4xl:text-6xl
                3xl:text-5xl
                2xl:text-4xl 
                xl:text-[2rem] xl:!leading-[1.8rem] 

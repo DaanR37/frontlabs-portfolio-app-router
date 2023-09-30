@@ -153,7 +153,6 @@ export default function Index() {
                 objectFit: "cover",
                 width: "100%",
                 borderRadius: "5px",
-                // height: "auto",
               }}
               className=""
             />
