@@ -5,6 +5,8 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useMediaQuery } from "@mui/material";
 
+import ScrollAnimation from "../components/ScrollAnimation";
+
 const projects = [
   {
     src: "projects/afb_bbkk.webp",
@@ -33,160 +35,71 @@ const projects = [
   },
 ];
 
-// Define your screen sizes and corresponding start/end values
-const screenSizes = {
-  5120: {
-    startImage: "top-=400px",
-    endImage: "bottom+=4500px bottom",
-    startTitles: "top-=375px",
-    endTitles: "top+=400px",
-  },
-  4096: {
-    startImage: "top-=350px",
-    endImage: "bottom+=3750px bottom",
-    startTitles: "top-=375px",
-    endTitles: "top+=400px",
-  },
-  3072: {
-    startImage: "top-=350px",
-    endImage: "bottom+=3250px bottom",
-    startTitles: "top-=325px",
-    endTitles: "top+=400px",
-  },
-  2880: {
-    startImage: "top-=350px",
-    endImage: "bottom+=2750px bottom",
-    startTitles: "top-=325px",
-    endTitles: "top+=400px",
-  },
-  2560: {
-    startImage: "top-=350px",
-    endImage: "bottom+=2500px bottom",
-    startTitles: "top-=325px",
-    endTitles: "top+=400px",
-  },
-  2304: {
-    startImage: "top-=350px",
-    endImage: "bottom+=2350px bottom",
-    startTitles: "top-=325px",
-    endTitles: "top+=400px",
-  },
-  1921: {
-    startImage: "top-=150px",
-    endImage: "bottom+=1750px bottom",
-    startTitles: "top-=175px",
-    endTitles: "top+=400px",
-  },
-  1535: {
-    startImage: "top-=100px",
-    endImage: "bottom+=1500px bottom",
-    startTitles: "top-=75px",
-    endTitles: "top+=400px",
-  },
-};
-
-// Default values for screens smaller than 4096px
-const defaultValues = {
-  startImage: "top-=100px",
-  endImage: "bottom+=1500px bottom",
-  startTitles: "top-=75px",
-  endTitles: "top+=400px",
-};
-
 export default function Index() {
   const [selectedProject, setSelectedProject] = useState(0);
   const container = useRef(null);
   const imageContainer = useRef(null);
   const titlesContainer = useRef(null);
 
-  /* useMediaQuery for 1st layoutEffect - trigger only at Image */
-  // const isSmallScreen = useMediaQuery("(max-width: 479px)");
+  // Define your screen sizes and corresponding start/end values
+  const screenSizes = {
+    5120: {
+      startImage: "top-=400px",
+      endImage: "bottom+=4500px bottom",
+      startTitles: "top-=375px",
+      endTitles: "top+=400px",
+    },
+    4096: {
+      startImage: "top-=350px",
+      endImage: "bottom+=3750px bottom",
+      startTitles: "top-=375px",
+      endTitles: "top+=400px",
+    },
+    3072: {
+      startImage: "top-=350px",
+      endImage: "bottom+=3250px bottom",
+      startTitles: "top-=325px",
+      endTitles: "top+=400px",
+    },
+    2880: {
+      startImage: "top-=350px",
+      endImage: "bottom+=2750px bottom",
+      startTitles: "top-=325px",
+      endTitles: "top+=400px",
+    },
+    2560: {
+      startImage: "top-=350px",
+      endImage: "bottom+=2500px bottom",
+      startTitles: "top-=325px",
+      endTitles: "top+=400px",
+    },
+    2304: {
+      startImage: "top-=350px",
+      endImage: "bottom+=2350px bottom",
+      startTitles: "top-=305px",
+      endTitles: "top+=400px",
+    },
+    1921: {
+      startImage: "top-=150px",
+      endImage: "bottom+=1750px bottom",
+      startTitles: "top-=175px",
+      endTitles: "top+=400px",
+    },
+    1440: {
+      startImage: "top-=100px",
+      endImage: "bottom+=1500px bottom",
+      startTitles: "top-=75px",
+      endTitles: "top+=400px",
+    },
+  };
 
-  const [startEndValues, setStartEndValues] = useState(defaultValues);
-
-  useEffect(() => {
-    const updateStartEndValues = () => {
-      // Find the highest screen size that's less than or equal to the window width
-      const screenWidth = Object.keys(screenSizes)
-        .sort((a, b) => b - a)
-        .find((size) => window.innerWidth >= size);
-      setStartEndValues(screenSizes[screenWidth] || defaultValues);
-    };
-
-    // Update the start/end values when the window size changes
-    window.addEventListener("resize", updateStartEndValues);
-    updateStartEndValues(); // Initial update
-
-    return () => {
-      // Clean up the event listener when the component is unmounted
-      window.removeEventListener("resize", updateStartEndValues);
-    };
-  }, []);
-
-  /* ALTERNATIVE SCROLL - PIN ON BOTH TITLES & IMAGES */
-  useLayoutEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    const t1 = gsap.timeline();
-
-    /* Use the start/end values from the state */
-    const { startImage, endImage, startTitles, endTitles } = startEndValues;
-
-    /* Scroll-trigger for pinning the ImageContainer */
-    t1.to(imageContainer.current, {
-      scrollTrigger: {
-        trigger: imageContainer.current,
-        start: startImage,
-        end: endImage, // Adjust for pinning duration
-        pin: true,
-      },
-    });
-
-    /* Scroll-trigger for pinning the TitlesContainer */
-    t1.to(titlesContainer.current, {
-      scrollTrigger: {
-        trigger: titlesContainer.current,
-        start: startTitles,
-        end: endTitles, // Adjust for pinning duration
-        pin: true,
-      },
-    });
-
-    /* Apply the timeline to the ScrollTrigger */
-    ScrollTrigger.create({
-      trigger: document.body,
-      animation: t1,
-      start: "top top",
-      end: "bottom bottom",
-      scrub: true,
-    });
-
-    return () => {
-      t1.kill();
-      ScrollTrigger.getAll().forEach((st) => st.kill()); // Kill all ScrollTriggers
-    };
-  }, [startEndValues]);
-
-  /* INITIAL CODE - WORKS FINE BUT WITHOUT PIN ON TITLES */
-  // useLayoutEffect(() => {
-  //   gsap.registerPlugin(ScrollTrigger);
-
-  //   const endValue = isSmallScreen
-  //     ? "bottom+=800px bottom"
-  //     : "bottom+=900px bottom";
-
-  //   ScrollTrigger.create({
-  //     trigger: imageContainer.current,
-  //     start: "top-=150px",
-  //     // end: document.body.offsetHeight - window.innerHeight - 50,
-  //     // end: "bottom+=900px bottom",
-  //     end: endValue,
-  //     pin: true,
-  //   });
-
-  //   return () => {
-  //     ScrollTrigger.getAll().forEach((st) => st.kill());
-  //   };
-  // }, [isSmallScreen]);
+  const screenWidth = window.innerWidth;
+  const startEndValues = screenSizes[screenWidth] || {
+    startImage: "default-start-image-value",
+    endImage: "default-end-image-value",
+    startTitles: "default-start-titles-value",
+    endTitles: "default-end-titles-value",
+  };
 
   return (
     <>
@@ -216,7 +129,7 @@ export default function Index() {
           {/* Container Images */}
           <div
             ref={imageContainer}
-            className="imageContainer relative 
+            className="image-container relative 
                 w-[35%]
                 xl:w-[45%]"
           >
@@ -325,7 +238,7 @@ export default function Index() {
         {/* Container Project Titles */}
         <div
           ref={titlesContainer}
-          className="projectList relative flex flex-col 
+          className="titles-container relative flex flex-col 
                9xl:mt-[1150px] 
                8xl:mt-[950px] 
                7xl:mt-[750px] 
@@ -371,7 +284,8 @@ export default function Index() {
             );
           })}
         </div>
+        <ScrollAnimation {...startEndValues} />
       </section>
     </>
   );
-}
+};

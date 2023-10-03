@@ -7,8 +7,6 @@ import { useMediaQuery } from "@mui/material";
 import { motion, useScroll, useTransform } from "framer-motion";
 import styles from "./style.module.scss";
 
-import Bio from "../biography";
-
 /* Import Images */
 import Profilepic1 from "../../public/images/profilepic/A-profilepic-1-kopie.webp";
 import Profilepic2 from "../../public/images/profilepic/A-profilepic-2-kopie.webp";
