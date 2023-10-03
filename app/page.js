@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic';
 import Biography from "./biography";
 import LocomotiveScrollSetup from './components/LocomotiveScrollSetup';
 
+
 const DynamicCursor = dynamic(() => import('./components/Reusablecomponents/Cursor'), {
   ssr: false,
 });

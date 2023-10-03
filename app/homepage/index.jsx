@@ -121,12 +121,6 @@ export default function Index() {
                   xl:w-1/3
                   "
             >
-              {/* 9xl:w-[1100px] 9xl:h-[1100px] 8xl:w-[950px] 8xl:h-[950px]
-              7xl:w-[800px] 7xl:h-[800px] 6xl:w-[750px] 6xl:h-[750px]
-              5xl:w-[650px] 5xl:h-[650px] 4xl:w-[600px] 4xl:h-[600px]
-              3xl:w-[500px] 3xl:h-[500px] 2xl:w-[400px] 2xl:h-[400px]
-              xl:w-[350px] xl:h-[350px] lg:w-[300px] lg:h-[300px] md:w-[250px]
-              md:h-[250px] */}
               <Image
                 src={FrontlabsLogo}
                 alt="logo frontlabs amsterdam home page"
@@ -249,22 +243,22 @@ export default function Index() {
                 className="flex justify-between items-center rounded font-medium text-dark 
                      bg-customThree/[0.85] hover:bg-customThree/100 transition-all 
                      duration-[300ms] ease-in-out z-20
-                     py-3 px-5 
-                     9xl:text-6xl
-                     8xl:text-5xl
-                     6xl:text-4xl
-                     5xl:text-3xl
+                     9xl:text-5xl 9xl:py-5 9xl:px-7
+                     6xl:text-4xl 6xl:py-4 5xl:px-4
+                     5xl:text-3xl 5xl:py-3
                      4xl:text-2xl
-                     3xl:text-xl
-                     2xl:text-lg 2xl:py-2 2xl:px-4
-                     lg:px-2
-                     md:text-base
-                     sm:text-sm"
+                     3xl:py-2
+                     2xl:text-lg 2xl:py-1 2xl:px-3
+                     lg:py-2
+                     md:text-base md:py-1 md:px-2
+                     sm:text-sm
+                     xs:text-xs xs:py-1.5"
               >
                 <h1 className="flex items-center">CV</h1>
                 <div
                   className="flex items-center 
-                    max-w-[18.5px] ml-2"
+                    max-w-[18.5px] ml-2
+                    xs:max-w-[14px] xs:ml-1"
                 >
                   <Image src={DownloadIcon} alt="" />
                 </div>

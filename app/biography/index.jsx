@@ -20,11 +20,16 @@ const phrases = [
 export default function Index() {
   return (
     <div
-      className="relative w-full ml-[10vw]
-            3xl:mt-[25rem]
-            xl:w-[70vw] xl:mt-[45rem] xl:mx-auto 
-            lg:w-[75vw]
-            sm:w-[80vw] sm:mt-[35rem]"
+      className="relative
+            w-full ml-[10vw]
+            9xl:mt-[60vh]
+            7xl:mt-[70vh]
+            6xl:mt-[60vh]
+            xl:w-[70vw] xl:mt-[40vh] xl:mx-auto 
+            lg:w-[75vw] lg:mt-[55vh]
+            md:w-[80vw] md:mt-[65vh]
+            sm:mt-[65vh]
+            xs:mt-[70vh]"
     >
       {phrases.map((phrase, index) => {
         return <AnimatedText key={index}>{phrase}</AnimatedText>;
@@ -45,7 +50,8 @@ function AnimatedText({ children }) {
         start: "0px bottom",
         end: "bottom+=200px bottom",
       },
-      opacity: 0,
+      opacity: 1,
+      // opacity: 0,
       left: "-200px",
       ease: "power3.Out",
     });
@@ -54,12 +60,19 @@ function AnimatedText({ children }) {
   return (
     <p
       ref={textRef}
-      className={`relative m-0 ${!children.trim() ? "my-4" : ""}
+      className={`relative m-0 ${!children.trim() ? "my-8" : ""} 
+         font-extralight text-light uppercase
+         9xl:text-7xl 9xl:!leading-[1.25]
+         8xl:text-6xl
+         7xl:text-5xl
+         6xl:text-[2.75rem]
+         5xl:text-4xl
+         4xl:text-3xl
          3xl:text-2xl
          2xl:text-xl
          md:text-lg 
          xs:text-base
-         font-extralight text-light uppercase`}
+         `}
     >
       {children}
     </p>

@@ -7,6 +7,7 @@ import { useMediaQuery } from "@mui/material";
 import { motion, useScroll, useTransform } from "framer-motion";
 import styles from "./style.module.scss";
 
+import Bio from "../biography";
 
 /* Import Images */
 import Profilepic1 from "../../public/images/profilepic/A-profilepic-1-kopie.webp";
@@ -26,7 +27,7 @@ export default function Index() {
         trigger: title.current,
         scrub: true,
         start: "0px bottom",
-        end: "bottom+=200px bottom",
+        end: "bottom+=300px bottom",
       },
       opacity: 0.5,
       left: "-200px",
@@ -38,24 +39,38 @@ export default function Index() {
     <>
       <section
         id="about"
-        className="relative flex w-[80vw] mx-auto text-light
-            mt-28
-            md:mt-14
+        className="relative flex text-light
+            w-[80vw] mx-auto
+            lg:w-[85vw]
             xs:w-[90vw]"
       >
         {/* Container Title & Images */}
         <div
-          className="relative w-full flex justify-between 
-            lg:flex-col"
+          className="relative 
+            w-full flex justify-between 
+            9xl:mt-[20rem]
+            6xl:mt-[15rem]
+            4xl:mt-[10rem]
+            2xl:mt-[7rem]
+            lg:mt-[6rem] lg:flex-col
+            md:mt-[6rem] 
+            sm:mt-[3.5rem]"
         >
           {/* Title About Me */}
-          <div ref={title} className="relative mt-4">
+          <div ref={title} className="relative">
             <h1
-              className={`${styles.textShadow} title relative uppercase font-extralight
-                  left-[5%] m-0
-                  3xl:text-[4.5rem]
+              className={`${styles.textShadow} title relative uppercase font-extralight tracking-wider
+                  left-[10%] m-0
+                  9xl:text-[14rem]
+                  8xl:text-[10rem]
+                  7xl:text-[7.5rem]
+                  6xl:text-[7rem]
+                  5xl:text-[6.5rem]
+                  4xl:text-[6rem]
+                  3xl:text-[5rem]
                   2xl:text-[4rem]
                   lg:text-[3.5rem] lg:top-4 
+                  md:text-[3rem]
                   sm:text-[2.5rem] 
                   xs:text-[2rem] xs:left-[15%]`}
             >
@@ -68,16 +83,13 @@ export default function Index() {
             <div
               className="relative 
                  w-[80%] mx-auto 
-                 lg:top-[10rem] 
+                 lg:top-[10vh] 
                  sm:top-[6rem] 
-                 brightness-[85%]"
+                 brightness-[90%]"
             >
               <div
                 className="absolute flex justify-center mx-auto
-                  lg:w-[475px] lg:h-[475px]
-                  md:w-[400px] md:h-[400px]
-                  sm:w-[320px] sm:h-[320px]
-                  xs:w-[260px] xs:h-[260px]"
+                  lg:w-full"
               >
                 <Image
                   src={Profilepic1}
@@ -85,27 +97,25 @@ export default function Index() {
                   priority={true}
                   rel="preload"
                   as="image"
-                  //  placeholder="blur"
-                  //  quality={100}
+                  width={250}
+                  height={250}
+                  // fill
                   sizes="(max-width: 768px) 100vw,
-                     (max-width: 1535px) 50vw,
-                   50vw"
-                  fill
+                  (max-width: 1535px) 50vw,
+                  50vw"
                   style={{
                     objectFit: "cover",
                     width: "100%",
                     borderRadius: "5px",
                   }}
-                  className="blur-[3px] mx-auto"
+                  className="blur-[3px]"
                 />
               </div>
               <motion.div
                 style={{ y }}
                 className="relative
-                  lg:w-[220px] lg:h-[220px] lg:left-[20rem] lg:top-[10rem]
-                  md:w-[200px] md:h-[200px] md:left-[9rem] 
-                  sm:w-[150px] sm:h-[150px]
-                  xs:w-[130px] xs:h-[130px]"
+                  lg:w-[37.5%] lg:left-[20rem] lg:top-[10vh]
+                  md:left-[65%]"
               >
                 <Image
                   src={Profilepic3}
@@ -113,17 +123,16 @@ export default function Index() {
                   priority={true}
                   rel="preload"
                   as="image"
-                  //  placeholder="blur"
-                  //  quality={100}
+                  width={250}
+                  height={250}
+                  // fill
                   sizes="(max-width: 768px) 100vw,
-                     (max-width: 1535px) 50vw,
-                   50vw"
-                  fill
+                  (max-width: 1535px) 50vw,
+                  50vw"
                   style={{
                     objectFit: "cover",
                     width: "100%",
                     borderRadius: "5px",
-                    // height: "auto",
                   }}
                   className="drop-shadow-4xl"
                 />
@@ -132,13 +141,12 @@ export default function Index() {
           ) : (
             <div
               className="relative 
-                  w-1/2 right-0 flex justify-end items-start
-                  brightness-[85%]"
+                  w-1/2 right-0 flex justify-end items-start brightness-[90%]"
             >
               <div
                 className="absolute mx-auto
-                  3xl:w-[600px] 3xl:h-[600px]
-                  2xl:w-[500px] 2xl:h-[500px]"
+                  9xl:w-[75%]
+                  xl:w-full"
               >
                 <Image
                   src={Profilepic1}
@@ -146,25 +154,27 @@ export default function Index() {
                   priority={true}
                   rel="preload"
                   as="image"
-                  //  placeholder="blur"
-                  //  quality={100}
+                  width={250}
+                  height={250}
+                  // fill
                   sizes="(max-width: 768px) 100vw,
                      (max-width: 1535px) 50vw,
                    50vw"
-                  fill
                   style={{
                     objectFit: "cover",
                     width: "100%",
                     borderRadius: "5px",
                   }}
-                  className="blur-[4px]"
+                  className="blur-[7px]"
                 />
               </div>
+              {/* Small Image - left */}
               <div
-                className="relative 
-                  top-[16rem] right-[32%] 
-                  3xl:w-[200px] 3xl:h-[200px]
-                  2xl:w-[175px] 2xl:h-[175px]"
+                className="relative              
+                  9xl:w-1/3 9xl:top-[32vh] 9xl:right-[35%]
+                  8xl:w-[28%]
+                  2xl:w-1/3 2xl:top-[16vh] 2xl:right-[32%]
+                  xl:w-[37.5%] xl:top-[14vh] xl:right-[32%]"
               >
                 <Image
                   src={Profilepic3}
@@ -172,12 +182,12 @@ export default function Index() {
                   priority={true}
                   rel="preload"
                   as="image"
-                  //  placeholder="blur"
-                  //  quality={100}
+                  width={250}
+                  height={250}
+                  // fill
                   sizes="(max-width: 768px) 100vw,
                      (max-width: 1535px) 50vw,
                    50vw"
-                  fill
                   style={{
                     objectFit: "cover",
                     width: "100%",
@@ -188,26 +198,27 @@ export default function Index() {
                   className="drop-shadow-4xl"
                 />
               </div>
+              {/* Small Image - right */}
               <div
                 className="relative
-                     mt-24 mb-24 
-                     top-[17rem] left-[10%] 
-                     3xl:w-[200px] 3xl:h-[200px]
-                     2xl:w-[175px] 2xl:h-[175px]
-                     md:hidden"
+                     9xl:w-1/3 9xl:top-[30vh] 9xl:left-[10%]
+                     8xl:w-[28%]
+                     2xl:w-1/3 2xl:top-[16vh] 2xl:right-[32%]
+                     xl:w-[37.5%] xl:top-[25vh] xl:right-[32%]"
               >
+                {/* mt-24 mb-24 ????? */}
                 <Image
                   src={Profilepic2}
                   alt="picture of author"
                   priority={true}
                   rel="preload"
                   as="image"
-                  //  placeholder="blur"
-                  //  quality={100}
+                  width={250}
+                  height={250}
+                  // fill
                   sizes="(max-width: 768px) 100vw,
                      (max-width: 1535px) 50vw,
                    50vw"
-                  fill
                   style={{
                     objectFit: "cover",
                     width: "100%",

@@ -1,9 +1,9 @@
 // "use client";
-import { useState, useLayoutEffect, useRef } from "react";
+import { useState, useEffect, useLayoutEffect, useRef } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-// import { useMediaQuery } from "@mui/material";
+import { useMediaQuery } from "@mui/material";
 
 const projects = [
   {
@@ -33,41 +33,125 @@ const projects = [
   },
 ];
 
+// Define your screen sizes and corresponding start/end values
+const screenSizes = {
+  5120: {
+    startImage: "top-=400px",
+    endImage: "bottom+=4500px bottom",
+    startTitles: "top-=375px",
+    endTitles: "top+=400px",
+  },
+  4096: {
+    startImage: "top-=350px",
+    endImage: "bottom+=3750px bottom",
+    startTitles: "top-=375px",
+    endTitles: "top+=400px",
+  },
+  3072: {
+    startImage: "top-=350px",
+    endImage: "bottom+=3250px bottom",
+    startTitles: "top-=325px",
+    endTitles: "top+=400px",
+  },
+  2880: {
+    startImage: "top-=350px",
+    endImage: "bottom+=2750px bottom",
+    startTitles: "top-=325px",
+    endTitles: "top+=400px",
+  },
+  2560: {
+    startImage: "top-=350px",
+    endImage: "bottom+=2500px bottom",
+    startTitles: "top-=325px",
+    endTitles: "top+=400px",
+  },
+  2304: {
+    startImage: "top-=350px",
+    endImage: "bottom+=2350px bottom",
+    startTitles: "top-=325px",
+    endTitles: "top+=400px",
+  },
+  1921: {
+    startImage: "top-=150px",
+    endImage: "bottom+=1750px bottom",
+    startTitles: "top-=175px",
+    endTitles: "top+=400px",
+  },
+  1535: {
+    startImage: "top-=100px",
+    endImage: "bottom+=1500px bottom",
+    startTitles: "top-=75px",
+    endTitles: "top+=400px",
+  },
+};
+
+// Default values for screens smaller than 4096px
+const defaultValues = {
+  startImage: "top-=100px",
+  endImage: "bottom+=1500px bottom",
+  startTitles: "top-=75px",
+  endTitles: "top+=400px",
+};
+
 export default function Index() {
   const [selectedProject, setSelectedProject] = useState(0);
   const container = useRef(null);
   const imageContainer = useRef(null);
   const titlesContainer = useRef(null);
 
+  /* useMediaQuery for 1st layoutEffect - trigger only at Image */
   // const isSmallScreen = useMediaQuery("(max-width: 479px)");
+
+  const [startEndValues, setStartEndValues] = useState(defaultValues);
+
+  useEffect(() => {
+    const updateStartEndValues = () => {
+      // Find the highest screen size that's less than or equal to the window width
+      const screenWidth = Object.keys(screenSizes)
+        .sort((a, b) => b - a)
+        .find((size) => window.innerWidth >= size);
+      setStartEndValues(screenSizes[screenWidth] || defaultValues);
+    };
+
+    // Update the start/end values when the window size changes
+    window.addEventListener("resize", updateStartEndValues);
+    updateStartEndValues(); // Initial update
+
+    return () => {
+      // Clean up the event listener when the component is unmounted
+      window.removeEventListener("resize", updateStartEndValues);
+    };
+  }, []);
 
   /* ALTERNATIVE SCROLL - PIN ON BOTH TITLES & IMAGES */
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     const t1 = gsap.timeline();
 
-    // Scroll-trigger for pinning the ImageContainer
+    /* Use the start/end values from the state */
+    const { startImage, endImage, startTitles, endTitles } = startEndValues;
+
+    /* Scroll-trigger for pinning the ImageContainer */
     t1.to(imageContainer.current, {
       scrollTrigger: {
         trigger: imageContainer.current,
-        start: "top-=100px",
-        end: "bottom+=1500px bottom", // Adjust for pinning duration
+        start: startImage,
+        end: endImage, // Adjust for pinning duration
         pin: true,
       },
     });
 
-    // Scroll-trigger for pinning the TitlesContainer
+    /* Scroll-trigger for pinning the TitlesContainer */
     t1.to(titlesContainer.current, {
       scrollTrigger: {
         trigger: titlesContainer.current,
-        start: "top-=75px",
-        end: "top+=400px", // Adjust for pinning duration
-        // end: "bottom+=950px bottom", // Adjust for pinning duration
+        start: startTitles,
+        end: endTitles, // Adjust for pinning duration
         pin: true,
       },
     });
 
-    // Apply the timeline to the ScrollTrigger
+    /* Apply the timeline to the ScrollTrigger */
     ScrollTrigger.create({
       trigger: document.body,
       animation: t1,
@@ -80,7 +164,7 @@ export default function Index() {
       t1.kill();
       ScrollTrigger.getAll().forEach((st) => st.kill()); // Kill all ScrollTriggers
     };
-  }, []);
+  }, [startEndValues]);
 
   /* INITIAL CODE - WORKS FINE BUT WITHOUT PIN ON TITLES */
   // useLayoutEffect(() => {
@@ -110,8 +194,9 @@ export default function Index() {
         ref={container}
         id="projects"
         className="projects relative w-full text-light 
-            mt-[40vh] p-[10%]
-            3xl:mt-[25vh]
+            p-[10%]
+            9xl:mt-[25vh]
+            6xl:mt-[20vh]
             xl:p-[5%] 
             sm:p-[2.5%] 
             xs:mt-[20vh]"
@@ -119,7 +204,11 @@ export default function Index() {
         {/* Container Project Images & Intro Text */}
         <div
           className="projectDescription flex justify-between 
-            h-[700px]
+            9xl:h-[2500px]
+            7xl:h-[2000px]
+            6xl:h-[1500px]
+            4xl:h-[1100px]
+            3xl:h-[850px]
             xl:h-[750px] 
             xs:h-[650px]
             "
@@ -131,12 +220,6 @@ export default function Index() {
                 w-[35%]
                 xl:w-[45%]"
           >
-            {/* 3xl:w-[450px] 3xl:h-[675px] 
-            2xl:w-[425px] 2xl:h-[650px] w-[400px] ????
-            lg:w-[350px] lg:h-[525px]
-            md:w-[275px] md:h-[425px]
-            sm:w-[210px] sm:h-[325px]
-            xs:w-[130px] xs:h-[195px] */}
             <Image
               src={`/images/${projects[selectedProject].src}`}
               alt="project image"
@@ -154,31 +237,42 @@ export default function Index() {
                 width: "100%",
                 borderRadius: "5px",
               }}
-              className=""
             />
           </div>
 
-          {/* Container for Only two Columns Text */}
+          {/* Container for Text Columns */}
           <div
             className="relative 
               w-[45%] flex justify-between
+              9xl:gap-14
+              8xl:gap-12
+              7xl:gap-16
+              6xl:gap-10
+              3xl:gap-5
               xs:block"
           >
-            {/* gap ?? ^^ */}
             {/* 1st Column */}
             <div
               className="column flex
-               w-[16vw] ml-1
+               9xl:w-[21vw]
+               2xl:w-[18vw]
                xl:w-[25vw]
                lg:pl-2
                xs:w-[35vw] xs:pl-0 xs:ml-0"
             >
               <p
                 className="
-                  text-2xl
+                  9xl:text-8xl 9xl:!leading-[1.25]
+                  8xl:text-7xl
+                  7xl:text-6xl
+                  6xl:text-5xl
+                  5xl:text-[2.75rem]
+                  4xl:text-[2.5rem]
+                  3xl:text-[2rem]
+                  2xl:text-[1.75rem]
                   xl:text-xl
                   lg:text-lg  
-                  sm:text-base sm:!leading-[1.10rem]
+                  sm:text-base sm:!leading-[1.10]
                   xs:text-sm xs:!leading-[1.25rem]"
               >
                 {`Over the last years, I've specialized in crafting
@@ -190,7 +284,13 @@ export default function Index() {
             {/* 2nd Column */}
             <div
               className="column flex items-end 
-               w-[16vw] h-full mt-[15vh]
+               h-full
+               9xl:w-[21vw] 9xl:mt-[15vh]
+               8xl:mt-[1vh]
+               7xl:mt-[5vh]
+               6xl:mt-0
+               4xl:mt-[10vh]
+               2xl:w-[18vw]
                xl:mt-28               
                lg:w-[25vw] lg:mt-0 
                md:mt-20
@@ -199,10 +299,17 @@ export default function Index() {
             >
               <p
                 className="
-                  text-2xl
+                  9xl:text-8xl 9xl:!leading-[1.25]
+                  8xl:text-7xl
+                  7xl:text-6xl
+                  6xl:text-5xl
+                  5xl:text-[2.75rem]
+                  4xl:text-[2.5rem]
+                  3xl:text-[2rem]
+                  2xl:text-[1.75rem]
                   xl:text-xl
                   lg:text-lg
-                  sm:text-base sm:!leading-[1.10rem]
+                  sm:text-base sm:!leading-[1.10]
                   xs:text-sm xs:!leading-[1.25rem]"
               >
                 {`For instance, RTXP Amsterdam, an immersive art experience,
@@ -219,7 +326,12 @@ export default function Index() {
         <div
           ref={titlesContainer}
           className="projectList relative flex flex-col 
-               3xl:mt-[300px]
+               9xl:mt-[1150px] 
+               8xl:mt-[950px] 
+               7xl:mt-[750px] 
+               6xl:mt-[550px] 
+               3xl:mt-[400px]
+               2xl:mt-[350px]
                md:mt-[250px] 
                sm:mt-[200px]
                xs:mt-[250px]"
@@ -233,14 +345,19 @@ export default function Index() {
                 }}
                 className="border-b-[1px] border-light
                     flex justify-end
-                    w-full
-                    m-0 p-0"
+                    w-full m-0 p-0"
               >
                 <a href={project.link} target={"_blank"}>
                   <h2
                     className="text-[whitesmoke] uppercase cursor-pointer
-                        3xl:text-5xl 3xl:mt-[45px] 3xl:mb-[10px]
-                        2xl:text-4xl 2xl:mb-[5px]
+                        9xl:text-9xl 9xl:mt-[150px] 9xl:mb-[35px]
+                        8xl:text-8xl 8xl:mt-[135px] 8xl:mb-[25px]
+                        7xl:text-7xl 7xl:mt-[115px] 7xl:mb-[15px]
+                        6xl:text-6xl 6xl:mt-[95px] 
+                        5xl:text-5xl 5xl:mt-[85px] 
+                        4xl:text-[2.75rem] 4xl:mt-[75px] 4xl:mb-[10px]
+                        3xl:mt-[55px]
+                        2xl:text-[2rem] 2xl:mb-[5px]
                         xl:text-3xl xl:mt-[40px]
                         lg:text-2xl lg:mt-[30px]
                         md:text-xl md:mt-[25px]

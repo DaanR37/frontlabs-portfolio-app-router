@@ -41,7 +41,12 @@ const CustomMobileLink = ({ title, className = "", onClick }) => {
   return (
     <button
       onClick={handleClick}
-      className={`${className} relative lg:text-[20px] text-light dark:text-dark my-2`}
+      className={`${className} relative text-light dark:text-dark
+          font-light
+          lg:text-3xl lg:my-3 
+          md:text-2xl md:my-2
+          sm:text-xl 
+          xs:text-[18px] xs:my-1`}
     >
       {title}
     </button>
@@ -86,29 +91,32 @@ export default function Index() {
             7xl:px-24 7xl:py-20 
             5xl:px-20 5xl:py-16 
             3xl:py-12 
-            2xl:px-12 2xl:py-8 
-            sm:px-8"
+            2xl:px-12 2xl:py-8"
     >
       {/* Hamburger Button Mobile Logic */}
       <button
         className="absolute flex-col justify-center items-center hidden z-10
-            lg:top-[2rem] lg:flex"
+            lg:top-12 lg:flex
+            sm:top-10"
         onClick={handleClick}
       >
         <span
-          className={`block bg-light transition-all duration-300 ease-in-out h-0.5 w-6 rounded-sm -translate-y-0.5 ${
-            isOpen ? "rotate-45 translate-y-1" : "-translate-y-0.5"
-          }`}
+          className={`block bg-light transition-all duration-300 ease-in-out rounded-sm -translate-y-0.5
+                lg:w-7 lg:h-[2.5px]
+                md:w-6 md:h-0.5
+                ${isOpen ? "rotate-45 translate-y-1" : "-translate-y-0.5"}`}
         ></span>
         <span
-          className={`block bg-light transition-all duration-300 ease-in-out h-0.5 w-6 rounded-sm my-0.5 ${
-            isOpen ? "opacity-0" : "opacity-100"
-          }`}
+          className={`block bg-light transition-all duration-300 ease-in-out rounded-sm 
+                lg:w-7 lg:h-[2.5px] lg:my-[2.5px]
+                md:w-6 md:h-0.5 md:my-0.5
+                ${isOpen ? "opacity-0" : "opacity-100"}`}
         ></span>
         <span
-          className={`block bg-light transition-all duration-300 ease-in-out h-0.5 w-6 rounded-sm ${
-            isOpen ? "-rotate-45 -translate-y-1" : "translate-y-0.5"
-          }`}
+          className={`block bg-light transition-all duration-300 ease-in-out rounded-sm
+                lg:w-7 lg:h-[2.5px]
+                md:w-6 md:h-0.5
+                ${isOpen ? "-rotate-45 -translate-y-1" : "translate-y-0.5"}`}
         ></span>
       </button>
 
@@ -247,21 +255,23 @@ export default function Index() {
         </motion.nav>
       </div>
 
-      {/* NavBar smaller screen */}
+      {/* NavBar small screens */}
       {isOpen ? (
         <motion.div
           initial={{ scale: 0, opacity: 0, x: "-50%", y: "30%" }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.3 }}
-          className="absolute flex flex-col min-w-[75vw] left-1/2 -translate-x-1/2
-                bg-dark/60 dark:bg-light/60
-                rounded-lg backdrop-blur-md z-40
-                py-28
+          className="absolute bg-dark/60 dark:bg-light/60 rounded-lg backdrop-blur-md z-40
+                min-w-[75vw] py-28 left-1/2 -translate-x-1/2 flex flex-col
                 sm:py-20 
                 xs:py-16"
         >
           <nav className="flex flex-col">
-            <ul className="text-center list-none mb-4">
+            <ul
+              className="text-center list-none 
+                    lg:mb-8
+                    xs:mb-7"
+            >
               <li>
                 <CustomMobileLink
                   onClick={() => {
@@ -269,7 +279,6 @@ export default function Index() {
                     handleClick();
                   }}
                   title="Home"
-                  className=""
                 />
               </li>
               <li>
@@ -279,7 +288,6 @@ export default function Index() {
                     handleClick();
                   }}
                   title="About"
-                  className=""
                 />
               </li>
               <li>
@@ -289,7 +297,6 @@ export default function Index() {
                     handleClick();
                   }}
                   title="Projects"
-                  className=""
                 />
               </li>
               <li>
@@ -299,7 +306,6 @@ export default function Index() {
                     handleClick();
                   }}
                   title="Articles"
-                  className=""
                 />
               </li>
               <li>
@@ -309,13 +315,15 @@ export default function Index() {
                     handleClick();
                   }}
                   title="Contact"
-                  className=""
                 />
               </li>
             </ul>
           </nav>
 
-          <nav className="flex items-center justify-center flex-wrap mt-2">
+          <nav
+            className="
+                flex items-center justify-center flex-wrap"
+          >
             <motion.a
               href="https://www.linkedin.com/in/daan-roelofs-b7021220/"
               target={"_blank"}
@@ -323,9 +331,10 @@ export default function Index() {
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.9 }}
               className="text-light dark:text-dark
-                  mr-4
-                  w-8     
-                  sm:mx-2"
+                  w-10 mr-6
+                  md:w-9 md:mr-5
+                  sm:w-8
+                  xs:w-7"
             >
               <LinkedInIcon />
             </motion.a>
@@ -336,17 +345,20 @@ export default function Index() {
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.9 }}
               className="text-light dark:text-dark
-                  w-8 
-                  sm:mx-2"
+                  w-10
+                  md:w-9 
+                  sm:w-8
+                  xs:w-7"
             >
               <GithubIcon />
             </motion.a>
             <button
               onClick={() => setMode(mode === "light" ? "dark" : "light")}
               className={`flex items-center justify-center rounded-full
-                  p-1
-                  ml-4
-                  sm:mx-2
+                  w-10 p-1 ml-6
+                  md:w-9 md:ml-5
+                  sm:w-8
+                  xs:w-7
                            ${
                              mode === "light"
                                ? "bg-dark text-light"
