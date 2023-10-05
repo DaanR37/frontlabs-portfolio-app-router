@@ -92,10 +92,9 @@ export default function Index() {
         {loading && <Loader />}
 
         <div
-          className="relative w-full flex justify-center items-center z-10 
-               mx-auto mt-[5rem] 
-               3xl:max-w-[80rem]
-               2xl:max-w-[72rem] 
+          className="relative flex justify-center items-center z-10
+               w-full mx-auto
+               9xl:max-w-[80vw] 9xl:mt-[10vh]
                xl:px-8 
                lg:px-10 
                md:px-8 
@@ -121,80 +120,101 @@ export default function Index() {
             {/* Contact Details */}
             <div
               className="flex flex-col justify-between border-r-[0.5px] border-light/50  
-                  px-12 
-                  xl:px-10 
-                  lg:px-8 
-                  md:px-6 
+                  9xl:px-24
+                  3xl:px-12
+                  xl:px-10
+                  lg:px-8
+                  md:px-6
                   sm:px-0 sm:border-none"
             >
               {/* Break Line */}
               <span
                 className="
-                  sm:py-4
-                  sm:border-t-[1px] 
-                  sm:border-light/50"
+                  sm:py-4 sm:border-t-[1px] sm:border-light/50"
               ></span>
 
               {/* Icons Container - Telephone / Mail / Pinpoint */}
               <div
                 className="icons-container inline-flex flex-col text-light cursor-pointer
-                    mb-20 
+                    9xl:mb-44 9xl:space-y-44
+                    3xl:mb-20 3xl:space-y-16
                     sm:mb-9"
               >
+                {/* Phone */}
                 <Magnetic>
                   <a
                     href="tel:0652624512"
                     target="_blank"
                     rel="noreferrer"
                     className="flex flex-row items-center 
-                        space-x-6 mb-6 
+                        9xl:space-x-20
+                        3xl:space-x-6
                         sm:my-5"
                   >
                     <TelIcon
-                      className="w-6 
+                      className="
+                        9xl:w-24
+                        3xl:w-6 
                         sm:w-5"
                     />
                     <p
-                      className="text-gray-50 font-light text-base 
+                      className="text-gray-50 font-light 
+                        9xl:text-5xl
+                        3xl:text-base 
                         xs:text-sm"
                     >
                       {MyUserData.phone}
                     </p>
                   </a>
                 </Magnetic>
+                {/* Email */}
                 <Magnetic>
                   <a
                     href="mailto:frontlabsamsterdam@gmail.com"
                     target="_blank"
                     rel="noreferrer"
                     className="flex flex-row items-center 
-                        space-x-6 my-6 
+                        9xl:space-x-20
+                        3xl:space-x-6
                         sm:my-5"
                   >
-                    <MailIcon className="w-6 sm:w-5" />
+                    <MailIcon
+                      className="
+                        9xl:w-24
+                        3xl:w-6 
+                        sm:w-5"
+                    />
                     <p
-                      className="text-gray-50 font-light text-base 
+                      className="text-gray-50 font-light 
+                        9xl:text-5xl
+                        3xl:text-base 
                         xs:text-sm"
                     >
                       {MyUserData.email}
                     </p>
                   </a>
                 </Magnetic>
+                {/* PinPoint */}
                 <a
                   href="https://goo.gl/maps/C8tcosBz27NuL5dt8"
                   target="_blank"
                   rel="noreferrer"
                   className="flex flex-row items-center 
-                        space-x-6 my-6 
+                        9xl:space-x-20
+                        3xl:space-x-6
                         sm:my-5"
                 >
                   <PinpointIcon
-                    className="w-6 
+                    className="
+                        9xl:w-24
+                        3xl:w-6 
                         sm:w-5"
                   />
                   <p
-                    className="text-gray-50 font-light text-base opacity-[0.8] hover:opacity-100 
+                    className="text-gray-50 font-light opacity-[0.8] hover:opacity-100 
                         transition-all duration-[350ms] ease-in-out
+                        9xl:text-5xl
+                        3xl:text-base 
                         xs:text-sm"
                   >
                     {MyUserData.address}
@@ -204,20 +224,24 @@ export default function Index() {
 
               {/* Business Details */}
               <div className="flex justify-between text-light">
+                {/* Legal Info FrontLabs */}
                 <div
                   className="flex flex-col justify-end opacity-[0.75]
-                     text-[15px] 
+                     9xl:text-5xl 9xl:space-y-8
+                     3xl:text-[15px] 3xl:space-y-3
                      xs:text-sm"
                 >
-                  <p className="py-[4px]">
+                  <p className="">
                     <i>{MyUserData.company}</i>
                   </p>
-                  <p className="py-[4px]">CoC: {MyUserData.CoC}</p>
-                  <p className="py-[4px]">VAT: {MyUserData.VAT}</p>
+                  <p className="">CoC: {MyUserData.CoC}</p>
+                  <p className="">VAT: {MyUserData.VAT}</p>
                 </div>
+                {/* Social Media Icons */}
                 <div
                   className="social-icons flex flex-col 
-                     space-y-6
+                     9xl:space-y-20
+                     3xl:space-y-6
                      md:space-y-5"
                 >
                   <motion.a
@@ -225,7 +249,8 @@ export default function Index() {
                     target="_blank"
                     rel="noreferrer"
                     className="flex items-center justify-center cursor-pointer rounded-full
-                        w-7 
+                        9xl:w-20    
+                        3xl:w-7 
                         md:w-6"
                     whileHover={{ y: -2 }}
                     whileTap={{ scale: 0.9 }}
@@ -237,7 +262,8 @@ export default function Index() {
                     target="_blank"
                     rel="noreferrer"
                     className="flex items-center justify-center cursor-pointer rounded-full
-                        w-7 
+                        9xl:w-20    
+                        3xl:w-7 
                         md:w-6"
                     whileHover={{ y: -2 }}
                     whileTap={{ scale: 0.9 }}
@@ -249,11 +275,12 @@ export default function Index() {
                     target="_blank"
                     rel="noreferrer"
                     className="flex items-center justify-center cursor-pointer rounded-full 
-                        w-7 
+                        9xl:w-20    
+                        3xl:w-7 
                         md:w-6"
                     whileHover={{ y: -2 }}
                     whileTap={{ scale: 0.9 }}
-                >
+                  >
                     <InstagramIcon />
                   </motion.a>
                 </div>

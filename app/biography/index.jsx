@@ -48,7 +48,7 @@ function AnimatedText({ children }) {
         trigger: textRef.current,
         scrub: true,
         start: "0px bottom",
-        end: "bottom+=200px bottom",
+        end: "bottom+=225px bottom",
       },
       opacity: 1,
       // opacity: 0,

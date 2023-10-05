@@ -115,9 +115,12 @@ export default function Index() {
         <div
           ref={gallery}
           className={`${styles.gallery} relative 
-              flex box-border overflow-hidden gap-[1.5vw] bg-[black]
-              h-[450vh] p-[1.5vw] 
-              sm:h-[515vh]`}
+              flex box-border overflow-hidden bg-[black]
+              h-[400vh] p-[1.5vw] gap-[1.5vw]
+              6xl:h-[350vh]
+              xl:h-[250vh]
+              lg:h-[350vh]
+              xs:p-[3vw]`}
         >
           {isExtraSmallScreen ? (
             <>
@@ -148,7 +151,7 @@ const Column = ({ y }) => {
           flex flex-col gap-[1vw]
           h-full w-1/3 min-w-[250px] 
           md:w-1/2 md:min-w-[200px] 
-          xs:w-full xs:min-w-[150px]`}
+          xs:w-full xs:min-w-[150px] xs:gap-[2.5vw]`}
       style={{ y }}
     >
       {images.map((image, i) => {
@@ -156,10 +159,9 @@ const Column = ({ y }) => {
           <div
             key={i}
             className={`${styles.imageContainer} relative 
-                w-auto h-full min-h-[500px]
+                w-auto h-full min-h-[450px]
                 rounded-[0.5vw] overflow-hidden`}
           >
-            {/* w-auto ^^ ?? */}
             <a href={image.link} target={"_blank"} className="">
               <Image
                 src={`/images/${image.src}`}
@@ -180,14 +182,16 @@ const Column = ({ y }) => {
                 }}
                 className=""
               />
-              {/* !relative ?? ^^ => Needed to let it work with FireFox */}
+              {/* !relative ?^? => Needed to let it work with FireFox */}
               <div
                 className={`${styles.hoverContainer} absolute 
                     opacity-0 bg-[rgba(0,0,0,0.4)] 
                     transition-opacity duration-500
                     top-0 left-0`}
               >
-                <span aria-hidden="true">{image.title}</span>
+                <span aria-hidden="true" className="">
+                  {image.title}
+                </span>
               </div>
             </a>
           </div>

@@ -15,6 +15,7 @@ const ScrollAnimation = ({ startImage, endImage, startTitles, endTitles }) => {
         start: startImage,
         end: endImage,
         pin: true,
+        // markers: true
       },
     });
 
@@ -24,6 +25,7 @@ const ScrollAnimation = ({ startImage, endImage, startTitles, endTitles }) => {
         start: startTitles,
         end: endTitles,
         pin: true,
+        // markers: true
       },
     });
 
