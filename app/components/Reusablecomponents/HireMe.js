@@ -20,9 +20,12 @@ const HireMe = () => {
       >
         <CircText2 className="fill-[whitesmoke] animate-spin-slow" />
         <Link href="mailto:frontlabsamsterdam@gmail.com" target="_blank" className="absolute flex items-center justify-center 
-                            left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-dark/40 text-light shadow-md 
-                            border border-[whitesmoke] hover:border-dark rounded-full font-medium 
-                            hover:bg-dark/100 hover:text-light transition-all duration-[300ms] ease-in-out cursor-pointer
+                            left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 
+                            bg-dark/40 text-light shadow-md
+                            border border-[whitesmoke]
+                            hover:border-dark rounded-full font-medium 
+                            hover:bg-dark/100 hover:text-light
+                            transition-all duration-[300ms] ease-in-out cursor-pointer
                             w-20 h-20
                             9xl:w-[240px] 9xl:h-[240px] 9xl:text-[55px]
                             7xl:w-[200px] 7xl:h-[200px] 7xl:text-[50px]
@@ -30,10 +33,11 @@ const HireMe = () => {
                             5xl:w-[180px] 5xl:h-[180px] 5xl:text-[40px]
                             4xl:w-[150px] 4xl:h-[150px] 4xl:text-[35px]
                             3xl:w-20 3xl:h-20 3xl:text-[20px]
+                            2xl:text-[18px]
                             lg:w-16 lg:h-16 lg:text-[14px]
                             md:w-12 md:h-12 md:text-[10px]"
         >
-          Email
+          e-mail
         </Link>
       </div>
     </div>

@@ -20,8 +20,6 @@ export default function Index() {
   const colors = ["#f5f5f5", "#000000", "#f5f5f5", "#000000"];
   const isSmallScreen = useMediaQuery("(max-width: 1023px)");
 
-  // const currentThemeClass = "dark";
-
   return (
     <>
       <section
@@ -241,14 +239,14 @@ export default function Index() {
                 download={true}
                 target={"_blank"}
                 className="flex justify-between items-center rounded font-medium text-dark 
-                     bg-customThree/[0.85] hover:bg-customThree/100 transition-all 
+                     bg-customThree/[0.85] hover:bg-dark/60 hover:text-light transition-all 
                      duration-[300ms] ease-in-out z-20
-                     9xl:text-5xl 9xl:py-5 9xl:px-7
-                     6xl:text-4xl 6xl:py-4 5xl:px-4
-                     5xl:text-3xl 5xl:py-3
-                     4xl:text-2xl
+                     9xl:text-5xl 9xl:py-6 9xl:px-9
+                     7xl:text-4xl 7xl:px-7
+                     6xl:py-4 6xl:px-5
+                     5xl:text-3xl 5xl:px-4
                      3xl:py-2
-                     2xl:text-lg 2xl:py-1 2xl:px-3
+                     2xl:text-lg 2xl:py-1.5 2xl:px-3
                      lg:py-2
                      md:text-base md:py-1 md:px-2
                      sm:text-sm
@@ -257,7 +255,13 @@ export default function Index() {
                 <h1 className="flex items-center">CV</h1>
                 <div
                   className="flex items-center 
-                    max-w-[18.5px] ml-2
+                    hover:invert transition-all 
+                    duration-[300ms] ease-in-out
+                    9xl:w-[45px] 9xl:ml-4
+                    7xl:w-[40px]
+                    6xl:w-[35px] 
+                    4xl:w-[30px]
+                    3xl:w-[18.5px] 3xl:ml-2
                     xs:max-w-[14px] xs:ml-1"
                 >
                   <Image src={DownloadIcon} alt="" />

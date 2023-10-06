@@ -12,10 +12,7 @@ import { roboto } from "../fonts";
 import {
   GithubIcon,
   LinkedInIcon,
-  MoonIcon,
-  SunIcon,
 } from "../components/Reusablecomponents/Icons";
-import useThemeSwitcher from "../components/hooks/useThemeSwitcher";
 import styles from "./style.module.scss";
 
 /* CUSTOMLINK */
@@ -55,7 +52,6 @@ const CustomMobileLink = ({ title, className = "", onClick }) => {
 
 export default function Index() {
   const ref = useRef(null);
-  const [mode, setMode] = useThemeSwitcher();
   const [isOpen, setIsOpen] = useState(false);
 
   /* HANDLECLICK FUNCTION */
@@ -229,29 +225,6 @@ export default function Index() {
           >
             <GithubIcon />
           </motion.a>
-          <button
-            onClick={() => setMode(mode === "light" ? "dark" : "light")}
-            className={`
-                p-1 flex items-center justify-center rounded-full
-                9xl:w-28 9xl:ml-8
-                8xl:w-24 8xl:ml-6
-                6xl:w-20
-                5xl:w-16
-                3xl:w-12 3xl:ml-3
-                2xl:w-8
-                    ${
-                      mode === "light"
-                        ? "bg-dark text-light"
-                        : "bg-customTwo/75 text-dark"
-                    }
-                    `}
-          >
-            {mode === "dark" ? (
-              <SunIcon className="fill-dark" />
-            ) : (
-              <MoonIcon className={"fill-dark"} />
-            )}
-          </button>
         </motion.nav>
       </div>
 
@@ -261,7 +234,7 @@ export default function Index() {
           initial={{ scale: 0, opacity: 0, x: "-50%", y: "30%" }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.3 }}
-          className="absolute bg-dark/60 dark:bg-light/60 rounded-lg backdrop-blur-md z-40
+          className="absolute bg-dark/60 rounded-lg backdrop-blur-md z-40
                 min-w-[75vw] py-28 left-1/2 -translate-x-1/2 flex flex-col
                 sm:py-20 
                 xs:py-16"
@@ -352,26 +325,6 @@ export default function Index() {
             >
               <GithubIcon />
             </motion.a>
-            <button
-              onClick={() => setMode(mode === "light" ? "dark" : "light")}
-              className={`flex items-center justify-center rounded-full
-                  w-10 p-1 ml-6
-                  md:w-9 md:ml-5
-                  sm:w-8
-                  xs:w-7
-                           ${
-                             mode === "light"
-                               ? "bg-dark text-light"
-                               : "bg-customTwo text-dark"
-                           }
-                           `}
-            >
-              {mode === "dark" ? (
-                <SunIcon className={"fill-dark"} />
-              ) : (
-                <MoonIcon className={"fill-dark"} />
-              )}
-            </button>
           </nav>
         </motion.div>
       ) : null}

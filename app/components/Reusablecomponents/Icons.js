@@ -24,7 +24,7 @@ export const GithubIcon = ({ className, ...rest }) => (
     {...rest}
   >
     <path
-      fill="none"
+      fill="currentColor"
       stroke="currentColor"
       strokeLinecap="round"
       strokeLinejoin="round"
