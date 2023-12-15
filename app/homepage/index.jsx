@@ -12,7 +12,6 @@ import HireMe from "../components/Reusablecomponents/HireMe";
 
 /* Import Images */
 import FrontlabsLogo from "../../public/images/frontlabslogo-alternative-logos/logo-no-background-kopie.webp";
-// import { DownloadIcon } from "@/components/Reusablecomponents/Icons";
 import DownloadIcon from "../../public/images/svg/download.svg";
 
 export default function Index() {
@@ -235,7 +234,7 @@ export default function Index() {
               <a
                 rel="preload"
                 as="style"
-                href="/CVDaanRoelofs2023-2.pdf"
+                href="/CVDaanRoelofs2023.pdf"
                 download={true}
                 target={"_blank"}
                 className="flex justify-between items-center rounded font-medium text-dark 
