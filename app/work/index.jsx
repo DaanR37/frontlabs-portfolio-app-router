@@ -17,12 +17,12 @@ const projects = [
   {
     src: "projects/afb_rtxp.webp",
     title: "RTXP Amsterdam",
-    link: "https://www.rtxp.nl/",
+    link: "https://rtxp.netlify.app/",
   },
   {
     src: "projects/afb_podcast.webp",
     title: "PodcastTailor",
-    link: "https://www.podcast-tailor.nl/",
+    link: "https://podcast-tailor.netlify.app/",
   },
   {
     src: "projects/afb_karlitosway.webp",
